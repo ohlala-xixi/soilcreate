@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
 
-const siteUrl = 'https://catalog.rolodex.work'
+const siteUrl = 'https://soilcreate.com'
 const docsDir = path.resolve('docs')
 const distDir = path.resolve('docs/.vitepress/dist')
 const output = path.join(distDir, 'sitemap.xml')

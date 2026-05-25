@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-const siteUrl = 'https://catalog.rolodex.work'
+const siteUrl = 'https://soilcreate.com'
 const siteName = 'SoilCreate'
 const defaultDescription =
   'Industrial grease pumps and geotechnical monitoring equipment from a source factory built for global buyers.'
