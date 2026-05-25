@@ -5,6 +5,7 @@ Static VitePress site scaffold for the SoilCreate brand catalog.
 ## SEO Operations
 
 - Daily SEO workflow: [SEO_DAILY_WORKFLOW.md](./SEO_DAILY_WORKFLOW.md)
+- 中文 SEO 每日工作清单: [SEO_DAILY_WORKFLOW_ZH.md](./SEO_DAILY_WORKFLOW_ZH.md)
 - Production site: https://soilcreate.com
 - Sitemap: https://soilcreate.com/sitemap.xml
 
