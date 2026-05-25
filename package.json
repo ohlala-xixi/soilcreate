@@ -1,0 +1,16 @@
+{
+  "name": "soilcreate-catalog",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "node scripts/generate-spec-pdfs.mjs && vitepress build docs && node scripts/generate-sitemap.mjs",
+    "preview": "vitepress preview docs",
+    "generate:specs": "node scripts/generate-spec-pdfs.mjs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  }
+}

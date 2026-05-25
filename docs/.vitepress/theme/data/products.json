@@ -1,0 +1,151 @@
+{
+  "categories": [
+    {
+      "id": "inclinometers",
+      "label": "Inclinometer",
+      "children": [
+        {
+          "id": "ipi",
+          "label": "IPI"
+        },
+        {
+          "id": "in-place-inclinometer",
+          "label": "SAA"
+        },
+        {
+          "id": "portable-inclinometer",
+          "label": "Portable"
+        },
+        {
+          "id": "digital-inclinometer",
+          "label": "Robot"
+        }
+      ]
+    },
+    {
+      "id": "vibration-monitoring",
+      "label": "Vibration Monitor",
+      "children": [
+        {
+          "id": "vibration-monitor",
+          "label": "Wired Vibration Sensor"
+        }
+      ]
+    },
+    {
+      "id": "piezometers",
+      "label": "Piezometer",
+      "children": [
+        {
+          "id": "piezometer-420",
+          "label": "Integration"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "sku": "SC-IPI-100",
+      "name": "In-Place Inclinometer (IPI)",
+      "categoryId": "inclinometers",
+      "subcategoryId": "ipi",
+      "category": "Inclinometers",
+      "subcategory": "IPI",
+      "image": "/images/product-placeholder.svg",
+      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
+      "summary": "Modular in-place inclinometer chain for automated lateral deformation monitoring in slopes, retaining walls, tunnels, and deep excavations.",
+      "keywords": [
+        "IPI",
+        "in-place inclinometer",
+        "slope monitoring",
+        "deformation monitoring"
+      ],
+      "updatedAt": "2026-05-26"
+    },
+    {
+      "sku": "SC-IPI-200",
+      "name": "Shape Acceleration Array",
+      "categoryId": "inclinometers",
+      "subcategoryId": "in-place-inclinometer",
+      "category": "Inclinometers",
+      "subcategory": "In-place Inclinometer",
+      "image": "/images/product-placeholder.svg",
+      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
+      "summary": "Fixed borehole inclinometer probe for continuous movement readings in geotechnical monitoring projects.",
+      "keywords": [
+        "borehole inclinometer",
+        "continuous monitoring",
+        "geotechnical sensor"
+      ],
+      "updatedAt": "2026-05-26"
+    },
+    {
+      "sku": "SC-DI-300",
+      "name": "Automated Robot Inclinometer",
+      "categoryId": "inclinometers",
+      "subcategoryId": "digital-inclinometer",
+      "category": "Inclinometers",
+      "subcategory": "Digital Inclinometer",
+      "image": "/images/product-placeholder.svg",
+      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
+      "summary": "Digital tilt and displacement sensor for automated acquisition systems and long-term structural movement datasets.",
+      "keywords": [
+        "digital inclinometer",
+        "tilt sensor",
+        "structural monitoring"
+      ],
+      "updatedAt": "2026-05-26"
+    },
+    {
+      "sku": "SC-PI-400",
+      "name": "Portable Inclinometer System",
+      "categoryId": "inclinometers",
+      "subcategoryId": "portable-inclinometer",
+      "category": "Inclinometers",
+      "subcategory": "Portable Inclinometer",
+      "image": "/images/product-placeholder.svg",
+      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
+      "summary": "Portable inclinometer system for manual borehole surveys, baseline checks, and periodic site inspections.",
+      "keywords": [
+        "portable inclinometer",
+        "manual survey",
+        "borehole monitoring"
+      ],
+      "updatedAt": "2026-05-26"
+    },
+    {
+      "sku": "SC-PZ-420",
+      "name": "4-20mA Piezometer Sensor",
+      "categoryId": "piezometers",
+      "subcategoryId": "piezometer-420",
+      "category": "Piezometers",
+      "subcategory": "4-20mA Piezometer",
+      "image": "/images/product-placeholder.svg",
+      "href": "/products/geotechnical-monitoring/piezometer-sensor",
+      "summary": "Current-output piezometer for pore water pressure and groundwater monitoring in dams, foundations, tunnels, and slopes.",
+      "keywords": [
+        "4-20mA piezometer",
+        "pore water pressure",
+        "groundwater monitoring"
+      ],
+      "updatedAt": "2026-05-26"
+    },
+    {
+      "sku": "SC-VM-600",
+      "name": "Vibration Monitoring Station",
+      "categoryId": "vibration-monitoring",
+      "subcategoryId": "vibration-monitor",
+      "category": "Vibration Monitoring",
+      "subcategory": "Vibration Monitor",
+      "image": "/images/product-placeholder.svg",
+      "href": "/products/geotechnical-monitoring/vibration-monitoring-station",
+      "summary": "Vibration monitoring station for construction impact, blasting observation, and structural vibration data collection.",
+      "keywords": [
+        "vibration monitoring",
+        "construction vibration",
+        "structural vibration"
+      ],
+      "updatedAt": "2026-05-26"
+    }
+  ]
+}

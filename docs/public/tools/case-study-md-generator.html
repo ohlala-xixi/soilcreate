@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoilCreate Case Study Markdown Generator</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f8fafc; color: #334155; margin: 0; padding: 40px 20px; }
+    .wrapper { max-width: 920px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+    h1 { font-size: 24px; color: #3A474E; margin: 0 0 8px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; }
+    h1 span { color: #F25C22; }
+    .subtitle { color: #64748b; font-size: 14px; margin-bottom: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; }
+    .section-title { font-size: 16px; font-weight: 700; color: #3A474E; margin: 30px 0 15px; padding-bottom: 8px; border-bottom: 2px solid #3A474E; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .form-group { margin-bottom: 18px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; color: #3A474E; }
+    input[type="text"], textarea, select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 14px; color: #334155; background-color: #fff; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #F25C22; box-shadow: 0 0 0 3px rgba(242, 92, 34, 0.1); }
+    .row-item { display: grid; grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)) auto; gap: 12px; margin-bottom: 12px; align-items: center; }
+    button { background-color: #3A474E; color: white; border: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s; }
+    button:hover { background-color: #2b353b; }
+    .btn-add { background-color: #fff; color: #F25C22; border: 1px solid #F25C22; padding: 6px 12px; }
+    .btn-add:hover { background-color: rgba(242, 92, 34, 0.05); }
+    .btn-remove { background-color: #ef4444; }
+    .btn-remove:hover { background-color: #dc2626; }
+    .output-box { margin-top: 40px; background: #0f172a; color: #e2e8f0; padding: 25px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 14px; white-space: pre-wrap; word-break: break-word; border: 1px solid #1e293b; position: relative; }
+    .btn-copy { position: absolute; top: 15px; right: 15px; background-color: #F25C22; }
+    .hint { color: #64748b; font-size: 13px; line-height: 1.5; margin-top: 8px; }
+    @media (max-width: 760px) { .wrapper { padding: 24px; } .form-grid, .row-item { grid-template-columns: 1fr; } .btn-copy { position: static; margin-bottom: 16px; } }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Soil<span>Create</span> Case Study MD Generator</h1>
+    <div class="subtitle">Generate VitePress case study Markdown. Save the output under docs/case-studies/ as a .md file.</div>
+
+    <form id="mdForm">
+      <div class="form-grid">
+        <div class="form-group"><label for="title">Case Study Title</label><input type="text" id="title" placeholder="Sydney Metro Underground Excavation" oninput="generateMarkdown()" /></div>
+        <div class="form-group"><label for="slug">Recommended File Name</label><input type="text" id="slug" placeholder="sydney-metro-tunnel.md" oninput="generateMarkdown()" /></div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group"><label for="industry">Industry / Category</label><select id="industry" onchange="generateMarkdown()"><option>Tunnels</option><option>Dams & Reservoirs</option><option>Earthworks and Excavation</option><option>Mining</option><option>Railways</option><option>Structures</option><option>Industrial Pumps</option></select></div>
+        <div class="form-group"><label for="location">Location</label><input type="text" id="location" placeholder="Sydney, Australia" oninput="generateMarkdown()" /></div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group"><label for="projectType">Project Type</label><input type="text" id="projectType" placeholder="Tunnel excavation monitoring" oninput="generateMarkdown()" /></div>
+        <div class="form-group"><label for="scope">Monitoring Scope</label><input type="text" id="scope" placeholder="Ground settlement and pore water pressure" oninput="generateMarkdown()" /></div>
+      </div>
+
+      <div class="form-group"><label for="description">Meta Description / Hero Summary</label><textarea id="description" rows="3" placeholder="Short summary for SEO and the case hero." oninput="generateMarkdown()"></textarea></div>
+
+      <div class="form-grid">
+        <div class="form-group"><label for="image">Hero / Case Image Path</label><input type="text" id="image" value="/images/case-studies/case-placeholder.jpg" oninput="generateMarkdown()" /></div>
+        <div class="form-group"><label for="imageAlt">Image Alt Text</label><input type="text" id="imageAlt" placeholder="Tunnel monitoring project with geotechnical sensors" oninput="generateMarkdown()" /></div>
+      </div>
+
+      <div class="form-group"><label for="keywords">SEO Keywords</label><input type="text" id="keywords" placeholder="tunnel monitoring case study, automated inclinometer, piezometer telemetry" oninput="generateMarkdown()" /></div>
+
+      <div class="section-title">Case Body</div>
+      <div class="form-group"><label for="challenge">Project Challenge</label><textarea id="challenge" rows="5" placeholder="Describe the engineering challenge, risk, site condition, or monitoring requirement." oninput="generateMarkdown()"></textarea></div>
+      <div class="form-group"><label for="solution">SoilCreate Solution</label><textarea id="solution" rows="5" placeholder="Describe equipment supplied, installation approach, data logging, and support." oninput="generateMarkdown()"></textarea></div>
+      <div class="form-group"><label for="result">Result / Outcome</label><textarea id="result" rows="5" placeholder="Describe the measurable outcome, operational improvement, or client benefit." oninput="generateMarkdown()"></textarea></div>
+
+      <div class="section-title">Key Metrics <button type="button" class="btn-add" onclick="addItem('metricsContainer', ['Value', 'Label'])">+ Add Metric</button></div>
+      <div id="metricsContainer"></div>
+
+      <div class="section-title">Equipment Used <button type="button" class="btn-add" onclick="addItem('productsContainer', ['Product Name', 'Product Link'])">+ Add Product</button></div>
+      <div id="productsContainer"></div>
+    </form>
+
+    <div class="section-title">Generated Markdown Code</div>
+    <div class="output-box"><button class="btn-copy" onclick="copyCode()">Copy Code</button><code id="codeArea">---</code></div>
+  </div>
+
+<script>
+function q(value) { return JSON.stringify((value || '').trim()); }
+function slugify(value) { return (value || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+
+function addItem(containerId, placeholders) {
+  const container = document.getElementById(containerId);
+  const div = document.createElement('div');
+  div.className = 'row-item';
+  div.style.setProperty('--cols', placeholders.length);
+  placeholders.forEach(ph => {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = ph;
+    input.oninput = generateMarkdown;
+    div.appendChild(input);
+  });
+  const removeBtn = document.createElement('button');
+  removeBtn.type = 'button';
+  removeBtn.className = 'btn-remove';
+  removeBtn.textContent = 'Delete';
+  removeBtn.onclick = () => { div.remove(); generateMarkdown(); };
+  div.appendChild(removeBtn);
+  container.appendChild(div);
+  generateMarkdown();
+}
+
+function rows(containerId) {
+  return Array.from(document.getElementById(containerId).getElementsByClassName('row-item')).map(row =>
+    Array.from(row.getElementsByTagName('input')).map(input => input.value.trim())
+  ).filter(values => values.some(Boolean));
+}
+
+function generateMarkdown() {
+  const title = document.getElementById('title').value.trim();
+  const fileName = document.getElementById('slug').value.trim() || slugify(title || 'new-case-study') + '.md';
+  const industry = document.getElementById('industry').value;
+  const location = document.getElementById('location').value.trim();
+  const projectType = document.getElementById('projectType').value.trim();
+  const scope = document.getElementById('scope').value.trim();
+  const description = document.getElementById('description').value.trim();
+  const image = document.getElementById('image').value.trim();
+  const imageAlt = document.getElementById('imageAlt').value.trim();
+  const keywords = document.getElementById('keywords').value.trim();
+  const challenge = document.getElementById('challenge').value.trim();
+  const solution = document.getElementById('solution').value.trim();
+  const result = document.getElementById('result').value.trim();
+
+  let md = '---\n';
+  md += 'layout: case-study\n';
+  md += 'title: ' + q(title) + '\n';
+  md += 'description: ' + q(description) + '\n';
+  md += 'industry: ' + q(industry) + '\n';
+  md += 'location: ' + q(location) + '\n';
+  md += 'projectType: ' + q(projectType) + '\n';
+  md += 'scope: ' + q(scope) + '\n';
+  md += 'image: ' + q(image || '/images/case-studies/case-placeholder.jpg') + '\n';
+  md += 'imageAlt: ' + q(imageAlt || title + ' case study image') + '\n';
+  md += 'challenge: ' + q(challenge || 'Describe the project challenge and site condition.') + '\n';
+  md += 'solution: ' + q(solution || 'Describe the SoilCreate equipment, installation approach, and support scope.') + '\n';
+  md += 'result: ' + q(result || 'Describe the result, measured improvement, or client benefit.') + '\n';
+  if (keywords) md += 'head:\n  - - meta\n    - name: keywords\n      content: ' + q(keywords) + '\n';
+
+  const metrics = rows('metricsContainer');
+  if (metrics.length) {
+    md += 'metrics:\n';
+    metrics.forEach(([value, label]) => { md += '  - value: ' + q(value) + '\n    label: ' + q(label) + '\n'; });
+  }
+
+  const products = rows('productsContainer');
+  if (products.length) {
+    md += 'products:\n';
+    products.forEach(([name, href]) => { md += '  - name: ' + q(name) + '\n    href: ' + q(href || '/products/') + '\n'; });
+  }
+
+  md += '---\n\n';
+  md += '## Project Challenge\n\n' + (challenge || 'Describe the project challenge and site condition.') + '\n\n';
+  md += '## SoilCreate Solution\n\n' + (solution || 'Describe the SoilCreate equipment, installation approach, and support scope.') + '\n\n';
+  md += '## Result\n\n' + (result || 'Describe the result, measured improvement, or client benefit.') + '\n';
+  md += '\n<!-- Suggested file path: docs/case-studies/' + fileName + ' -->\n';
+
+  document.getElementById('codeArea').textContent = md;
+}
+
+function copyCode() {
+  navigator.clipboard.writeText(document.getElementById('codeArea').textContent).then(() => alert('Markdown code copied.'));
+}
+
+addItem('metricsContainer', ['Value', 'Label']);
+addItem('productsContainer', ['Product Name', 'Product Link']);
+generateMarkdown();
+</script>
+</body>
+</html>

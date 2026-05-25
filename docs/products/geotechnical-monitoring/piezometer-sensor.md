@@ -1,0 +1,64 @@
+---
+layout: product
+title: 4-20mA Piezometer Sensor
+description: Vibrating wire and current-output piezometer options for pore water pressure and groundwater monitoring in geotechnical projects.
+category: Piezometers
+model: SC-PZ-420
+image: /images/product-placeholder.svg
+imageAlt: 4-20mA piezometer sensor product image
+specPdf: /specs/piezometer-sensor-spec.pdf
+head:
+  - - meta
+    - name: keywords
+      content: 4-20mA piezometer, geotechnical piezometer sensor, pore water pressure monitoring, groundwater monitoring sensor
+snapshot:
+  - label: Signal output
+    value: 4-20mA current output
+  - label: Monitoring target
+    value: Pore water pressure and groundwater level
+  - label: Application fields
+    value: Dams, foundations, tunnels, slopes, and excavation works
+  - label: Inquiry contact
+    value: sophia@kstpropack.com
+specs:
+  - label: Product type
+    value: Geotechnical piezometer sensor
+  - label: Output signal
+    value: 4-20mA for data logger and industrial acquisition systems
+  - label: Project fit
+    value: Long-term pressure monitoring in civil, hydrological, and foundation works
+  - label: Documentation
+    value: Technical specification PDF and procurement files available on request
+applications:
+  - Dam and reservoir pore pressure monitoring
+  - Foundation and retaining wall groundwater observation
+  - Tunnel, subway, and excavation safety monitoring
+  - Slope stability and earthwork pressure tracking
+features:
+  - Procurement-ready product data for engineering buyers
+  - Direct RFQ workflow with no public price exposure
+  - Export communication through email and WhatsApp
+related:
+  - label: Inclinometer Sensors
+    href: /products/geotechnical-monitoring/inclinometer-sensor
+  - label: Product Catalog
+    href: /products/
+relatedCaseStudies:
+  - title: "Sydney Metro Underground Excavation"
+    href: "/case-studies/sydney-metro-tunnel"
+    category: "Tunnels"
+    summary: "Automated IPI and piezometer monitoring for settlement control during metro tunnel construction."
+    image: "https://via.placeholder.com/600x400/eaedf0/64748b?text=Tunnel+Excavation"
+    imageAlt: "Tunnel excavation monitoring case study"
+  - title: "Norway Hydroelectric Dam Telemetry"
+    href: "/case-studies/norway-hydro-dam"
+    category: "Dams & Reservoirs"
+    summary: "Remote pore water pressure and seepage monitoring for a critical hydropower dam."
+    image: "https://via.placeholder.com/600x400/eaedf0/64748b?text=Hydroelectric+Dam"
+    imageAlt: "Hydroelectric dam telemetry case study"
+
+---
+
+## Procurement notes
+
+Share the project location, monitoring depth, expected quantity, cable length, and data acquisition requirements. SoilCreate will verify model fit before quotation.
