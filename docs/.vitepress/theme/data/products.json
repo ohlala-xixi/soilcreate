@@ -10,7 +10,7 @@
         },
         {
           "id": "in-place-inclinometer",
-          "label": "SAA"
+          "label": "Flexible"
         },
         {
           "id": "portable-inclinometer",
@@ -63,21 +63,24 @@
       "updatedAt": "2026-05-26"
     },
     {
-      "sku": "SC-IPI-200",
-      "name": "Shape Acceleration Array",
+      "sku": "SC-FI-300",
+      "name": "Flexible Inclinometer",
       "categoryId": "inclinometers",
       "subcategoryId": "in-place-inclinometer",
       "category": "Inclinometers",
-      "subcategory": "In-place Inclinometer",
-      "image": "/images/product-placeholder.svg",
-      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
-      "summary": "Fixed borehole inclinometer probe for continuous movement readings in geotechnical monitoring projects.",
+      "subcategory": "Flexible",
+      "image": "/images/products/flexible-inclinometer.jpg",
+      "href": "/products/geotechnical-monitoring/flexible-inclinometer",
+      "summary": "Modular array displacement meter for 3D geotechnical deformation, settlement, tunnel convergence, slope, foundation pit, and embankment monitoring.",
       "keywords": [
-        "borehole inclinometer",
-        "continuous monitoring",
-        "geotechnical sensor"
+        "flexible inclinometer",
+        "array displacement meter",
+        "3D geotechnical deformation monitoring",
+        "MEMS flexible inclinometer",
+        "tunnel convergence monitoring",
+        "embankment settlement monitoring"
       ],
-      "updatedAt": "2026-05-26"
+      "updatedAt": "2026-05-27"
     },
     {
       "sku": "SC-DI-300",
