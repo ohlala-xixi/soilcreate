@@ -45,22 +45,24 @@
   ],
   "products": [
     {
-      "sku": "SC-IPI-100",
+      "sku": "SC-IPI-26",
       "name": "In-Place Inclinometer (IPI)",
       "categoryId": "inclinometers",
       "subcategoryId": "ipi",
       "category": "Inclinometers",
       "subcategory": "IPI",
-      "image": "/images/product-placeholder.svg",
+      "image": "/images/products/in-place-inclinometer-ipi.jpg",
       "href": "/products/geotechnical-monitoring/inclinometer-sensor",
-      "summary": "Modular in-place inclinometer chain for automated lateral deformation monitoring in slopes, retaining walls, tunnels, and deep excavations.",
+      "summary": "Automated in-place inclinometer sensor chain for continuous borehole lateral deformation monitoring in slopes, retaining walls, tunnels, dams, and deep excavations.",
       "keywords": [
-        "IPI",
         "in-place inclinometer",
-        "slope monitoring",
-        "deformation monitoring"
+        "IPI sensor chain",
+        "automated borehole deformation monitoring",
+        "lateral displacement monitoring",
+        "slope monitoring inclinometer",
+        "tunnel deformation monitoring"
       ],
-      "updatedAt": "2026-05-26"
+      "updatedAt": "2026-05-27"
     },
     {
       "sku": "SC-FI-300",
@@ -81,23 +83,6 @@
         "embankment settlement monitoring"
       ],
       "updatedAt": "2026-05-27"
-    },
-    {
-      "sku": "SC-DI-300",
-      "name": "Automated Robot Inclinometer",
-      "categoryId": "inclinometers",
-      "subcategoryId": "digital-inclinometer",
-      "category": "Inclinometers",
-      "subcategory": "Digital Inclinometer",
-      "image": "/images/product-placeholder.svg",
-      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
-      "summary": "Digital tilt and displacement sensor for automated acquisition systems and long-term structural movement datasets.",
-      "keywords": [
-        "digital inclinometer",
-        "tilt sensor",
-        "structural monitoring"
-      ],
-      "updatedAt": "2026-05-26"
     },
     {
       "sku": "SCIS 50S / SCIS 50D",
