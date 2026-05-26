@@ -31,8 +31,8 @@ const setFilter = (filterId) => {
     <div class="sc-page-intro">
       <h1>Industrial Equipment & Geotechnical Sensors</h1>
       <p>
-        SoilCreate specialise in the assembly and supply of geotechnical instrumentation,
-        ensuring maximum reliability and long-term performance for monitoring projects.
+        SoilCreate specializes in the supply of advanced geotechnical sensors and premium industrial equipment,
+        ensuring maximum reliability for your critical projects.
       </p>
     </div>
 

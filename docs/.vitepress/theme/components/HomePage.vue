@@ -1,3 +1,9 @@
+<script setup>
+import catalog from '../data/products.json'
+
+const hotProducts = catalog.products.filter((product) => product.categoryId === 'inclinometers').slice(0, 3)
+</script>
+
 <template>
   <section class="sc-hero">
     <div class="sc-hero-inner">
@@ -25,36 +31,14 @@
     </div>
 
     <div class="sc-grid">
-      <a href="/products/" class="sc-cat-card">
+      <a v-for="product in hotProducts" :key="product.sku" :href="product.href" class="sc-cat-card">
         <div class="sc-cat-img">
-          <img src="https://via.placeholder.com/400x250/eaedf0/64748b?text=Geotechnical+Sensors" alt="Geotechnical Sensors">
+          <img :src="product.image" :alt="product.name" loading="lazy" decoding="async">
         </div>
         <div class="sc-cat-content">
-          <h3>Geotechnical Sensors</h3>
-          <p>High-precision Inclinometers, Piezometers, and Vibration Monitors designed to secure structural health and ensure absolute safety.</p>
-          <div class="sc-cat-link">View Catalog ➔</div>
-        </div>
-      </a>
-
-      <a href="/products/" class="sc-cat-card">
-        <div class="sc-cat-img">
-          <img src="https://via.placeholder.com/400x250/eaedf0/64748b?text=Industrial+Pumps" alt="Industrial Pumps">
-        </div>
-        <div class="sc-cat-content">
-          <h3>Industrial Pumps</h3>
-          <p>Heavy-duty pneumatic and electric pumping systems tailored for reliable grease and fluid transfer in severe industrial conditions.</p>
-          <div class="sc-cat-link">View Catalog ➔</div>
-        </div>
-      </a>
-
-      <a href="/solutions" class="sc-cat-card">
-        <div class="sc-cat-img">
-          <img src="https://via.placeholder.com/400x250/eaedf0/64748b?text=Automated+Telemetry" alt="Automated Telemetry">
-        </div>
-        <div class="sc-cat-content">
-          <h3>Automated Telemetry</h3>
-          <p>Turnkey remote data logging solutions that bring real-time infrastructure monitoring directly to your centralized command center.</p>
-          <div class="sc-cat-link">View Solutions ➔</div>
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.summary }}</p>
+          <div class="sc-cat-link">View Details ➔</div>
         </div>
       </a>
     </div>

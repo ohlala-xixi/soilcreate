@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { Content, useData } from 'vitepress'
 import InquiryForm from './InquiryForm.vue'
+import catalog from '../data/products.json'
 import { openInquiry } from '../utils/inquiry.js'
 
 const { frontmatter } = useData()
@@ -32,6 +33,22 @@ const normalizedDownloads = computed(() => {
     ? [{ name: frontmatter.value.title + ' Datasheet', meta: 'PDF | Technical file', link: frontmatter.value.specPdf }]
     : []
 })
+const productByHref = computed(() => {
+  const pairs = catalog.products.map((product) => [product.href, product])
+  return Object.fromEntries(pairs)
+})
+const normalizedRelatedProducts = computed(() =>
+  (frontmatter.value.related || []).map((item) => {
+    const product = productByHref.value[item.href] || {}
+    return {
+      ...item,
+      label: item.label || product.name || 'Related Product',
+      sku: item.sku || product.sku || 'View details',
+      image: item.image || product.image || '',
+      imageAlt: item.imageAlt || product.imageAlt || product.name || item.label || 'Related product image'
+    }
+  })
+)
 const normalizedCaseStudies = computed(() =>
   (frontmatter.value.relatedCaseStudies || frontmatter.value.caseStudies || []).map((item) => ({
     title: item.title || item.label || 'Case Study',
@@ -141,11 +158,14 @@ const normalizedCaseStudies = computed(() =>
       </div>
     </section>
 
-    <section v-if="frontmatter.related?.length" class="sc-section">
+    <section v-if="normalizedRelatedProducts.length" class="sc-section">
       <h2 class="sc-section-title">Related Products</h2>
       <div class="sc-related-grid">
-        <a v-for="item in frontmatter.related" :key="item.href" :href="item.href" class="sc-related-card">
-          <div class="sc-related-img">{{ item.imageLabel || '[ Related Product ]' }}</div>
+        <a v-for="item in normalizedRelatedProducts" :key="item.href" :href="item.href" class="sc-related-card">
+          <div class="sc-related-img">
+            <img v-if="item.image" :src="item.image" :alt="item.imageAlt" width="480" height="300" loading="lazy" decoding="async" />
+            <span v-else>{{ item.imageLabel || '[ Related Product ]' }}</span>
+          </div>
           <div class="sc-related-title">{{ item.label }}</div>
           <div class="sc-related-sku">{{ item.sku || 'View details' }}</div>
         </a>
