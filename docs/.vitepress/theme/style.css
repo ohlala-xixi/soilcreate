@@ -480,6 +480,22 @@ a { text-underline-offset: 3px; }
   padding-left: 15px;
   line-height: 1.2;
 }
+
+.sc-pdp-page .sc-action-group .sc-btn-catalog-download {
+  min-width: 100px;
+  border: 2px solid var(--sc-orange);
+  color: var(--sc-orange);
+  background: #fff;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sc-pdp-page .sc-action-group .sc-btn-catalog-download:hover {
+  background: rgba(242, 92, 34, 0.08);
+  color: var(--sc-orange-hover);
+  border-color: var(--sc-orange-hover);
+}
 /* End product detail layout corrections */
 
 /* Home section title cleanup */

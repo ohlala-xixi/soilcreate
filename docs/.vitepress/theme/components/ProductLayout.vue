@@ -78,8 +78,13 @@ const normalizedCaseStudies = computed(() =>
           <button type="button" class="sc-btn-primary" @click="openInquiry(frontmatter.title)">
             Make an Enquiry
           </button>
-          <a v-if="frontmatter.specPdf" :href="frontmatter.specPdf" class="sc-btn-secondary">
-            Technical Datasheet
+          <a
+            v-if="frontmatter.specPdf"
+            :href="frontmatter.specPdf"
+            class="sc-btn-secondary sc-btn-catalog-download"
+            download
+          >
+            Catalog
           </a>
         </div>
       </div>
