@@ -1093,12 +1093,13 @@ a { text-underline-offset: 3px; }
 .sc-footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0;
 }
 
 .sc-logo-icon {
   width: 28px;
   height: 32px;
+  margin-right: 8px;
   object-fit: contain;
   flex: 0 0 auto;
   display: block;
