@@ -114,6 +114,24 @@
       "updatedAt": "2026-05-26"
     },
     {
+      "sku": "SCIS 50S / SCIS 50D",
+      "name": "High-Precision Bluetooth Sliding Inclinometer",
+      "categoryId": "inclinometers",
+      "subcategoryId": "portable-inclinometer",
+      "category": "Inclinometers",
+      "subcategory": "Portable",
+      "image": "/images/products/high-precision-sliding-inclinometer.jpg",
+      "href": "/products/geotechnical-monitoring/high-precision-sliding-inclinometer",
+      "summary": "Bluetooth sliding inclinometer system for manual borehole deformation surveys in slopes, foundation pits, dams, bridges, and retaining walls.",
+      "keywords": [
+        "Bluetooth sliding inclinometer",
+        "portable inclinometer",
+        "borehole deformation survey",
+        "MEMS inclinometer"
+      ],
+      "updatedAt": "2026-05-26"
+    },
+    {
       "sku": "SC-PZ-420",
       "name": "4-20mA Piezometer Sensor",
       "categoryId": "piezometers",
