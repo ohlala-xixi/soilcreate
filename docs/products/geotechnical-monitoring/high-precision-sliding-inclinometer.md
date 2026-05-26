@@ -11,7 +11,7 @@ specPdf: "/specs/high-precision-sliding-inclinometer.pdf"
 head:
   - - meta
     - name: keywords
-      content: "Bluetooth sliding inclinometer, portable inclinometer system, borehole inclinometer survey, MEMS inclinometer probe, geotechnical deformation monitoring"
+      content: "Bluetooth sliding inclinometer, manual borehole inclinometer survey, Bluetooth inclinometer probe, portable inclinometer system, MEMS inclinometer probe, borehole deformation monitoring, slope inclinometer survey"
 features:
   - "High-precision MEMS inclinometer probe for reliable borehole deformation readings"
   - "Bluetooth wireless data transmission with mobile app collection and cloud synchronization"
@@ -70,6 +70,6 @@ relatedCaseStudies:
     imageAlt: "Tunnel excavation monitoring case study"
 ---
 
-The SoilCreate High-Precision Bluetooth Sliding Inclinometer is designed for manual borehole deformation surveys where field speed, data reliability, and simple operation matter. The system combines a high-precision MEMS probe, Bluetooth wireless transmission, mobile data acquisition software, and cloud synchronization to connect field measurement with office review.
+The SoilCreate High-Precision Bluetooth Sliding Inclinometer is designed for manual borehole inclinometer survey work where field speed, data reliability, and simple operation matter. The system combines a high-precision Bluetooth inclinometer probe, MEMS sensing, wireless transmission, mobile data acquisition software, and cloud synchronization to connect field measurement with office review.
 
-For procurement and project matching, please share borehole depth, casing size, expected survey frequency, project location, required single-axis or dual-axis configuration, and whether cloud reporting or datasheet review is required.
+For procurement and project matching, please share borehole depth, casing size, expected survey frequency, project location, required single-axis or dual-axis configuration, and whether a manual borehole inclinometer survey workflow, Bluetooth inclinometer probe package, cloud reporting, or datasheet review is required.

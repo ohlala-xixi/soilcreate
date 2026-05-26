@@ -97,23 +97,6 @@
       "updatedAt": "2026-05-26"
     },
     {
-      "sku": "SC-PI-400",
-      "name": "Portable Inclinometer System",
-      "categoryId": "inclinometers",
-      "subcategoryId": "portable-inclinometer",
-      "category": "Inclinometers",
-      "subcategory": "Portable Inclinometer",
-      "image": "/images/product-placeholder.svg",
-      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
-      "summary": "Portable inclinometer system for manual borehole surveys, baseline checks, and periodic site inspections.",
-      "keywords": [
-        "portable inclinometer",
-        "manual survey",
-        "borehole monitoring"
-      ],
-      "updatedAt": "2026-05-26"
-    },
-    {
       "sku": "SCIS 50S / SCIS 50D",
       "name": "High-Precision Bluetooth Sliding Inclinometer",
       "categoryId": "inclinometers",
@@ -122,12 +105,14 @@
       "subcategory": "Portable",
       "image": "/images/products/high-precision-sliding-inclinometer.jpg",
       "href": "/products/geotechnical-monitoring/high-precision-sliding-inclinometer",
-      "summary": "Bluetooth sliding inclinometer system for manual borehole deformation surveys in slopes, foundation pits, dams, bridges, and retaining walls.",
+      "summary": "Bluetooth sliding inclinometer probe and cable reel system for manual borehole inclinometer surveys and deformation monitoring in slopes, foundation pits, dams, bridges, and retaining walls.",
       "keywords": [
         "Bluetooth sliding inclinometer",
-        "portable inclinometer",
-        "borehole deformation survey",
-        "MEMS inclinometer"
+        "manual borehole inclinometer survey",
+        "Bluetooth inclinometer probe",
+        "portable inclinometer system",
+        "borehole deformation monitoring",
+        "MEMS inclinometer probe"
       ],
       "updatedAt": "2026-05-26"
     },
