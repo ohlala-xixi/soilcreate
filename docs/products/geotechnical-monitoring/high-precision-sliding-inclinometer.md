@@ -3,7 +3,7 @@ layout: product
 title: "High-Precision Bluetooth Sliding Inclinometer for Borehole Deformation Monitoring"
 description: "SoilCreate Bluetooth sliding inclinometer for high-precision manual borehole deformation surveys in slopes, foundation pits, dams, bridges, and retaining walls."
 category: "Inclinometers"
-subcategory: "Portable"
+subcategory: "Portable Inclinometer"
 model: "SCIS 50S / SCIS 50D"
 image: "/images/products/high-precision-sliding-inclinometer.jpg"
 imageAlt: "SoilCreate high-precision Bluetooth sliding inclinometer probe and cable reel for borehole deformation monitoring"

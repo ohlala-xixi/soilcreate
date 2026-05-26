@@ -3,7 +3,7 @@ layout: product
 title: "In-Place Inclinometer (IPI) for Automated Borehole Deformation Monitoring"
 description: "SoilCreate in-place inclinometer (IPI) chain for automated borehole lateral deformation monitoring in slopes, retaining walls, tunnels, dams, and deep excavations."
 category: "Inclinometers"
-subcategory: "IPI"
+subcategory: "In-Place Inclinometer (IPI)"
 model: "SC-IPI-26"
 image: "/images/products/in-place-inclinometer-ipi.jpg"
 imageAlt: "SoilCreate in-place inclinometer IPI sensor chain for automated borehole deformation monitoring"
@@ -43,7 +43,7 @@ specs:
   - label: "Documentation"
     value: "Technical product brochure and procurement files available for engineering review"
 related:
-  - label: "Flexible Inclinometer"
+  - label: "Shape Displacement Array"
     href: "/products/geotechnical-monitoring/flexible-inclinometer"
     sku: "SC-FI-300"
     imageLabel: "[ Related Product ]"

@@ -1,17 +1,17 @@
 ---
 layout: product
-title: "Flexible Inclinometer for 3D Geotechnical Deformation Monitoring"
-description: "SoilCreate flexible inclinometer, also known as an array displacement meter, for 3D deformation, settlement, tunnel convergence, slope, foundation pit, and embankment monitoring."
+title: "Shape Displacement Array for 3D Geotechnical Deformation Monitoring"
+description: "SoilCreate shape displacement array, also known as a flexible inclinometer, for 3D deformation, settlement, tunnel convergence, slope, foundation pit, and embankment monitoring."
 category: "Inclinometers"
-subcategory: "Flexible"
+subcategory: "Shape Displacement Array"
 model: "SC-flexible-inclinometer"
 image: "/images/products/flexible-inclinometer.jpg"
-imageAlt: "SoilCreate flexible inclinometer array displacement meter for 3D geotechnical deformation monitoring"
+imageAlt: "SoilCreate shape displacement array flexible inclinometer for 3D geotechnical deformation monitoring"
 specPdf: "/specs/flexible-inclinometer.pdf"
 head:
   - - meta
     - name: keywords
-      content: "flexible inclinometer, array displacement meter, 3D geotechnical deformation monitoring, MEMS flexible inclinometer, tunnel convergence monitoring, embankment settlement monitoring, slope displacement monitoring"
+      content: "shape displacement array, flexible inclinometer, array displacement meter, 3D geotechnical deformation monitoring, MEMS shape array sensor, tunnel convergence monitoring, embankment settlement monitoring, slope displacement monitoring"
 features:
   - "Integrated MEMS and temperature compensation models reduce axis errors and temperature drift for stable long-term data"
   - "Dual calibration process combines independent node calibration with full-system calibration to reduce cumulative errors"
@@ -27,7 +27,7 @@ applications:
   - "Bridge, railway track, subway, and underground structure deformation monitoring"
 specs:
   - label: "Function type"
-    value: "Array displacement meter / flexible inclinometer"
+    value: "Shape displacement array / flexible inclinometer"
   - label: "Working method"
     value: "Self-developed MEMS"
   - label: "Measurement direction"
@@ -100,7 +100,7 @@ relatedCaseStudies:
     imageAlt: "Tunnel excavation monitoring case study"
 ---
 
-The SoilCreate Flexible Inclinometer, also known as an array displacement meter, is a modular multi-section 3D measurement system for geotechnical deformation monitoring. Its flexible sensing units can be connected in series and assembled on site according to borehole depth, making the system convenient to transport, maintain, and reuse across different projects.
+The SoilCreate Shape Displacement Array, also known as a flexible inclinometer and array displacement meter, is a modular multi-section 3D measurement system for geotechnical deformation monitoring. Its flexible sensing units can be connected in series and assembled on site according to borehole depth, making the system convenient to transport, maintain, and reuse across different projects.
 
 The system supports vertical, horizontal, and circular installation methods. It is suitable for deep horizontal displacement monitoring, roadbed settlement, rockfill dam settlement, tunnel convergence, underground powerhouse convergence, foundation pit deformation, slope displacement, and underground structure monitoring.
 

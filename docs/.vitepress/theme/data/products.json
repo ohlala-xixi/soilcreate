@@ -6,19 +6,19 @@
       "children": [
         {
           "id": "ipi",
-          "label": "IPI"
+          "label": "In-Place Inclinometer (IPI)"
         },
         {
           "id": "in-place-inclinometer",
-          "label": "Flexible"
+          "label": "Shape Displacement Array"
         },
         {
           "id": "portable-inclinometer",
-          "label": "Portable"
+          "label": "Portable Inclinometer"
         },
         {
           "id": "digital-inclinometer",
-          "label": "Robot"
+          "label": "Robotic Inclinometer"
         }
       ]
     },
@@ -50,7 +50,7 @@
       "categoryId": "inclinometers",
       "subcategoryId": "ipi",
       "category": "Inclinometers",
-      "subcategory": "IPI",
+      "subcategory": "In-Place Inclinometer (IPI)",
       "image": "/images/products/in-place-inclinometer-ipi.jpg",
       "href": "/products/geotechnical-monitoring/inclinometer-sensor",
       "summary": "Automated in-place inclinometer sensor chain for continuous borehole lateral deformation monitoring in slopes, retaining walls, tunnels, dams, and deep excavations.",
@@ -66,21 +66,21 @@
     },
     {
       "sku": "SC-FI-300",
-      "name": "Flexible Inclinometer",
+      "name": "Shape Displacement Array",
       "categoryId": "inclinometers",
       "subcategoryId": "in-place-inclinometer",
       "category": "Inclinometers",
-      "subcategory": "Flexible",
+      "subcategory": "Shape Displacement Array",
       "image": "/images/products/flexible-inclinometer.jpg",
       "href": "/products/geotechnical-monitoring/flexible-inclinometer",
-      "summary": "Modular array displacement meter for 3D geotechnical deformation, settlement, tunnel convergence, slope, foundation pit, and embankment monitoring.",
+      "summary": "Modular shape displacement array, also known as a flexible inclinometer, for long-term 3D deformation monitoring in boreholes, slopes, embankments, and retaining structures.",
       "keywords": [
+        "shape displacement array",
         "flexible inclinometer",
         "array displacement meter",
-        "3D geotechnical deformation monitoring",
-        "MEMS flexible inclinometer",
-        "tunnel convergence monitoring",
-        "embankment settlement monitoring"
+        "3D deformation monitoring",
+        "borehole displacement monitoring",
+        "slope movement monitoring"
       ],
       "updatedAt": "2026-05-27"
     },
@@ -90,7 +90,7 @@
       "categoryId": "inclinometers",
       "subcategoryId": "portable-inclinometer",
       "category": "Inclinometers",
-      "subcategory": "Portable",
+      "subcategory": "Portable Inclinometer",
       "image": "/images/products/high-precision-sliding-inclinometer.jpg",
       "href": "/products/geotechnical-monitoring/high-precision-sliding-inclinometer",
       "summary": "Bluetooth sliding inclinometer probe and cable reel system for manual borehole inclinometer surveys and deformation monitoring in slopes, foundation pits, dams, bridges, and retaining walls.",
