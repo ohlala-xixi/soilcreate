@@ -62,12 +62,12 @@ related:
     sku: "SC-PZ-420"
     imageLabel: "[ Related Product ]"
 relatedCaseStudies:
-  - title: "Sydney Metro Underground Excavation"
-    href: "/case-studies/sydney-metro-tunnel"
-    category: "Tunnels"
-    summary: "Automated IPI and piezometer monitoring for settlement control during metro tunnel construction."
-    image: "https://via.placeholder.com/600x400/eaedf0/64748b?text=Tunnel+Excavation"
-    imageAlt: "Tunnel excavation monitoring case study"
+  - title: "Deep Excavation Collapse Case Study"
+    href: "/case-studies/deep-excavation-collapse-case-study-what-monitoring-failure-teaches-contractors"
+    category: "Case Studies & Field Notes"
+    summary: "How linked monitoring data, alarm rules, and field context help contractors interpret deep excavation movement before risks escalate."
+    image: "/images/hero/bridge-hero.png"
+    imageAlt: "Infrastructure project representing deep excavation monitoring risk control"
 ---
 
 The SoilCreate High-Precision Bluetooth Sliding Inclinometer is designed for manual borehole inclinometer survey work where field speed, data reliability, and simple operation matter. The system combines a high-precision Bluetooth inclinometer probe, MEMS sensing, wireless transmission, mobile data acquisition software, and cloud synchronization to connect field measurement with office review.

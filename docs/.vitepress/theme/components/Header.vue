@@ -8,9 +8,9 @@ const route = useRoute()
 
 const navItems = [
   { label: 'Home', href: '/', match: '/' },
-  { label: 'About Us', href: '/about', match: '/about' },
+  { label: 'About', href: '/about', match: '/about' },
   { label: 'Products', href: '/products/', match: '/products/' },
-  { label: 'Case Study', href: '/case-study', match: '/case-study' },
+  { label: 'Solutions', href: '/case-study', match: '/case-study' },
   { label: 'Contact', href: '/contact', match: '/contact' }
 ]
 

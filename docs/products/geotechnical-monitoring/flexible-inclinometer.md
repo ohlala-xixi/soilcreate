@@ -92,12 +92,12 @@ related:
     sku: "SC-PZ-420"
     imageLabel: "[ Related Product ]"
 relatedCaseStudies:
-  - title: "Sydney Metro Underground Excavation"
-    href: "/case-studies/sydney-metro-tunnel"
-    category: "Tunnels"
-    summary: "Automated geotechnical monitoring for settlement and structural stability during metro tunnel construction."
-    image: "https://via.placeholder.com/600x400/eaedf0/64748b?text=Tunnel+Excavation"
-    imageAlt: "Tunnel excavation monitoring case study"
+  - title: "Deep Excavation Collapse Case Study"
+    href: "/case-studies/deep-excavation-collapse-case-study-what-monitoring-failure-teaches-contractors"
+    category: "Case Studies & Field Notes"
+    summary: "How linked monitoring data, alarm rules, and field context help contractors interpret deep excavation movement before risks escalate."
+    image: "/images/hero/bridge-hero.png"
+    imageAlt: "Infrastructure project representing deep excavation monitoring risk control"
 ---
 
 The SoilCreate Shape Displacement Array, also known as a flexible inclinometer and array displacement meter, is a modular multi-section 3D measurement system for geotechnical deformation monitoring. Its flexible sensing units can be connected in series and assembled on site according to borehole depth, making the system convenient to transport, maintain, and reuse across different projects.

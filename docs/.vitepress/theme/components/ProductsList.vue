@@ -74,6 +74,14 @@ const setFilter = (filterId) => {
             </ul>
           </li>
         </ul>
+        <a
+          href="/specs/monitoring-product-selection-manual.pdf"
+          class="sc-sidebar-manual-download"
+          download
+        >
+          <span>↓</span>
+          Selection Manual
+        </a>
       </aside>
 
       <section class="sc-product-grid-area">

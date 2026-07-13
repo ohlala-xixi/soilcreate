@@ -4,6 +4,7 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import ProductLayout from './components/ProductLayout.vue'
 import CaseStudyLayout from './components/CaseStudyLayout.vue'
+import SeoArticleLayout from './components/SeoArticleLayout.vue'
 import InquiryModal from './components/InquiryModal.vue'
 import { onMounted, onUnmounted } from 'vue'
 import { openInquiry } from './utils/inquiry.js'
@@ -33,6 +34,7 @@ onUnmounted(() => {
   <main class="sc-main">
     <ProductLayout v-if="frontmatter.layout === 'product'" />
     <CaseStudyLayout v-else-if="frontmatter.layout === 'case-study'" />
+    <SeoArticleLayout v-else-if="frontmatter.layout === 'seo-article'" />
     <Content v-else />
   </main>
   <Footer />

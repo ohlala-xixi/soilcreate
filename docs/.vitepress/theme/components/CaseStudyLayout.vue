@@ -23,7 +23,7 @@ const caseSections = computed(() => [
   },
   {
     key: 'solution',
-    label: 'SoilCreate Solution',
+    label: 'SoilCreate Solutions',
     icon: '☼',
     text: frontmatter.value.solution
   },
@@ -47,7 +47,7 @@ const caseSections = computed(() => [
         </div>
       </div>
       <div class="sc-case-hero__content">
-        <span class="sc-case-kicker">{{ frontmatter.industry || 'Case Study' }}</span>
+        <span class="sc-case-kicker">{{ frontmatter.industry || 'Solutions' }}</span>
         <h1>{{ frontmatter.title }}</h1>
         <p>{{ frontmatter.description }}</p>
         <button type="button" class="sc-case-cta" @click="openInquiry(frontmatter.title)">Discuss a Similar Project</button>

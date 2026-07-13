@@ -1,45 +1,333 @@
+<script setup>
+import { computed, ref } from 'vue'
+import { contactEmail, formspreeEndpoint } from '../data/site.js'
+import { trackEvent } from '../utils/tracking.js'
+
+const subscriberEmail = ref('')
+const subscribing = ref(false)
+const subscribeStatus = ref('')
+const subscribeStatusType = ref('success')
+const activeCategory = ref('all')
+
+const categories = [
+  { id: 'inclinometer-basics', label: 'Inclinometer Basics' },
+  { id: 'product-guides', label: 'Product Guides' },
+  { id: 'installation-troubleshooting', label: 'Installation & Troubleshooting' },
+  { id: 'monitoring-applications', label: 'Monitoring Applications' },
+  { id: 'data-alarms-risk-warning', label: 'Data, Alarms & Risk Warning' },
+  { id: 'automation-monitoring-technology', label: 'Automation & Monitoring Technology' },
+  { id: 'distributor-procurement-insights', label: 'Distributor & Procurement Insights' },
+  { id: 'case-studies-field-notes', label: 'Solutions & Field Notes' }
+]
+
+const articles = [
+  {
+    title: 'Automated Inclinometer Installation Troubleshooting: Common Field Errors and Fixes',
+    href: '/case-studies/automated-inclinometer-installation-troubleshooting-common-field-errors-and-fixes',
+    categoryId: 'installation-troubleshooting',
+    category: 'Installation & Troubleshooting',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Field technician checking automated inclinometer installation quality on a geotechnical monitoring site',
+    summary: 'A practical troubleshooting guide for installation teams who need cleaner inclinometer data, fewer site returns, and faster commissioning.'
+  },
+  {
+    title: 'Automated Inclinometer Monitoring System: From Sensor Data to Cloud Alarms',
+    href: '/case-studies/automated-inclinometer-monitoring-system-from-sensor-data-to-cloud-alarms',
+    categoryId: 'automation-monitoring-technology',
+    category: 'Automation & Monitoring Technology',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Automated inclinometer monitoring system sending sensor data to a cloud alarm platform',
+    summary: 'See how sensors, data loggers, telemetry, alarm rules, and cloud dashboards work together in a real monitoring workflow.'
+  },
+  {
+    title: 'Bridge Health Monitoring System: What to Track from Construction to Operation',
+    href: '/case-studies/bridge-health-monitoring-system-what-to-track-from-construction-to-operation',
+    categoryId: 'monitoring-applications',
+    category: 'Monitoring Applications',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Bridge health monitoring system with sensors tracking deformation and structural response',
+    summary: 'A field-focused guide to bridge monitoring points, sensor choices, alarm logic, and long-term maintenance data.'
+  },
+  {
+    title: 'Dam Safety Monitoring System: How Seepage, Deformation, Rainfall, and Water Level Work Together',
+    href: '/case-studies/dam-safety-monitoring-system-how-seepage-deformation-rainfall-and-water-level-work-togethe',
+    categoryId: 'monitoring-applications',
+    category: 'Monitoring Applications',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Dam safety monitoring system combining seepage deformation rainfall and water level data',
+    summary: 'A practical look at dam monitoring data streams and how teams use them together instead of reacting to one sensor alone.'
+  },
+  {
+    title: 'Deep Excavation Collapse Case Study: What Monitoring Failure Teaches Contractors',
+    href: '/case-studies/deep-excavation-collapse-case-study-what-monitoring-failure-teaches-contractors',
+    categoryId: 'case-studies-field-notes',
+    category: 'Solutions & Field Notes',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Infrastructure bridge project representing deep excavation and geotechnical monitoring risk control',
+    summary: 'A practical field note on how linked monitoring data, alarm rules, and data quality checks help contractors interpret deep excavation movement before risks escalate.'
+  },
+  {
+    title: 'Deep Excavation Horizontal Displacement Monitoring: Warning Signs Before Failure',
+    href: '/case-studies/deep-excavation-horizontal-displacement-monitoring-warning-signs',
+    categoryId: 'data-alarms-risk-warning',
+    category: 'Data, Alarms & Risk Warning',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Deep excavation horizontal displacement monitoring chart showing early warning signs',
+    summary: 'Learn what abnormal lateral movement can look like before a deep excavation turns into a site emergency.'
+  },
+  {
+    title: 'Deep Excavation Horizontal Displacement Monitoring with Strut Force, Settlement, and Groundwater',
+    href: '/case-studies/deep-excavation-horizontal-displacement-monitoring-strut-force-settlement-groundwater',
+    categoryId: 'data-alarms-risk-warning',
+    category: 'Data, Alarms & Risk Warning',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Deep excavation monitoring dashboard comparing displacement strut force settlement and groundwater',
+    summary: 'A guide to reading excavation movement together with strut force, settlement, and groundwater instead of judging one curve in isolation.'
+  },
+  {
+    title: 'Deep Excavation Monitoring Alarm Values: Why Cumulative Movement and Rate Both Matter',
+    href: '/case-studies/deep-excavation-monitoring-alarm-values-why-cumulative-movement-and-rate-both-matter',
+    categoryId: 'data-alarms-risk-warning',
+    category: 'Data, Alarms & Risk Warning',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Deep excavation monitoring alarm thresholds comparing cumulative movement and displacement rate',
+    summary: 'A clear explanation of how alarm values work and why both total displacement and movement speed matter on site.'
+  },
+  {
+    title: 'Flexible Inclinometer Specification Guide for Geotechnical Monitoring Procurement',
+    href: '/case-studies/flexible-inclinometer-specification-guide-for-geotechnical-monitoring-procurement',
+    categoryId: 'distributor-procurement-insights',
+    category: 'Distributor & Procurement Insights',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Flexible inclinometer specification sheet for geotechnical monitoring procurement teams',
+    summary: 'A buyer-friendly checklist for accuracy, range, temperature stability, communication, installation, and long-term service.'
+  },
+  {
+    title: 'Flexible Inclinometer vs Traditional Inclinometer',
+    href: '/case-studies/flexible-inclinometer-vs-traditional-inclinometer',
+    categoryId: 'product-guides',
+    category: 'Product Guides',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Flexible inclinometer compared with traditional inclinometer casing and probe monitoring',
+    summary: 'Compare flexible array systems and traditional inclinometer probes by workflow, risk, labor, data frequency, and life-cycle cost.'
+  },
+  {
+    title: 'Inclinometer Operation and Error Control: A Field Guide for Reliable Readings',
+    href: '/case-studies/inclinometer-operation-and-error-control-a-field-guide-for-reliable-readings',
+    categoryId: 'installation-troubleshooting',
+    category: 'Installation & Troubleshooting',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Field engineer controlling inclinometer reading errors during geotechnical monitoring',
+    summary: 'A field guide for reducing reading noise, drift, casing issues, operator mistakes, and reporting errors.'
+  },
+  {
+    title: 'Inclinometer Selection Guide: Deep Excavation, Slope, Dam, and Tunnel Projects',
+    href: '/case-studies/inclinometer-selection-guide-deep-excavation-slope-dam-tunnel',
+    categoryId: 'product-guides',
+    category: 'Product Guides',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Inclinometer selection guide for excavation slope dam and tunnel monitoring projects',
+    summary: 'Choose the right inclinometer setup by project risk, installation conditions, data frequency, and procurement priorities.'
+  },
+  {
+    title: 'Open-Pit Mine Slope Monitoring: How Automation Reduces Inspection Blind Spots',
+    href: '/case-studies/open-pit-mine-slope-monitoring-how-automation-reduces-inspection-blind-spots',
+    categoryId: 'monitoring-applications',
+    category: 'Monitoring Applications',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Open-pit mine slope monitoring system reducing inspection blind spots with automated sensors',
+    summary: 'A practical monitoring plan for mine slopes where manual inspection alone can miss deep movement and fast-changing risk.'
+  },
+  {
+    title: 'Slope Monitoring System: How Deep Displacement, Rainfall, and Groundwater Work Together',
+    href: '/case-studies/slope-monitoring-system-how-deep-displacement-rainfall-and-groundwater-work-together',
+    categoryId: 'monitoring-applications',
+    category: 'Monitoring Applications',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Slope monitoring system combining deep displacement rainfall and groundwater data',
+    summary: 'Understand how slope monitoring teams connect movement, rainfall, groundwater, and alarm rules into one risk picture.'
+  },
+  {
+    title: 'SoilCreate Inclinometer Selection Guide for Different Geotechnical Projects',
+    href: '/case-studies/soilcreate-inclinometer-selection-guide-for-different-geotechnical-projects',
+    categoryId: 'distributor-procurement-insights',
+    category: 'Distributor & Procurement Insights',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'SoilCreate inclinometer selection guide for contractors distributors and monitoring service companies',
+    summary: 'A procurement guide for matching SoilCreate inclinometer options to site risk, budget, installation limits, and service needs.'
+  },
+  {
+    title: 'Tunnel Monitoring System: How to Track Convergence and Rock Mass Stability Over Time',
+    href: '/case-studies/tunnel-monitoring-system-how-to-track-convergence-and-rock-mass-stability-over-time',
+    categoryId: 'monitoring-applications',
+    category: 'Monitoring Applications',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Tunnel monitoring system tracking convergence deformation and rock mass stability',
+    summary: 'A site-ready guide to tunnel convergence, crown settlement, surrounding rock response, and automated alarm workflows.'
+  },
+  {
+    title: 'What Is a 3D Flexible Displacement Array (SAA)? A Practical Guide',
+    href: '/case-studies/what-is-a-3d-flexible-displacement-array-saa-a-practical-guide',
+    categoryId: 'inclinometer-basics',
+    category: 'Inclinometer Basics',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: '3D flexible displacement array SAA used for automated geotechnical deformation monitoring',
+    summary: 'A plain-English guide to SAA systems, how they measure shape and displacement, and where they fit in geotechnical monitoring.'
+  },
+  {
+    title: 'What Is a Geotechnical Inclinometer? Types, Uses, and Monitoring Value',
+    href: '/case-studies/what-is-a-geotechnical-inclinometer-types-uses-monitoring-value',
+    categoryId: 'inclinometer-basics',
+    category: 'Inclinometer Basics',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'Geotechnical inclinometer types and monitoring value for lateral ground movement',
+    summary: 'A simple guide to inclinometer types, common applications, and why lateral movement data matters for project risk control.'
+  },
+  {
+    title: 'What Is an In-Place Inclinometer (IPI)? A Practical Guide for Geotechnical Monitoring',
+    href: '/case-studies/what-is-an-in-place-inclinometer-ipi-a-practical-guide-for-geotechnical-monitoring',
+    categoryId: 'inclinometer-basics',
+    category: 'Inclinometer Basics',
+    image: '/images/hero/bridge-hero.png',
+    imageAlt: 'In-place inclinometer IPI installed for continuous geotechnical monitoring',
+    summary: 'Learn how IPI systems work, when they beat manual readings, and what buyers should check before procurement.'
+  }
+]
+
+const categoryCounts = computed(() => {
+  const counts = { all: articles.length }
+  for (const article of articles) {
+    counts[article.categoryId] = (counts[article.categoryId] || 0) + 1
+  }
+  return counts
+})
+
+const filteredArticles = computed(() => {
+  if (activeCategory.value === 'all') return articles
+  return articles.filter((article) => article.categoryId === activeCategory.value)
+})
+
+const setCategory = (categoryId) => {
+  activeCategory.value = categoryId
+}
+
+const submitSubscribe = async () => {
+  subscribing.value = true
+  subscribeStatus.value = ''
+
+  try {
+    const response = await fetch(formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: 'Solutions Subscription',
+        subject: 'Solutions Subscription',
+        form_name: 'case_study_subscription',
+        recipient: contactEmail,
+        email: subscriberEmail.value
+      })
+    })
+
+    if (!response.ok) throw new Error('Subscription failed')
+
+    trackEvent('sign_up', {
+      form_name: 'case_study_subscription'
+    })
+    subscriberEmail.value = ''
+    subscribeStatusType.value = 'success'
+    subscribeStatus.value = '✓ Subscribed successfully'
+  } catch (error) {
+    subscribeStatusType.value = 'error'
+    subscribeStatus.value = 'Subscription failed. Please try again later.'
+  } finally {
+    subscribing.value = false
+  }
+}
+</script>
+
+
 <template>
   <div class="sc-cs-hero">
     <div class="sc-cs-hero-inner">
-      <h1>Case Studies & Projects</h1>
+      <h1>Solutions & Projects</h1>
       <div class="sc-heading-line"></div>
-      <p>Discover how SoilCreate's geotechnical instruments and heavy-duty industrial pumps deliver critical data and uncompromising performance in extreme engineering environments worldwide.</p>
+      <p>Explore practical monitoring solutions for deep excavations, slopes, dams, tunnels, and industrial sites. SoilCreate helps contractors and distributors choose reliable, cost-effective instruments that fit real project budgets and field conditions.</p>
+      <form class="sc-cs-subscribe" @submit.prevent="submitSubscribe">
+        <label for="case-study-subscribe">More project solutions, delivered monthly.</label>
+        <div class="sc-cs-subscribe-row">
+          <input
+            id="case-study-subscribe"
+            v-model="subscriberEmail"
+            type="email"
+            name="email"
+            placeholder="Your Business Email"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" :disabled="subscribing">
+            {{ subscribing ? 'Loading...' : 'Subscribe' }}
+          </button>
+        </div>
+        <p v-if="subscribeStatus" class="sc-cs-subscribe-status" :class="subscribeStatusType">
+          {{ subscribeStatus }}
+        </p>
+      </form>
     </div>
   </div>
 
-  <div class="sc-cs-filter-bar">
-    <button class="active" type="button">ALL</button>
-    <button type="button">DAMS & RESERVOIRS</button>
-    <button type="button">EARTHWORKS AND EXCAVATION</button>
-    <button type="button">MINING</button>
-    <button type="button">RAILWAYS</button>
-    <button type="button">STRUCTURES</button>
-    <button type="button">TUNNELS</button>
-  </div>
+  <main class="sc-container sc-news-container">
+    <div class="sc-catalog-layout sc-news-layout">
+      <aside class="sc-sidebar sc-news-sidebar" aria-label="Solutions categories">
+        <div class="sc-sidebar-header">Solutions Categories</div>
+        <ul class="sc-category-list">
+          <li class="sc-has-submenu">
+            <button
+              class="sc-category-title"
+              :class="{ active: activeCategory === 'all' }"
+              type="button"
+              @click="setCategory('all')"
+            >
+              All News ({{ categoryCounts.all }})
+            </button>
+            <ul class="sc-submenu">
+              <li v-for="category in categories" :key="category.id">
+                <button
+                  class="sc-sub-item"
+                  :class="{ active: activeCategory === category.id }"
+                  type="button"
+                  @click="setCategory(category.id)"
+                >
+                  {{ category.label }}
+                  <span v-if="categoryCounts[category.id]">({{ categoryCounts[category.id] }})</span>
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
 
-  <div class="sc-cs-grid">
-    <a href="/case-studies/sydney-metro-tunnel" class="sc-cs-card">
-      <div class="sc-cs-img">
-        <img src="https://via.placeholder.com/600x400/eaedf0/64748b?text=Tunnel+Excavation" alt="Tunnel Monitoring">
-        <span class="sc-cs-tag">Tunnels</span>
-      </div>
-      <div class="sc-cs-content">
-        <h3>Sydney Metro Underground Excavation</h3>
-        <p>Deployment of automated In-Place Inclinometers (IPI) and Piezometers to monitor ground settlement and structural integrity during TBM operations.</p>
-        <span class="sc-cs-readmore">Read Case Study ➔</span>
-      </div>
-    </a>
-
-    <a href="/case-studies/norway-hydro-dam" class="sc-cs-card">
-      <div class="sc-cs-img">
-        <img src="https://via.placeholder.com/600x400/eaedf0/64748b?text=Hydroelectric+Dam" alt="Dam Monitoring">
-        <span class="sc-cs-tag">Dams & Reservoirs</span>
-      </div>
-      <div class="sc-cs-content">
-        <h3>Norway Hydroelectric Dam Telemetry</h3>
-        <p>Turnkey remote data logging solutions providing real-time pore water pressure and seepage monitoring for a critical 120m high concrete dam.</p>
-        <span class="sc-cs-readmore">Read Case Study ➔</span>
-      </div>
-    </a>
-  </div>
+      <section class="sc-product-grid-area sc-news-grid-area">
+        <div v-if="filteredArticles.length" class="sc-cs-grid sc-cs-grid--sidebar">
+          <a v-for="article in filteredArticles" :key="article.href" :href="article.href" class="sc-cs-card">
+            <div class="sc-cs-img">
+              <img :src="article.image" :alt="article.imageAlt" loading="lazy" decoding="async">
+              <span class="sc-cs-tag">{{ article.category }}</span>
+            </div>
+            <div class="sc-cs-content">
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.summary }}</p>
+              <span class="sc-cs-readmore">Read Article ➔</span>
+            </div>
+          </a>
+        </div>
+        <div v-else class="sc-news-empty">
+          <h2>Articles coming soon</h2>
+          <p>This category is ready for future SEO articles and field notes.</p>
+        </div>
+      </section>
+    </div>
+  </main>
 </template>

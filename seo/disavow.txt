@@ -1,0 +1,14 @@
+# SoilCreate spam backlink disavow list
+
+domain:metamagic.top
+domain:toplikevideo.com
+domain:blogsphere.top
+domain:creativeposts.top
+domain:fiverr-affordable-seo-services.site
+domain:portailorange.net
+domain:qwenterprise.com
+domain:sapphirevpn.net
+
+# Added later
+domain:new-spam-domain.com
+domain:another-bad-site.net

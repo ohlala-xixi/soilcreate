@@ -100,18 +100,12 @@ related:
     sku: "SC-PZ-420"
     imageLabel: "[ Related Product ]"
 relatedCaseStudies:
-  - title: "Sydney Metro Underground Excavation"
-    href: "/case-studies/sydney-metro-tunnel"
-    category: "Tunnels"
-    summary: "Automated IPI and piezometer monitoring for settlement control during metro tunnel construction."
-    image: "https://via.placeholder.com/600x400/eaedf0/64748b?text=Tunnel+Excavation"
-    imageAlt: "Tunnel excavation monitoring case study"
-  - title: "Norway Hydroelectric Dam Telemetry"
-    href: "/case-studies/norway-hydro-dam"
-    category: "Dams & Reservoirs"
-    summary: "Remote pore water pressure and seepage monitoring for a critical hydropower dam."
-    image: "https://via.placeholder.com/600x400/eaedf0/64748b?text=Hydroelectric+Dam"
-    imageAlt: "Hydroelectric dam telemetry case study"
+  - title: "Deep Excavation Collapse Case Study"
+    href: "/case-studies/deep-excavation-collapse-case-study-what-monitoring-failure-teaches-contractors"
+    category: "Case Studies & Field Notes"
+    summary: "How linked monitoring data, alarm rules, and field context help contractors interpret deep excavation movement before risks escalate."
+    image: "/images/hero/bridge-hero.png"
+    imageAlt: "Infrastructure project representing deep excavation monitoring risk control"
 ---
 
 The SoilCreate In-Place Inclinometer (IPI) is an automated sensor chain for continuous borehole deformation and lateral displacement monitoring. Compared with periodic manual readings, an IPI system supports long-term data collection for projects where slope movement, retaining wall displacement, excavation deformation, tunnel settlement, or dam stability must be observed continuously.

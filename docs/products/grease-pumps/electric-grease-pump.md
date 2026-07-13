@@ -39,14 +39,6 @@ related:
     href: "/products/"
     sku: "All products"
     imageLabel: "[ Related Product ]"
-relatedCaseStudies:
-  - title: "Norway Hydroelectric Dam Telemetry"
-    href: "/case-studies/norway-hydro-dam"
-    category: "Dams & Reservoirs"
-    summary: "Industrial project telemetry and site support for infrastructure monitoring applications."
-    image: "https://via.placeholder.com/600x400/eaedf0/64748b?text=Hydroelectric+Dam"
-    imageAlt: "Hydroelectric dam project case study"
-
 ---
 
 Share the voltage requirement, lubrication points, grease type, control method, and destination country. SoilCreate will verify model fit before quotation.

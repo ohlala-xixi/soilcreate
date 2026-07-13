@@ -4,7 +4,8 @@ const siteUrl = 'https://soilcreate.com'
 const siteName = 'SoilCreate'
 const defaultDescription =
   'Industrial grease pumps and geotechnical monitoring equipment from a source factory built for global buyers.'
-const defaultImage = `${siteUrl}/images/hero/home-hero.svg`
+const defaultImage = `${siteUrl}/images/hero/bridge-hero.png`
+const logoImage = `${siteUrl}/images/logo/site-icon.png`
 
 const routeFromPage = (page) => {
   const withoutIndex = page.replace(/(^|\/)index\.md$/, '$1')
@@ -20,6 +21,127 @@ const imageFromFrontmatter = (frontmatter) => {
   if (!image) return defaultImage
   if (/^https?:\/\//.test(image)) return image
   return absoluteUrl(image)
+}
+
+const stripTrailingSlash = (url) => url.replace(/\/$/, '')
+
+const breadcrumbSchema = (canonical, pageTitle) => {
+  const path = new URL(canonical).pathname
+  const segments = path.split('/').filter(Boolean)
+  const items = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl
+    }
+  ]
+
+  let currentPath = ''
+  segments.forEach((segment, index) => {
+    currentPath += `/${segment}`
+    items.push({
+      '@type': 'ListItem',
+      position: index + 2,
+      name: index === segments.length - 1 ? pageTitle : segment.replace(/-/g, ' '),
+      item: stripTrailingSlash(absoluteUrl(currentPath))
+    })
+  })
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items
+  }
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: siteName,
+  url: siteUrl,
+  logo: logoImage,
+  email: 'sophia@kstpropack.com',
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: 'sophia@kstpropack.com',
+      telephone: '+86-153-5604-6033',
+      availableLanguage: ['English', 'Chinese']
+    }
+  ]
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  name: siteName,
+  url: siteUrl,
+  publisher: {
+    '@id': `${siteUrl}/#organization`
+  },
+  inLanguage: 'en-US'
+}
+
+const productSchema = (frontmatter, canonical, pageTitle, pageDescription, image) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: pageTitle,
+  description: pageDescription,
+  image,
+  sku: frontmatter.model || frontmatter.sku,
+  category: [frontmatter.category, frontmatter.subcategory].filter(Boolean).join(' > '),
+  brand: {
+    '@type': 'Brand',
+    name: siteName
+  },
+  manufacturer: {
+    '@id': `${siteUrl}/#organization`
+  },
+  url: canonical,
+  additionalProperty: (frontmatter.specs || []).map((spec) => ({
+    '@type': 'PropertyValue',
+    name: spec.label || spec.key || spec.parameter,
+    value: spec.value
+  })).filter((item) => item.name && item.value)
+})
+
+const articleSchema = (frontmatter, canonical, pageTitle, pageDescription, image) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: pageTitle,
+  description: pageDescription,
+  image,
+  author: {
+    '@id': `${siteUrl}/#organization`
+  },
+  publisher: {
+    '@id': `${siteUrl}/#organization`
+  },
+  mainEntityOfPage: canonical,
+  inLanguage: 'en-US',
+  about: frontmatter.industry || frontmatter.projectType || 'Geotechnical monitoring'
+})
+
+const schemaForPage = ({ frontmatter, canonical, pageTitle, pageDescription, image, route }) => {
+  const schemas = [breadcrumbSchema(canonical, pageTitle)]
+
+  if (route === '/') {
+    schemas.push(organizationSchema, websiteSchema)
+  }
+
+  if (frontmatter.layout === 'product') {
+    schemas.push(productSchema(frontmatter, canonical, pageTitle, pageDescription, image))
+  }
+
+  if (frontmatter.layout === 'case-study' || frontmatter.layout === 'seo-article') {
+    schemas.push(articleSchema(frontmatter, canonical, pageTitle, pageDescription, image))
+  }
+
+  return schemas
 }
 
 export default defineConfig({
@@ -72,6 +194,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NXV7CZGC');`
     ],
+    ['link', { rel: 'icon', href: '/images/logo/favicon.ico', sizes: 'any' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/logo/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/logo/favicon-16x16.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/logo/apple-touch-icon.png' }],
     ['meta', { name: 'theme-color', content: '#3A474E' }],
     ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
     ['meta', { name: 'author', content: siteName }],
@@ -89,17 +215,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       ? 'noindex,nofollow'
       : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'
 
+    const schemas = schemaForPage({ frontmatter, canonical, pageTitle, pageDescription, image, route })
+
     return [
       ['link', { rel: 'canonical', href: canonical }],
       ['meta', { name: 'robots', content: robots }],
-      ['meta', { property: 'og:type', content: 'website' }],
+      ['meta', { property: 'og:type', content: frontmatter.layout === 'case-study' || frontmatter.layout === 'seo-article' ? 'article' : 'website' }],
       ['meta', { property: 'og:title', content: pageTitle }],
       ['meta', { property: 'og:description', content: pageDescription }],
       ['meta', { property: 'og:url', content: canonical }],
       ['meta', { property: 'og:image', content: image }],
       ['meta', { name: 'twitter:title', content: pageTitle }],
       ['meta', { name: 'twitter:description', content: pageDescription }],
-      ['meta', { name: 'twitter:image', content: image }]
+      ['meta', { name: 'twitter:image', content: image }],
+      ...schemas.map((schema) => [
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify(schema)
+      ])
     ]
   }
 })
