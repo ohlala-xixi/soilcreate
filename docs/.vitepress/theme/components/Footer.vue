@@ -51,7 +51,7 @@ const submitSubscribe = async () => {
       <div>
         <a href="/" class="sc-footer-brand">Soil<span>Create</span></a>
         <p class="sc-footer-desc">
-          Premium engineered solutions for industrial hardware and geotechnical telemetry.
+          Precision geotechnical monitoring instruments and telemetry support for demanding engineering projects.
         </p>
         <ul class="sc-footer-contact-list sc-footer-contact-list--brand">
           <li>Email: {{ contactEmail }}</li>

@@ -29,9 +29,9 @@ const setFilter = (filterId) => {
 <template>
   <main class="sc-container">
     <div class="sc-page-intro">
-      <h1>Industrial Equipment & Geotechnical Sensors</h1>
+      <h1>Geotechnical Monitoring Sensors</h1>
       <p>
-        SoilCreate specializes in the supply of advanced geotechnical sensors and premium industrial equipment,
+        SoilCreate specializes in the supply of advanced geotechnical sensors and monitoring instruments,
         ensuring maximum reliability for your critical projects.
       </p>
     </div>

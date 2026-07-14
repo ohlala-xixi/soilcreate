@@ -1,6 +1,6 @@
 ---
-title: SoilCreate | Geotechnical & Industrial Solutions
-description: SoilCreate provides geotechnical monitoring instruments, industrial pumps, and automated telemetry solutions for demanding global projects.
+title: SoilCreate | Geotechnical Monitoring Solutions
+description: SoilCreate provides geotechnical monitoring instruments, precision sensor systems, and automated telemetry solutions for demanding global projects.
 ---
 
 <HomePage />

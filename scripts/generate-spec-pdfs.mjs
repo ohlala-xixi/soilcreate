@@ -66,26 +66,6 @@ const buildPdf = (title, lines) => {
 
 const files = [
   {
-    file: 'pneumatic-grease-pump-spec.pdf',
-    title: 'Pneumatic Grease Pump Spec Sheet',
-    lines: [
-      'Drive: pneumatic',
-      'Use case: centralized lubrication systems',
-      'Application: heavy equipment maintenance lines',
-      'Document status: procurement ready'
-    ]
-  },
-  {
-    file: 'electric-grease-pump-spec.pdf',
-    title: 'Electric Grease Pump Spec Sheet',
-    lines: [
-      'Drive: electric',
-      'Use case: automated lubrication',
-      'Application: panel and cabinet integration',
-      'Document status: procurement ready'
-    ]
-  },
-  {
     file: 'inclinometer-sensor-spec.pdf',
     title: 'Inclinometer Sensor Spec Sheet',
     lines: [

@@ -295,8 +295,6 @@ README：
 - `docs/products/geotechnical-monitoring/inclinometer-sensor.md`
 - `docs/products/geotechnical-monitoring/piezometer-sensor.md`
 - `docs/products/geotechnical-monitoring/vibration-monitoring-station.md`
-- `docs/products/grease-pumps/electric-grease-pump.md`
-- `docs/products/grease-pumps/pneumatic-grease-pump.md`
 
 ### 3.4 Case Study 页面
 

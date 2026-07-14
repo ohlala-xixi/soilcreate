@@ -58,7 +58,7 @@ const filteredProducts = computed(() => {
       <div class="filter-grid">
         <label>
           Product name
-          <input v-model="nameQuery" type="text" placeholder="Pneumatic Grease Pump" />
+          <input v-model="nameQuery" type="text" placeholder="In-Place Inclinometer" />
         </label>
 
         <label>
@@ -103,4 +103,3 @@ const filteredProducts = computed(() => {
     </p>
   </section>
 </template>
-

@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 const siteUrl = 'https://soilcreate.com'
 const siteName = 'SoilCreate'
 const defaultDescription =
-  'Industrial grease pumps and geotechnical monitoring equipment from a source factory built for global buyers.'
+  'Advanced geotechnical monitoring instruments and precision sensor systems for global engineering projects.'
 const defaultImage = `${siteUrl}/images/hero/bridge-hero.png`
 const logoImage = `${siteUrl}/images/logo/site-icon.png`
 
@@ -162,14 +162,6 @@ export default defineConfig({
           text: 'Product Catalog',
           items: [
             { text: 'Overview', link: '/products/' },
-            {
-              text: 'Pneumatic Grease Pump',
-              link: '/products/grease-pumps/pneumatic-grease-pump'
-            },
-            {
-              text: 'Electric Grease Pump',
-              link: '/products/grease-pumps/electric-grease-pump'
-            },
             {
               text: 'Inclinometer Sensor',
               link: '/products/geotechnical-monitoring/inclinometer-sensor'

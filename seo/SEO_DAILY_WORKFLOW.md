@@ -273,13 +273,11 @@ Existing product Markdown files:
 - `docs/products/geotechnical-monitoring/inclinometer-sensor.md`
 - `docs/products/geotechnical-monitoring/piezometer-sensor.md`
 - `docs/products/geotechnical-monitoring/vibration-monitoring-station.md`
-- `docs/products/grease-pumps/electric-grease-pump.md`
-- `docs/products/grease-pumps/pneumatic-grease-pump.md`
 
 When adding a new product:
 
 1. Use the product generator.
-2. Save the generated `.md` under `docs/products/geotechnical-monitoring/` or `docs/products/grease-pumps/`.
+2. Save the generated `.md` under `docs/products/geotechnical-monitoring/`.
 3. Add or update product listing data in `docs/.vitepress/theme/data/products.json`.
 4. Put images under `docs/public/images/products/`.
 5. Put PDFs under `docs/public/specs/`.

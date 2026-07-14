@@ -279,15 +279,12 @@ Case Study 列表页：
 - `docs/products/geotechnical-monitoring/inclinometer-sensor.md`
 - `docs/products/geotechnical-monitoring/piezometer-sensor.md`
 - `docs/products/geotechnical-monitoring/vibration-monitoring-station.md`
-- `docs/products/grease-pumps/electric-grease-pump.md`
-- `docs/products/grease-pumps/pneumatic-grease-pump.md`
 
 新增产品流程：
 
 1. 用产品生成器生成 Markdown。
 2. 把 `.md` 文件保存到：
    - `docs/products/geotechnical-monitoring/`
-   - 或 `docs/products/grease-pumps/`
 3. 更新产品列表数据库：
    - `docs/.vitepress/theme/data/products.json`
 4. 产品图片放到：

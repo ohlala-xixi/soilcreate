@@ -3,7 +3,7 @@
     <div class="sc-contact-header">
       <h1>Contact SoilCreate</h1>
       <div class="sc-heading-line"></div>
-      <p>Contact <strong>SoilCreate</strong> for expert geotechnical monitoring instruments and heavy-duty industrial pumping solutions. Whether you need technical support, installation guidance or a quote for your project, our team is ready to assist you. Reach out using the contact form, email or office numbers below.</p>
+      <p>Contact <strong>SoilCreate</strong> for expert geotechnical monitoring instruments, precision sensor systems, and project support. Whether you need technical guidance, installation support, or a quote for your project, our team is ready to assist you. Reach out using the contact form, email, or WhatsApp below.</p>
     </div>
 
     <div class="sc-contact-wrapper">
