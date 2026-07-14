@@ -17,7 +17,7 @@ const routeFromFile = (file) => {
 
   if (withoutExt === 'index') return '/'
   if (withoutExt.endsWith('/index')) return `/${withoutExt.slice(0, -'/index'.length)}/`
-  return `/${withoutExt}/`
+  return `/${withoutExt}`
 }
 
 const lastmodFromFile = async (file) => {
@@ -63,7 +63,7 @@ const parseFrontmatter = (content) => {
 
 const sitemapHints = (route) => {
   if (route === '/') return { changefreq: 'weekly', priority: '1.0' }
-  if (route === '/products/' || route === '/case-study/') return { changefreq: 'weekly', priority: '0.9' }
+  if (route === '/products/' || route === '/case-study') return { changefreq: 'weekly', priority: '0.9' }
   if (route.startsWith('/products/') || route.startsWith('/case-studies/')) {
     return { changefreq: 'monthly', priority: '0.8' }
   }

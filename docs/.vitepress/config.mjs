@@ -8,10 +8,10 @@ const defaultImage = `${siteUrl}/images/hero/bridge-hero.png`
 const logoImage = `${siteUrl}/images/logo/site-icon.png`
 
 const routeFromPage = (page) => {
-  const withoutIndex = page.replace(/(^|\/)index\.md$/, '$1')
-  const withoutExt = withoutIndex.replace(/\.md$/, '')
-  if (!withoutExt || withoutExt === '/') return '/'
-  return `/${withoutExt.replace(/^\//, '')}/`
+  const withoutExt = page.replace(/\.md$/, '')
+  if (withoutExt === 'index') return '/'
+  if (withoutExt.endsWith('/index')) return `/${withoutExt.slice(0, -'/index'.length)}/`
+  return `/${withoutExt.replace(/^\//, '')}`
 }
 
 const absoluteUrl = (path) => new URL(path, siteUrl).toString()
@@ -40,11 +40,12 @@ const breadcrumbSchema = (canonical, pageTitle) => {
   let currentPath = ''
   segments.forEach((segment, index) => {
     currentPath += `/${segment}`
+    const itemPath = segment === 'case-studies' && index === 0 ? '/case-study' : currentPath
     items.push({
       '@type': 'ListItem',
       position: index + 2,
-      name: index === segments.length - 1 ? pageTitle : segment.replace(/-/g, ' '),
-      item: stripTrailingSlash(absoluteUrl(currentPath))
+      name: index === segments.length - 1 ? pageTitle : segment === 'case-studies' ? 'Solutions' : segment.replace(/-/g, ' '),
+      item: stripTrailingSlash(absoluteUrl(itemPath))
     })
   })
 
