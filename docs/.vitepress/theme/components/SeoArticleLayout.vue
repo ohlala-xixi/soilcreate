@@ -11,21 +11,21 @@ const fallbackProducts = [
     title: 'In-Place Inclinometer (IPI)',
     href: '/products/geotechnical-monitoring/inclinometer-sensor',
     summary: 'Automated borehole deformation monitoring for slopes, excavations, retaining walls, tunnels, and dams.',
-    image: '/images/products/in-place-inclinometer-ipi.jpg',
+    image: '/images/products/in-place-inclinometer/in-place-inclinometer-ipi-product.jpg',
     imageAlt: 'SoilCreate in-place inclinometer IPI sensor chain'
   },
   {
     title: 'Shape Displacement Array',
     href: '/products/geotechnical-monitoring/flexible-inclinometer',
     summary: 'Modular 3D deformation monitoring for boreholes, embankments, slopes, and retaining structures.',
-    image: '/images/products/flexible-inclinometer.jpg',
+    image: '/images/products/flexible-inclinometer/flexible-inclinometer-product.jpg',
     imageAlt: 'SoilCreate shape displacement array flexible inclinometer'
   },
   {
     title: 'Portable Inclinometer',
     href: '/products/geotechnical-monitoring/high-precision-sliding-inclinometer',
     summary: 'Bluetooth sliding inclinometer system for manual borehole deformation surveys.',
-    image: '/images/products/high-precision-sliding-inclinometer.jpg',
+    image: '/images/products/sliding-inclinometer/high-precision-sliding-inclinometer-product.jpg',
     imageAlt: 'SoilCreate portable Bluetooth sliding inclinometer system'
   }
 ]
@@ -46,7 +46,7 @@ const relatedArticles = computed(() => (frontmatter.value.relatedArticles || [])
   <article class="sc-article-detail">
     <nav class="sc-breadcrumb sc-article-breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a> <span>/</span>
-      <a href="/case-study">Solutions</a> <span>/</span>
+      <a href="/solution">Solutions</a> <span>/</span>
       <strong>{{ frontmatter.title }}</strong>
     </nav>
 

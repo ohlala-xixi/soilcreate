@@ -1,142 +1,250 @@
 {
   "categories": [
     {
-      "id": "inclinometers",
-      "label": "Inclinometer",
+      "id": "deformation-monitoring",
+      "label": "Deformation Monitoring",
       "children": [
         {
-          "id": "ipi",
-          "label": "In-Place Inclinometer (IPI)"
+          "id": "sliding-inclinometer",
+          "label": "Sliding Inclinometer"
         },
         {
           "id": "in-place-inclinometer",
-          "label": "Shape Displacement Array"
+          "label": "In-Place Inclinometer"
         },
         {
-          "id": "portable-inclinometer",
-          "label": "Portable Inclinometer"
+          "id": "shape-array",
+          "label": "Flexible Inclinometer / SAA"
         },
         {
-          "id": "digital-inclinometer",
-          "label": "Robotic Inclinometer"
+          "id": "gnss-monitoring",
+          "label": "GNSS Monitoring"
         }
       ]
     },
     {
-      "id": "vibration-monitoring",
-      "label": "Vibration Monitor",
+      "id": "settlement-tilt-monitoring",
+      "label": "Settlement & Tilt Monitoring",
       "children": [
         {
-          "id": "vibration-monitor",
-          "label": "Wired Vibration Sensor"
+          "id": "hydrostatic-level",
+          "label": "Hydrostatic Level Gauge"
+        },
+        {
+          "id": "tiltmeter",
+          "label": "Tiltmeter"
+        },
+        {
+          "id": "wireless-tilt-vibration",
+          "label": "Wireless Tilt + Vibration"
         }
       ]
     },
     {
-      "id": "piezometers",
-      "label": "Piezometer",
+      "id": "stress-environment-monitoring",
+      "label": "Stress & Environment Monitoring",
       "children": [
         {
-          "id": "piezometer-420",
-          "label": "Integration"
+          "id": "vibrating-wire-sensors",
+          "label": "Vibrating-Wire Sensors"
+        },
+        {
+          "id": "piezometer-water-level",
+          "label": "Piezometer / Water Level"
+        }
+      ]
+    },
+    {
+      "id": "data-acquisition",
+      "label": "Data Acquisition",
+      "children": [
+        {
+          "id": "data-logger-gateway",
+          "label": "Data Logger & Gateway"
+        },
+        {
+          "id": "wireless-transmission",
+          "label": "Wireless Transmission"
+        }
+      ]
+    },
+    {
+      "id": "software-platform",
+      "label": "Software Platform",
+      "children": [
+        {
+          "id": "monitoring-cloud",
+          "label": "Monitoring Cloud"
+        },
+        {
+          "id": "api-integration",
+          "label": "API Integration"
         }
       ]
     }
   ],
   "products": [
     {
-      "sku": "SC-IPI-26",
-      "name": "In-Place Inclinometer (IPI)",
-      "categoryId": "inclinometers",
-      "subcategoryId": "ipi",
-      "category": "Inclinometers",
-      "subcategory": "In-Place Inclinometer (IPI)",
-      "image": "/images/products/in-place-inclinometer-ipi.jpg",
-      "href": "/products/geotechnical-monitoring/inclinometer-sensor",
-      "summary": "Automated in-place inclinometer sensor chain for continuous borehole lateral deformation monitoring in slopes, retaining walls, tunnels, dams, and deep excavations.",
+      "sku": "SCIS Series",
+      "name": "Sliding Inclinometer",
+      "categoryId": "deformation-monitoring",
+      "subcategoryId": "sliding-inclinometer",
+      "category": "Deformation Monitoring",
+      "subcategory": "Sliding Inclinometer",
+      "image": "/images/products/sliding-inclinometer/sliding-inclinometer-system.jpg",
+      "imageAlt": "Bluetooth sliding inclinometer system with probe, control cable and cable reel",
+      "href": "/products/deformation-monitoring/sliding-inclinometer",
+      "summary": "Smart Bluetooth portable sliding inclinometer for one-operator manual borehole surveys, deep horizontal displacement profiles, and cloud-ready field data.",
+      "keywords": [
+        "sliding inclinometer",
+        "Bluetooth inclinometer",
+        "manual borehole inclinometer survey"
+      ],
+      "updatedAt": "2026-07-17"
+    },
+    {
+      "sku": "SCIS-IPI-01",
+      "name": "In-Place Inclinometer",
+      "categoryId": "deformation-monitoring",
+      "subcategoryId": "in-place-inclinometer",
+      "category": "Deformation Monitoring",
+      "subcategory": "In-Place Inclinometer",
+      "image": "/images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg",
+      "imageAlt": "In-place inclinometer sensor chain with lightweight rods and RS485 bus cabling",
+      "href": "/products/deformation-monitoring/in-place-inclinometer",
+      "summary": "Automated IPI sensor chain for 7x24 deep-displacement monitoring with RS485 sensor chains, lightweight rods, and cloud alarms.",
       "keywords": [
         "in-place inclinometer",
         "IPI sensor chain",
-        "automated borehole deformation monitoring",
-        "lateral displacement monitoring",
-        "slope monitoring inclinometer",
-        "tunnel deformation monitoring"
+        "automated borehole monitoring"
       ],
-      "updatedAt": "2026-05-27"
+      "updatedAt": "2026-07-17"
     },
     {
-      "sku": "SC-FI-300",
-      "name": "Shape Displacement Array",
-      "categoryId": "inclinometers",
-      "subcategoryId": "in-place-inclinometer",
-      "category": "Inclinometers",
-      "subcategory": "Shape Displacement Array",
-      "image": "/images/products/flexible-inclinometer.jpg",
-      "href": "/products/geotechnical-monitoring/flexible-inclinometer",
-      "summary": "Modular shape displacement array, also known as a flexible inclinometer, for long-term 3D deformation monitoring in boreholes, slopes, embankments, and retaining structures.",
+      "sku": "SCIS-SAA-02",
+      "name": "Flexible Inclinometer / Shape Array SAA",
+      "categoryId": "deformation-monitoring",
+      "subcategoryId": "shape-array",
+      "category": "Deformation Monitoring",
+      "subcategory": "Flexible Inclinometer / SAA",
+      "image": "/images/products/flexible-inclinometer/flexible-inclinometer-shape-array.jpg",
+      "imageAlt": "Flexible inclinometer shape array with rigid sensing segments and flexible joints",
+      "href": "/products/deformation-monitoring/flexible-inclinometer",
+      "summary": "Segmented, recoverable 3D deformation monitoring array for boreholes, settlement lines, tunnels, slopes, and reusable project deployments.",
       "keywords": [
-        "shape displacement array",
         "flexible inclinometer",
-        "array displacement meter",
-        "3D deformation monitoring",
-        "borehole displacement monitoring",
-        "slope movement monitoring"
+        "shape array SAA",
+        "3D deformation monitoring"
       ],
-      "updatedAt": "2026-05-27"
+      "updatedAt": "2026-07-17"
     },
     {
-      "sku": "SCIS 50S / SCIS 50D",
-      "name": "High-Precision Bluetooth Sliding Inclinometer",
-      "categoryId": "inclinometers",
-      "subcategoryId": "portable-inclinometer",
-      "category": "Inclinometers",
-      "subcategory": "Portable Inclinometer",
-      "image": "/images/products/high-precision-sliding-inclinometer.jpg",
-      "href": "/products/geotechnical-monitoring/high-precision-sliding-inclinometer",
-      "summary": "Bluetooth sliding inclinometer probe and cable reel system for manual borehole inclinometer surveys and deformation monitoring in slopes, foundation pits, dams, bridges, and retaining walls.",
+      "sku": "SCIS-GNSS-100",
+      "name": "GNSS Monitoring System",
+      "categoryId": "deformation-monitoring",
+      "subcategoryId": "gnss-monitoring",
+      "category": "Deformation Monitoring",
+      "subcategory": "GNSS Monitoring",
+      "image": "/images/products/gnss-monitoring-system/gnss-monitoring-station.jpg",
+      "imageAlt": "GNSS monitoring station with dome antenna and solar panels",
+      "href": "/products/deformation-monitoring/gnss-monitoring-system",
+      "summary": "All-in-one GNSS monitoring receiver for millimetre-level 3D displacement monitoring across slopes, dams, mines, and bridges.",
       "keywords": [
-        "Bluetooth sliding inclinometer",
-        "manual borehole inclinometer survey",
-        "Bluetooth inclinometer probe",
-        "portable inclinometer system",
-        "borehole deformation monitoring",
-        "MEMS inclinometer probe"
+        "GNSS monitoring system",
+        "millimetre displacement monitoring",
+        "slope GNSS monitoring"
       ],
-      "updatedAt": "2026-05-26"
+      "updatedAt": "2026-07-17"
     },
     {
-      "sku": "SC-PZ-420",
-      "name": "4-20mA Piezometer Sensor",
-      "categoryId": "piezometers",
-      "subcategoryId": "piezometer-420",
-      "category": "Piezometers",
-      "subcategory": "4-20mA Piezometer",
-      "image": "/images/product-placeholder.svg",
-      "href": "/products/geotechnical-monitoring/piezometer-sensor",
-      "summary": "Current-output piezometer for pore water pressure and groundwater monitoring in dams, foundations, tunnels, and slopes.",
+      "sku": "SCST Series",
+      "name": "Hydrostatic Level Gauge",
+      "categoryId": "settlement-tilt-monitoring",
+      "subcategoryId": "hydrostatic-level",
+      "category": "Settlement & Tilt Monitoring",
+      "subcategory": "Hydrostatic Level Gauge",
+      "image": "/images/products/hydrostatic-level-gauge/hydrostatic-level-gauge-product.jpg",
+      "imageAlt": "Hydrostatic level gauge with precision chamber and tubing connectors",
+      "href": "/products/settlement-tilt-monitoring/hydrostatic-level-gauge",
+      "summary": "High-resolution settlement monitoring instrument with RS485 output for metro, foundation pit, dam, bridge, and building projects.",
       "keywords": [
-        "4-20mA piezometer",
-        "pore water pressure",
-        "groundwater monitoring"
+        "hydrostatic level gauge",
+        "settlement monitoring sensor",
+        "RS485 settlement monitoring"
       ],
-      "updatedAt": "2026-05-26"
+      "updatedAt": "2026-07-17"
     },
     {
-      "sku": "SC-VM-600",
-      "name": "Vibration Monitoring Station",
-      "categoryId": "vibration-monitoring",
-      "subcategoryId": "vibration-monitor",
-      "category": "Vibration Monitoring",
-      "subcategory": "Vibration Monitor",
-      "image": "/images/product-placeholder.svg",
-      "href": "/products/geotechnical-monitoring/vibration-monitoring-station",
-      "summary": "Vibration monitoring station for construction impact, blasting observation, and structural vibration data collection.",
+      "sku": "SCST-T01",
+      "name": "Tiltmeter Series",
+      "categoryId": "settlement-tilt-monitoring",
+      "subcategoryId": "tiltmeter",
+      "category": "Settlement & Tilt Monitoring",
+      "subcategory": "Tiltmeter",
+      "image": "/images/products/tiltmeter-series/tiltmeter-product.jpg",
+      "imageAlt": "Wireless dual-axis tiltmeter with outdoor antenna",
+      "href": "/products/settlement-tilt-monitoring/tiltmeter-series",
+      "summary": "MEMS and electrolytic tiltmeter options with wired RS485 and wireless LoRa / NB-IoT versions for structural tilt monitoring.",
       "keywords": [
-        "vibration monitoring",
-        "construction vibration",
-        "structural vibration"
+        "tiltmeter",
+        "wireless tiltmeter",
+        "structural tilt monitoring"
       ],
-      "updatedAt": "2026-05-26"
+      "updatedAt": "2026-07-17"
+    },
+    {
+      "sku": "SCST-WV02",
+      "name": "Wireless Tilt, Temperature & Vibration Sensor",
+      "categoryId": "settlement-tilt-monitoring",
+      "subcategoryId": "wireless-tilt-vibration",
+      "category": "Settlement & Tilt Monitoring",
+      "subcategory": "Wireless Tilt + Vibration",
+      "image": "/images/products/wireless-tilt-vibration/wireless-tilt-vibration-sensor.jpg",
+      "imageAlt": "Wireless tilt temperature and vibration sensor with sealed housing",
+      "href": "/products/settlement-tilt-monitoring/wireless-tilt-vibration",
+      "summary": "Wireless tilt, temperature, and vibration sensor with FFT extraction, NB-IoT / 4G upload, and IP68 outdoor housing.",
+      "keywords": [
+        "wireless tilt sensor",
+        "vibration monitoring sensor",
+        "NB-IoT structural monitoring"
+      ],
+      "updatedAt": "2026-07-17"
+    },
+    {
+      "sku": "SCSE-VW01",
+      "name": "Vibrating-Wire Sensors & Acquisition",
+      "categoryId": "stress-environment-monitoring",
+      "subcategoryId": "vibrating-wire-sensors",
+      "category": "Stress & Environment Monitoring",
+      "subcategory": "Vibrating-Wire Sensors",
+      "image": "/images/products/vibrating-wire-sensors/vibrating-wire-stressmeter.jpg",
+      "imageAlt": "Vibrating-wire concrete stressmeter with stainless-steel sensing body and signal cable",
+      "href": "/products/stress-environment-monitoring/vibrating-wire-sensors",
+      "summary": "Vibrating-wire sensors and multi-channel acquisition for stress, strain, load, earth pressure, and pore water pressure monitoring.",
+      "keywords": [
+        "vibrating wire sensor",
+        "vibrating wire acquisition",
+        "stress monitoring"
+      ],
+      "updatedAt": "2026-07-17"
+    },
+    {
+      "sku": "SCDA-DG-01",
+      "name": "Data Acquisition & Monitoring Cloud",
+      "categoryId": "data-acquisition",
+      "subcategoryId": "data-logger-gateway",
+      "category": "Data Acquisition",
+      "subcategory": "Data Logger & Gateway",
+      "image": "/images/products/data-acquisition-monitoring-cloud/data-acquisition-gateway.jpg",
+      "imageAlt": "Data acquisition gateway and monitoring cloud platform hardware",
+      "href": "/products/data-acquisition/data-acquisition-monitoring-cloud",
+      "summary": "Data acquisition gateway and monitoring cloud system for LoRa networking, vibrating-wire acquisition, dashboards, alarms, and API integration.",
+      "keywords": [
+        "data acquisition gateway",
+        "geotechnical monitoring cloud",
+        "LoRa monitoring gateway"
+      ],
+      "updatedAt": "2026-07-17"
     }
   ]
 }

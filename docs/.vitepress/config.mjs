@@ -4,7 +4,7 @@ const siteUrl = 'https://soilcreate.com'
 const siteName = 'SoilCreate'
 const defaultDescription =
   'Advanced geotechnical monitoring instruments and precision sensor systems for global engineering projects.'
-const defaultImage = `${siteUrl}/images/hero/bridge-hero.png`
+const defaultImage = `${siteUrl}/images/shared/hero/bridge-infrastructure-hero.jpg`
 const logoImage = `${siteUrl}/images/logo/site-icon.png`
 
 const routeFromPage = (page) => {
@@ -40,7 +40,7 @@ const breadcrumbSchema = (canonical, pageTitle) => {
   let currentPath = ''
   segments.forEach((segment, index) => {
     currentPath += `/${segment}`
-    const itemPath = segment === 'case-studies' && index === 0 ? '/case-study' : currentPath
+    const itemPath = segment === 'case-studies' && index === 0 ? '/solution' : currentPath
     items.push({
       '@type': 'ListItem',
       position: index + 2,

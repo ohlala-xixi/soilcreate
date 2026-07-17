@@ -1,7 +1,3 @@
-<script setup>
-import { openInquiry } from '../utils/inquiry.js'
-</script>
-
 <template>
   <section class="sc-trust-slogan">
     <h2>"Your Trusted Partner For Geotechnical And Structural Monitoring Solutions"</h2>
@@ -52,10 +48,4 @@ import { openInquiry } from '../utils/inquiry.js'
     </div>
   </section>
 
-  <section class="sc-cta-banner">
-    <div class="sc-cta-text">
-      Talk to our experts today about the right instrumentation, data systems, and cloud solutions for your next project.
-    </div>
-    <button type="button" class="sc-btn-cta" @click="openInquiry('General Inquiry')">GET IN TOUCH</button>
-  </section>
 </template>

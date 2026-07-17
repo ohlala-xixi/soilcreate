@@ -1,5 +1,6 @@
 <script setup>
 import CompanyCapabilities from './CompanyCapabilities.vue'
+import HomeDataSections from './HomeDataSections.vue'
 </script>
 
 <template>
@@ -11,7 +12,13 @@ import CompanyCapabilities from './CompanyCapabilities.vue'
     </div>
   </section>
 
-  <CompanyCapabilities :show-authority="false" />
+  <CompanyCapabilities
+    :show-authority="false"
+    :show-manufacturer-block="true"
+    :show-technology-stack="true"
+  />
 
   <TrustSection />
+
+  <HomeDataSections :show-cta="false" />
 </template>

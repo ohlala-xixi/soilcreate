@@ -4,6 +4,7 @@ import catalog from '../data/products.json'
 import { openInquiry } from '../utils/inquiry.js'
 
 const activeFilter = ref('all')
+const openCategoryIds = ref(new Set(catalog.categories.map((category) => category.id)))
 
 const categoryCounts = computed(() => {
   const counts = { all: catalog.products.length }
@@ -23,16 +24,32 @@ const filteredProducts = computed(() => {
 
 const setFilter = (filterId) => {
   activeFilter.value = filterId
+  const parent = catalog.categories.find((category) => category.children?.some((child) => child.id === filterId))
+  if (parent) {
+    openCategoryIds.value = new Set([...openCategoryIds.value, parent.id])
+  }
+}
+
+const isCategoryOpen = (categoryId) => openCategoryIds.value.has(categoryId)
+
+const toggleCategory = (categoryId) => {
+  const next = new Set(openCategoryIds.value)
+  if (next.has(categoryId)) {
+    next.delete(categoryId)
+  } else {
+    next.add(categoryId)
+  }
+  openCategoryIds.value = next
 }
 </script>
 
 <template>
-  <main class="sc-container">
+  <main class="sc-container sc-products-page">
     <div class="sc-page-intro">
-      <h1>Geotechnical Monitoring Sensors</h1>
+      <h1>Products</h1>
       <p>
-        SoilCreate specializes in the supply of advanced geotechnical sensors and monitoring instruments,
-        ensuring maximum reliability for your critical projects.
+        Five categories, one complete monitoring chain — from deformation, settlement, stress and environment sensing
+        to data acquisition and software platform integration.
       </p>
     </div>
 
@@ -52,15 +69,26 @@ const setFilter = (filterId) => {
           </li>
 
           <li v-for="category in catalog.categories" :key="category.id" class="sc-has-submenu">
-            <button
-              class="sc-category-title"
-              :class="{ active: activeFilter === category.id }"
-              type="button"
-              @click="setFilter(category.id)"
-            >
-              {{ category.label }} ({{ categoryCounts[category.id] || 0 }})
-            </button>
-            <ul class="sc-submenu">
+            <div class="sc-category-row">
+              <button
+                class="sc-category-title"
+                :class="{ active: activeFilter === category.id }"
+                type="button"
+                @click="setFilter(category.id)"
+              >
+                {{ category.label }} ({{ categoryCounts[category.id] || 0 }})
+              </button>
+              <button
+                class="sc-category-toggle"
+                type="button"
+                :aria-expanded="isCategoryOpen(category.id)"
+                :aria-label="isCategoryOpen(category.id) ? 'Collapse category' : 'Expand category'"
+                @click="toggleCategory(category.id)"
+              >
+                {{ isCategoryOpen(category.id) ? '−' : '+' }}
+              </button>
+            </div>
+            <ul v-show="isCategoryOpen(category.id)" class="sc-submenu">
               <li v-for="child in category.children" :key="child.id">
                 <button
                   class="sc-sub-item"

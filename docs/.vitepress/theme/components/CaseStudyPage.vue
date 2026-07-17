@@ -26,7 +26,7 @@ const articles = [
     href: '/case-studies/automated-inclinometer-installation-troubleshooting-common-field-errors-and-fixes',
     categoryId: 'installation-troubleshooting',
     category: 'Installation & Troubleshooting',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Field technician checking automated inclinometer installation quality on a geotechnical monitoring site',
     summary: 'A practical troubleshooting guide for installation teams who need cleaner inclinometer data, fewer site returns, and faster commissioning.'
   },
@@ -35,7 +35,7 @@ const articles = [
     href: '/case-studies/automated-inclinometer-monitoring-system-from-sensor-data-to-cloud-alarms',
     categoryId: 'automation-monitoring-technology',
     category: 'Automation & Monitoring Technology',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Automated inclinometer monitoring system sending sensor data to a cloud alarm platform',
     summary: 'See how sensors, data loggers, telemetry, alarm rules, and cloud dashboards work together in a real monitoring workflow.'
   },
@@ -44,7 +44,7 @@ const articles = [
     href: '/case-studies/bridge-health-monitoring-system-what-to-track-from-construction-to-operation',
     categoryId: 'monitoring-applications',
     category: 'Monitoring Applications',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Bridge health monitoring system with sensors tracking deformation and structural response',
     summary: 'A field-focused guide to bridge monitoring points, sensor choices, alarm logic, and long-term maintenance data.'
   },
@@ -53,7 +53,7 @@ const articles = [
     href: '/case-studies/dam-safety-monitoring-system-how-seepage-deformation-rainfall-and-water-level-work-togethe',
     categoryId: 'monitoring-applications',
     category: 'Monitoring Applications',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Dam safety monitoring system combining seepage deformation rainfall and water level data',
     summary: 'A practical look at dam monitoring data streams and how teams use them together instead of reacting to one sensor alone.'
   },
@@ -62,7 +62,7 @@ const articles = [
     href: '/case-studies/deep-excavation-collapse-case-study-what-monitoring-failure-teaches-contractors',
     categoryId: 'case-studies-field-notes',
     category: 'Solutions & Field Notes',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Infrastructure bridge project representing deep excavation and geotechnical monitoring risk control',
     summary: 'A practical field note on how linked monitoring data, alarm rules, and data quality checks help contractors interpret deep excavation movement before risks escalate.'
   },
@@ -71,7 +71,7 @@ const articles = [
     href: '/case-studies/deep-excavation-horizontal-displacement-monitoring-warning-signs',
     categoryId: 'data-alarms-risk-warning',
     category: 'Data, Alarms & Risk Warning',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Deep excavation horizontal displacement monitoring chart showing early warning signs',
     summary: 'Learn what abnormal lateral movement can look like before a deep excavation turns into a site emergency.'
   },
@@ -80,7 +80,7 @@ const articles = [
     href: '/case-studies/deep-excavation-horizontal-displacement-monitoring-strut-force-settlement-groundwater',
     categoryId: 'data-alarms-risk-warning',
     category: 'Data, Alarms & Risk Warning',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Deep excavation monitoring dashboard comparing displacement strut force settlement and groundwater',
     summary: 'A guide to reading excavation movement together with strut force, settlement, and groundwater instead of judging one curve in isolation.'
   },
@@ -89,7 +89,7 @@ const articles = [
     href: '/case-studies/deep-excavation-monitoring-alarm-values-why-cumulative-movement-and-rate-both-matter',
     categoryId: 'data-alarms-risk-warning',
     category: 'Data, Alarms & Risk Warning',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Deep excavation monitoring alarm thresholds comparing cumulative movement and displacement rate',
     summary: 'A clear explanation of how alarm values work and why both total displacement and movement speed matter on site.'
   },
@@ -98,7 +98,7 @@ const articles = [
     href: '/case-studies/flexible-inclinometer-specification-guide-for-geotechnical-monitoring-procurement',
     categoryId: 'distributor-procurement-insights',
     category: 'Distributor & Procurement Insights',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Flexible inclinometer specification sheet for geotechnical monitoring procurement teams',
     summary: 'A buyer-friendly checklist for accuracy, range, temperature stability, communication, installation, and long-term service.'
   },
@@ -107,7 +107,7 @@ const articles = [
     href: '/case-studies/flexible-inclinometer-vs-traditional-inclinometer',
     categoryId: 'product-guides',
     category: 'Product Guides',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Flexible inclinometer compared with traditional inclinometer casing and probe monitoring',
     summary: 'Compare flexible array systems and traditional inclinometer probes by workflow, risk, labor, data frequency, and life-cycle cost.'
   },
@@ -116,7 +116,7 @@ const articles = [
     href: '/case-studies/inclinometer-operation-and-error-control-a-field-guide-for-reliable-readings',
     categoryId: 'installation-troubleshooting',
     category: 'Installation & Troubleshooting',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Field engineer controlling inclinometer reading errors during geotechnical monitoring',
     summary: 'A field guide for reducing reading noise, drift, casing issues, operator mistakes, and reporting errors.'
   },
@@ -125,7 +125,7 @@ const articles = [
     href: '/case-studies/inclinometer-selection-guide-deep-excavation-slope-dam-tunnel',
     categoryId: 'product-guides',
     category: 'Product Guides',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Inclinometer selection guide for excavation slope dam and tunnel monitoring projects',
     summary: 'Choose the right inclinometer setup by project risk, installation conditions, data frequency, and procurement priorities.'
   },
@@ -134,7 +134,7 @@ const articles = [
     href: '/case-studies/open-pit-mine-slope-monitoring-how-automation-reduces-inspection-blind-spots',
     categoryId: 'monitoring-applications',
     category: 'Monitoring Applications',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Open-pit mine slope monitoring system reducing inspection blind spots with automated sensors',
     summary: 'A practical monitoring plan for mine slopes where manual inspection alone can miss deep movement and fast-changing risk.'
   },
@@ -143,7 +143,7 @@ const articles = [
     href: '/case-studies/slope-monitoring-system-how-deep-displacement-rainfall-and-groundwater-work-together',
     categoryId: 'monitoring-applications',
     category: 'Monitoring Applications',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Slope monitoring system combining deep displacement rainfall and groundwater data',
     summary: 'Understand how slope monitoring teams connect movement, rainfall, groundwater, and alarm rules into one risk picture.'
   },
@@ -152,7 +152,7 @@ const articles = [
     href: '/case-studies/soilcreate-inclinometer-selection-guide-for-different-geotechnical-projects',
     categoryId: 'distributor-procurement-insights',
     category: 'Distributor & Procurement Insights',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'SoilCreate inclinometer selection guide for contractors distributors and monitoring service companies',
     summary: 'A procurement guide for matching SoilCreate inclinometer options to site risk, budget, installation limits, and service needs.'
   },
@@ -161,7 +161,7 @@ const articles = [
     href: '/case-studies/tunnel-monitoring-system-how-to-track-convergence-and-rock-mass-stability-over-time',
     categoryId: 'monitoring-applications',
     category: 'Monitoring Applications',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Tunnel monitoring system tracking convergence deformation and rock mass stability',
     summary: 'A site-ready guide to tunnel convergence, crown settlement, surrounding rock response, and automated alarm workflows.'
   },
@@ -170,7 +170,7 @@ const articles = [
     href: '/case-studies/what-is-a-3d-flexible-displacement-array-saa-a-practical-guide',
     categoryId: 'inclinometer-basics',
     category: 'Inclinometer Basics',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: '3D flexible displacement array SAA used for automated geotechnical deformation monitoring',
     summary: 'A plain-English guide to SAA systems, how they measure shape and displacement, and where they fit in geotechnical monitoring.'
   },
@@ -179,7 +179,7 @@ const articles = [
     href: '/case-studies/what-is-a-geotechnical-inclinometer-types-uses-monitoring-value',
     categoryId: 'inclinometer-basics',
     category: 'Inclinometer Basics',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Geotechnical inclinometer types and monitoring value for lateral ground movement',
     summary: 'A simple guide to inclinometer types, common applications, and why lateral movement data matters for project risk control.'
   },
@@ -188,7 +188,7 @@ const articles = [
     href: '/case-studies/what-is-an-in-place-inclinometer-ipi-a-practical-guide-for-geotechnical-monitoring',
     categoryId: 'inclinometer-basics',
     category: 'Inclinometer Basics',
-    image: '/images/hero/bridge-hero.png',
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'In-place inclinometer IPI installed for continuous geotechnical monitoring',
     summary: 'Learn how IPI systems work, when they beat manual readings, and what buyers should check before procurement.'
   }

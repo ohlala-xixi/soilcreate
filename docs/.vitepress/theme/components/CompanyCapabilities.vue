@@ -11,8 +11,150 @@ defineProps({
   showServices: {
     type: Boolean,
     default: true
+  },
+  showScaleProof: {
+    type: Boolean,
+    default: false
+  },
+  showManufacturerBlock: {
+    type: Boolean,
+    default: false
+  },
+  showTechnologyStack: {
+    type: Boolean,
+    default: false
+  },
+  primaryActionLabel: {
+    type: String,
+    default: 'Products'
+  },
+  primaryActionHref: {
+    type: String,
+    default: '/products/'
   }
 })
+
+const scaleMetrics = [
+  { value: '20,000+', label: 'In-place inclinometer annual measurement points' },
+  { value: '50,000+', label: 'Flexible inclinometer annual measurement points' },
+  { value: '5,000+', label: 'Sliding inclinometers sold cumulatively' },
+  { value: '300 m', label: 'Ultra-deep borehole capability proven in high-risk projects' }
+]
+
+const projectAreas = [
+  {
+    title: 'Rail Transit',
+    copy: 'Tunnel portals, metro lines, retaining structures, and borehole deformation monitoring.',
+    image: '/images/case/rail-transit/rail-transit-hero.jpg',
+    href: '/case/rail-transit'
+  },
+  {
+    title: 'Water & Hydropower',
+    copy: 'Dam safety monitoring, reservoir slopes, seepage-linked deformation, and long-term displacement data.',
+    image: '/images/case/water-dam/water-dam-hero.jpg',
+    href: '/case/water-dam'
+  },
+  {
+    title: 'Bridge & Tunnel',
+    copy: 'Structural response, tunnel convergence, slope movement, and construction-stage risk control.',
+    image: '/images/case/bridge-structure/bridge-structure-hero.jpg',
+    href: '/case/bridge-structure'
+  },
+  {
+    title: 'Geohazard & Pipelines',
+    copy: 'Landslide movement, pipeline corridor risk, and early-warning monitoring across remote sites.',
+    image: '/images/case/slope-landslide/geohazard-pipeline-monitoring.jpg',
+    href: '/case/slope-landslide'
+  },
+  {
+    title: 'Major Energy Projects',
+    copy: 'Long-term deep-displacement monitoring for demanding coastal, power, and infrastructure sites.',
+    image: '/images/case/major-energy/major-energy-projects.jpg',
+    href: '/case/water-dam'
+  },
+  {
+    title: 'Deep Foundation Pits',
+    copy: 'Automated retaining-structure monitoring through the full excavation process.',
+    image: '/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg',
+    href: '/case/deep-foundation-pit'
+  }
+]
+
+const manufacturerAdvantages = [
+  {
+    index: '01',
+    title: 'Full-Stack In-House R&D',
+    copy: 'Sensors, acquisition devices, communications, cloud platform and AI analytics — all five core modules developed in-house. End-to-end control, no black-box dependence.'
+  },
+  {
+    index: '02',
+    title: 'World-Leading Accuracy · High-Value Pricing',
+    copy: 'SoilCreate delivers world-leading measurement accuracy with practical, high-value pricing for large-scale engineering monitoring projects.'
+  },
+  {
+    index: '03',
+    title: 'Monitoring-as-a-Service',
+    copy: 'Standardized products plus an integrator ecosystem: we focus on technology R&D while empowering partners to deliver projects rapidly — a win-win division of labor.'
+  }
+]
+
+const technologyLayers = [
+  {
+    step: '01 / Sensing',
+    title: 'Sensing Layer',
+    points: ['MEMS high-precision sensing', 'RS485 bus / AutoID addressing', 'Segmented assembly / LoRa wireless']
+  },
+  {
+    step: '02 / Edge',
+    title: 'Acquisition Layer',
+    points: ['Smart gateway / VW acquisition', 'Edge computing + filtering', 'Breakpoint-resume / event-triggered reporting']
+  },
+  {
+    step: '03 / Network',
+    title: 'Network Layer',
+    points: ['4G/5G/NB-IoT all-carrier', 'MQTT / TCP / HTTP', 'LoRa ad-hoc networking']
+  },
+  {
+    step: '04 / Cloud',
+    title: 'Cloud Layer',
+    points: ['Microservices architecture', 'GIS/BIM 3D visualization', 'Tiered alerts / multi-project management']
+  },
+  {
+    step: '05 / AI',
+    title: 'AI Layer',
+    points: ['Neural-network safety assessment', 'Kalman / sidereal-day filtering', 'Machine-vision defect recognition']
+  }
+]
+
+const servicePhases = [
+  {
+    index: '01',
+    title: 'Solution Design',
+    copy: 'Needs analysis, sensor selection, point layout and system design — aligned with project geology and monitoring codes.'
+  },
+  {
+    index: '02',
+    title: 'Equipment Supply',
+    copy: 'Standard products from stock with fast response on customization; every unit ships with a QC factory report and calibration certificate.'
+  },
+  {
+    index: '03',
+    title: 'Technical Training',
+    copy: 'On-site installation guidance, remote technical support and dedicated partner enablement training.'
+  },
+  {
+    index: '04',
+    title: 'Ongoing O&M',
+    copy: 'Cloud-hosted O&M, remote device-status monitoring, and periodic data-analysis reports.'
+  }
+]
+
+const serviceMetrics = [
+  { value: '48 h', label: 'Standard-Product Shipping' },
+  { value: '7×24', label: 'Remote Technical Support' },
+  { value: '1 yr+', label: 'Warranty Period' },
+  { value: '∞', label: 'Lifetime Cloud Account' }
+]
 </script>
 
 <template>
@@ -46,6 +188,22 @@ defineProps({
           <a v-if="showAuthority" href="/about" class="sc-company-profile-link">Learn more about us <span aria-hidden="true">-></span></a>
         </div>
 
+        <div v-if="showManufacturerBlock" class="sc-manufacturer-block">
+          <div class="sc-data-kicker">Capability</div>
+          <h3>More Than a Sensor Manufacturer</h3>
+          <p>
+            We deliver a complete closed loop from front-end sensing to intelligent decision-making.
+          </p>
+
+          <div class="sc-manufacturer-grid">
+            <article v-for="item in manufacturerAdvantages" :key="item.title" class="sc-manufacturer-card">
+              <span>{{ item.index }}</span>
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.copy }}</p>
+            </article>
+          </div>
+        </div>
+
         <div class="sc-company-profile-showcase">
           <div class="sc-company-profile-points">
             <article>
@@ -68,7 +226,7 @@ defineProps({
           </div>
 
           <div class="sc-company-profile-media">
-            <img src="/images/hero/bridge-hero.png" alt="Engineering site for geotechnical monitoring and project support">
+            <img src="/images/case/rail-transit/rail-transit-hero.jpg" alt="Rail transit infrastructure project for geotechnical and structural monitoring">
           </div>
         </div>
       </div>
@@ -111,9 +269,83 @@ defineProps({
           </article>
         </div>
 
+        <div v-if="showTechnologyStack" class="sc-tech-stack">
+          <div class="sc-data-kicker">Technology</div>
+          <h3>Cloud-Edge-Device, Fully Self-Developed</h3>
+          <p>
+            Five layers, one proprietary system — from MEMS sensing to neural-network safety assessment.
+          </p>
+
+          <div class="sc-tech-layer-grid">
+            <article v-for="layer in technologyLayers" :key="layer.title" class="sc-tech-layer-card">
+              <span>{{ layer.step }}</span>
+              <h4>{{ layer.title }}</h4>
+              <ul>
+                <li v-for="point in layer.points" :key="point">{{ point }}</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="sc-tech-band">
+            FULL-CHAIN PROPRIETARY IP | NO BLACK-BOX DEPENDENCE | FULL DATA SOVEREIGNTY
+          </div>
+        </div>
+
+        <div v-if="showTechnologyStack" class="sc-service-system">
+          <div class="sc-data-kicker">Service System</div>
+          <h3>Full-Lifecycle Technical Support</h3>
+          <p>Four phases of service, from project kickoff through long-term operation and maintenance.</p>
+
+          <div class="sc-service-phase-grid">
+            <article v-for="phase in servicePhases" :key="phase.title" class="sc-service-phase-card">
+              <span>{{ phase.index }}</span>
+              <h4>{{ phase.title }}</h4>
+              <p>{{ phase.copy }}</p>
+            </article>
+          </div>
+
+          <div class="sc-service-metric-grid">
+            <article v-for="metric in serviceMetrics" :key="metric.label" class="sc-service-metric-card">
+              <strong>{{ metric.value }}</strong>
+              <p>{{ metric.label }}</p>
+            </article>
+          </div>
+        </div>
+
+        <div v-if="showScaleProof" class="sc-company-scale">
+          <div class="sc-data-kicker">Market Data</div>
+          <h2>Proven at Scale</h2>
+          <p class="sc-data-lede">
+            These are not lab figures. They are monitoring points running continuously in real projects,
+            every year.
+          </p>
+
+          <div class="sc-scale-grid">
+            <article v-for="item in scaleMetrics" :key="item.label" class="sc-scale-card">
+              <strong>{{ item.value }}</strong>
+              <p>{{ item.label }}</p>
+            </article>
+          </div>
+
+          <div class="sc-project-grid">
+            <a
+              v-for="project in projectAreas"
+              :key="project.title"
+              class="sc-project-card"
+              :href="project.href"
+              :style="{ backgroundImage: `linear-gradient(180deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.84)), url('${project.image}')` }"
+            >
+              <div>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.copy }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <div class="sc-company-services-actions">
-          <a href="/products/" class="sc-company-services-button">Products</a>
-          <a href="/case-study" class="sc-company-services-button">Solutions</a>
+          <a :href="primaryActionHref" class="sc-company-services-button">{{ primaryActionLabel }}</a>
+          <a href="/solution" class="sc-company-services-button">Solutions</a>
         </div>
       </div>
     </div>

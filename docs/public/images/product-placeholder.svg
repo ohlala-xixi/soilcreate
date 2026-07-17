@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-label="Product placeholder">
-  <rect width="900" height="640" fill="#f5f6f7"/>
-  <rect x="110" y="92" width="680" height="456" rx="18" fill="#fff" stroke="#dfe3e6"/>
-  <path d="M445 150h90v250h-90z" fill="#3A474E"/>
-  <path d="M475 118h30v72h-30zM475 400h30v112h-30z" fill="#F25C22"/>
-  <path d="M535 190c70 28 105 78 105 150" fill="none" stroke="#888A8D" stroke-width="16" stroke-linecap="round"/>
-  <text x="450" y="585" fill="#3A474E" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">SoilCreate Product Image</text>
-</svg>

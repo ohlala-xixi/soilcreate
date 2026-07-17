@@ -20,6 +20,7 @@ const normalizedSpecs = computed(() =>
     value: item.value || ''
   }))
 )
+const metricHighlights = computed(() => frontmatter.value.metricHighlights || frontmatter.value.metrics || [])
 const normalizedDownloads = computed(() => {
   const downloads = frontmatter.value.downloads || []
   if (downloads.length) {
@@ -51,13 +52,23 @@ const normalizedRelatedProducts = computed(() =>
 )
 const normalizedCaseStudies = computed(() =>
   (frontmatter.value.relatedCaseStudies || frontmatter.value.caseStudies || []).map((item) => ({
-    title: item.title || item.label || 'Solutions',
-    href: item.href || item.link || '/case-study',
-    category: item.category || item.projectType || 'Solutions',
+    title: item.title || item.label || 'Case Study',
+    href: item.href || item.link || '/case',
+    category: item.category || item.projectType || 'Case',
     summary: item.summary || item.description || 'See how SoilCreate instruments support real engineering projects.',
     image: item.image || '',
     imageAlt: item.imageAlt || item.title || item.label || 'SoilCreate case study'
-  }))
+  })).slice(0, 4)
+)
+const normalizedSolutions = computed(() =>
+  (frontmatter.value.relatedSolutions || []).map((item) => ({
+    title: item.title || item.label || 'Solution',
+    href: item.href || item.link || '/solution',
+    category: item.category || 'Solution',
+    summary: item.summary || item.description || 'Explore related SoilCreate monitoring applications and technical guidance.',
+    image: item.image || '',
+    imageAlt: item.imageAlt || item.title || item.label || 'SoilCreate solution'
+  })).slice(0, 4)
 )
 </script>
 
@@ -107,8 +118,16 @@ const normalizedCaseStudies = computed(() =>
       </div>
     </section>
 
+    <section v-if="metricHighlights.length" class="sc-pdp-metrics" aria-label="Key product metrics">
+      <div v-for="metric in metricHighlights" :key="metric.label + metric.value" class="sc-pdp-metric-card">
+        <div class="sc-pdp-metric-value">{{ metric.value }}</div>
+        <div class="sc-pdp-metric-label">{{ metric.label }}</div>
+      </div>
+    </section>
+
     <section class="sc-section sc-overview-section">
       <h2 class="sc-section-title">Product Overview</h2>
+      <h3 v-if="frontmatter.overviewHeading" class="sc-overview-heading">{{ frontmatter.overviewHeading }}</h3>
       <div class="sc-overview-content">
         <Content />
       </div>
@@ -173,9 +192,23 @@ const normalizedCaseStudies = computed(() =>
     </section>
 
     <section v-if="normalizedCaseStudies.length" class="sc-section">
-      <h2 class="sc-section-title">Related Solutions</h2>
+      <h2 class="sc-section-title">Related Case</h2>
       <div class="sc-related-grid sc-case-related-grid">
         <a v-for="item in normalizedCaseStudies" :key="item.href" :href="item.href" class="sc-related-card sc-case-related-card">
+          <div class="sc-related-img sc-case-related-img">
+            <img v-if="item.image" :src="item.image" :alt="item.imageAlt" width="480" height="300" loading="lazy" decoding="async" />
+            <span v-else>{{ item.category }}</span>
+          </div>
+          <div class="sc-related-title">{{ item.title }}</div>
+          <div class="sc-related-sku">{{ item.summary }}</div>
+        </a>
+      </div>
+    </section>
+
+    <section v-if="normalizedSolutions.length" class="sc-section">
+      <h2 class="sc-section-title">Related Solutions</h2>
+      <div class="sc-related-grid sc-case-related-grid">
+        <a v-for="item in normalizedSolutions" :key="item.href" :href="item.href" class="sc-related-card sc-case-related-card">
           <div class="sc-related-img sc-case-related-img">
             <img v-if="item.image" :src="item.image" :alt="item.imageAlt" width="480" height="300" loading="lazy" decoding="async" />
             <span v-else>{{ item.category }}</span>

@@ -64,7 +64,8 @@ const submitSubscribe = async () => {
         <ul>
           <li><a href="/about">About</a></li>
           <li><a href="/products/">All Products</a></li>
-          <li><a href="/case-study">Solutions</a></li>
+          <li><a href="/case">Case</a></li>
+          <li><a href="/solution">Solutions</a></li>
         </ul>
       </div>
 

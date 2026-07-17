@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420" role="img" aria-label="Industrial factory background">
-  <rect width="1440" height="420" fill="#3A474E"/>
-  <path d="M0 305h1440v115H0z" fill="#2f3a40"/>
-  <path d="M110 280h210v40H110zM360 230h120v90H360zM530 195h160v125H530zM745 250h260v70H745zM1060 210h180v110h-180z" fill="#52616a"/>
-  <path d="M0 292h1440" stroke="#F25C22" stroke-width="8" opacity=".9"/>
-  <path d="M140 160h1080" stroke="#77838a" stroke-width="14" opacity=".5"/>
-  <path d="M180 160v130M360 160v130M540 160v130M720 160v130M900 160v130M1080 160v130" stroke="#77838a" stroke-width="8" opacity=".5"/>
-</svg>

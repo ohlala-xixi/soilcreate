@@ -1,8 +1,11 @@
 <script setup>
 import CompanyCapabilities from './CompanyCapabilities.vue'
+import HomeDataSections from './HomeDataSections.vue'
 import catalog from '../data/products.json'
 
-const hotProducts = catalog.products.filter((product) => product.categoryId === 'inclinometers').slice(0, 3)
+const hotProducts = catalog.products
+  .filter((product) => ['in-place-inclinometer', 'shape-array', 'sliding-inclinometer'].includes(product.subcategoryId))
+  .slice(0, 3)
 </script>
 
 <template>
@@ -25,7 +28,7 @@ const hotProducts = catalog.products.filter((product) => product.categoryId === 
     <span>✓ IP68 EXTREME DURABILITY</span>
   </div>
 
-  <CompanyCapabilities :show-profile="false" :show-services="false" />
+  <CompanyCapabilities class="sc-home-authority-block" :show-profile="false" :show-services="false" />
 
   <section class="sc-categories">
     <div class="sc-section-title">
@@ -51,7 +54,16 @@ const hotProducts = catalog.products.filter((product) => product.categoryId === 
     </div>
   </section>
 
-  <CompanyCapabilities :show-authority="false" :show-profile="false" />
+  <CompanyCapabilities
+    class="sc-home-work-block"
+    :show-authority="false"
+    :show-profile="false"
+    :show-scale-proof="true"
+    primary-action-label="Case"
+    primary-action-href="/case"
+  />
 
   <TrustSection />
+
+  <HomeDataSections />
 </template>

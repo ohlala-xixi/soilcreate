@@ -63,8 +63,8 @@ const parseFrontmatter = (content) => {
 
 const sitemapHints = (route) => {
   if (route === '/') return { changefreq: 'weekly', priority: '1.0' }
-  if (route === '/products/' || route === '/case-study') return { changefreq: 'weekly', priority: '0.9' }
-  if (route.startsWith('/products/') || route.startsWith('/case-studies/')) {
+  if (route === '/products/' || route === '/case' || route === '/solution') return { changefreq: 'weekly', priority: '0.9' }
+  if (route.startsWith('/products/') || route.startsWith('/case/') || route.startsWith('/case-studies/')) {
     return { changefreq: 'monthly', priority: '0.8' }
   }
   return { changefreq: 'monthly', priority: '0.7' }

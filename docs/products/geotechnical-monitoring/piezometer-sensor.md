@@ -4,7 +4,7 @@ title: 4-20mA Piezometer Sensor
 description: Vibrating wire and current-output piezometer options for pore water pressure and groundwater monitoring in geotechnical projects.
 category: Piezometers
 model: SC-PZ-420
-image: /images/product-placeholder.svg
+image: /images/shared/placeholders/product-placeholder.svg
 imageAlt: 4-20mA piezometer sensor product image
 specPdf: /specs/piezometer-sensor-spec.pdf
 head:
@@ -48,8 +48,21 @@ relatedCaseStudies:
     href: "/case-studies/deep-excavation-collapse-case-study-what-monitoring-failure-teaches-contractors"
     category: "Case Studies & Field Notes"
     summary: "How linked monitoring data, alarm rules, and field context help contractors interpret deep excavation movement before risks escalate."
-    image: "/images/hero/bridge-hero.png"
+    image: "/images/shared/hero/bridge-infrastructure-hero.jpg"
     imageAlt: "Infrastructure project representing deep excavation monitoring risk control"
+relatedSolutions:
+  - title: "Deep Excavation Monitoring with Strut Force and Groundwater"
+    href: "/case-studies/deep-excavation-horizontal-displacement-monitoring-strut-force-settlement-groundwater"
+    category: "Monitoring Applications"
+    summary: "Read excavation displacement together with support force, settlement, and groundwater data."
+    image: "/images/shared/hero/bridge-infrastructure-hero.jpg"
+    imageAlt: "Infrastructure project representing groundwater and excavation monitoring"
+  - title: "Dam Safety Monitoring System"
+    href: "/case-studies/dam-safety-monitoring-system-how-seepage-deformation-rainfall-and-water-level-work-togethe"
+    category: "Monitoring Applications"
+    summary: "How seepage, deformation, rainfall, and water level data work together in dam monitoring."
+    image: "/images/shared/hero/bridge-infrastructure-hero.jpg"
+    imageAlt: "Dam infrastructure project representing water pressure monitoring"
 ---
 
 ## Procurement notes

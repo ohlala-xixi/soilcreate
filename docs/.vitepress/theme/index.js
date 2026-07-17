@@ -10,6 +10,9 @@ import ContactPage from './components/ContactPage.vue'
 import AboutPage from './components/AboutPage.vue'
 import HomePage from './components/HomePage.vue'
 import CaseStudyPage from './components/CaseStudyPage.vue'
+import ImportedCasePage from './components/ImportedCasePage.vue'
+import ImportedProductPage from './components/ImportedProductPage.vue'
+import HomeDataSections from './components/HomeDataSections.vue'
 
 export default {
   ...DefaultTheme,
@@ -24,6 +27,8 @@ export default {
     app.component('AboutPage', AboutPage)
     app.component('HomePage', HomePage)
     app.component('CaseStudyPage', CaseStudyPage)
+    app.component('ImportedCasePage', ImportedCasePage)
+    app.component('ImportedProductPage', ImportedProductPage)
+    app.component('HomeDataSections', HomeDataSections)
   }
 }
-
