@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import InquiryForm from './InquiryForm.vue'
+import TechnologyStack from './TechnologyStack.vue'
 import catalog from '../data/products.json'
 import { importedProducts } from '../data/importedProducts.js'
 import { rasberProductPages } from '../data/rasberProductPages.js'
@@ -14,6 +15,20 @@ const props = defineProps({
 
 const item = computed(() => importedProducts[props.product])
 const rawHtml = computed(() => rasberProductPages[props.product] || '')
+const dataChainSectionPattern =
+  /<!-- ====== CLOUD-EDGE-DEVICE DATA CHAIN ====== -->\n<section>[\s\S]*?<div class="arch-banner reveal">FULL-CHAIN IN-HOUSE R&amp;D&nbsp;&nbsp;\|&nbsp;&nbsp;NO BLACK-BOX DEPENDENCE&nbsp;&nbsp;\|&nbsp;&nbsp;FULL DATA SOVEREIGNTY<\/div>\n  <\/div>\n<\/section>\n/
+const usesSharedTechnologyStack = computed(
+  () => props.product === 'data-acquisition-monitoring-cloud' && dataChainSectionPattern.test(rawHtml.value)
+)
+const rawHtmlBeforeTechnologyStack = computed(() => {
+  if (!usesSharedTechnologyStack.value) return rawHtml.value
+  return rawHtml.value.split(dataChainSectionPattern)[0] || rawHtml.value
+})
+const rawHtmlAfterTechnologyStack = computed(() => {
+  if (!usesSharedTechnologyStack.value) return ''
+  const parts = rawHtml.value.split(dataChainSectionPattern)
+  return parts.length > 1 ? parts.slice(1).join('') : ''
+})
 const productByHref = computed(() => Object.fromEntries(catalog.products.map((product) => [product.href, product])))
 const currentHrefByKey = {
   'sliding-inclinometer': '/products/deformation-monitoring/sliding-inclinometer',
@@ -216,7 +231,13 @@ const relatedCases = computed(() => {
 <template>
   <main v-if="item" class="sc-rasber-product-page">
     <div class="sc-rasber-shell">
-      <div v-html="rawHtml"></div>
+      <div v-html="rawHtmlBeforeTechnologyStack"></div>
+      <section v-if="usesSharedTechnologyStack" class="sc-rasber-tech-section">
+        <div class="container">
+          <TechnologyStack />
+        </div>
+      </section>
+      <div v-if="usesSharedTechnologyStack" v-html="rawHtmlAfterTechnologyStack"></div>
     </div>
 
     <div class="sc-container sc-pdp-page sc-rasber-soilcreate-tail">

@@ -156,24 +156,7 @@ export default defineConfig({
   themeConfig: {
     siteTitle: siteName,
     nav: [],
-    sidebar: {
-      '/products/': [
-        {
-          text: 'Product Catalog',
-          items: [
-            { text: 'Overview', link: '/products/' },
-            {
-              text: 'Inclinometer Sensor',
-              link: '/products/geotechnical-monitoring/inclinometer-sensor'
-            },
-            {
-              text: 'Piezometer Sensor',
-              link: '/products/geotechnical-monitoring/piezometer-sensor'
-            }
-          ]
-        }
-      ]
-    },
+    sidebar: {},
     socialLinks: [],
     footer: false
   },

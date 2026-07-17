@@ -1,0 +1,447 @@
+{
+  "generatedAt": "2026-07-17T11:17:09.023Z",
+  "moved": [
+    {
+      "oldUrl": "/images/about/facility.svg",
+      "newUrl": "/images/about/facility.svg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/factory-bridge-placeholder.svg",
+      "newUrl": "/images/shared/placeholders/factory-bridge-placeholder.svg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/hero/about-hero.svg",
+      "newUrl": "/images/about/about-hero.svg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/hero/bridge-hero.png",
+      "newUrl": "/images/shared/hero/bridge-infrastructure-hero.png",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/hero/case-study-hero.svg",
+      "newUrl": "/images/case/index/case-study-hero.svg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/hero/home-hero.svg",
+      "newUrl": "/images/home/home-hero.svg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/product-placeholder.svg",
+      "newUrl": "/images/shared/placeholders/product-placeholder.svg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/products/flexible-inclinometer.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/flexible-inclinometer-product.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/products/high-precision-sliding-inclinometer.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/high-precision-sliding-inclinometer-product.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/products/in-place-inclinometer-ipi.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/in-place-inclinometer-ipi-product.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/cases/case-bridge.jpg",
+      "newUrl": "/images/case/bridge-structure/bridge-structure-hero.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/cases/case-dam.jpg",
+      "newUrl": "/images/case/water-dam/water-dam-hero.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/cases/case-excavation.jpg",
+      "newUrl": "/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/cases/case-nuclear-clean.jpg",
+      "newUrl": "/images/case/major-energy/major-energy-clean.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/cases/case-nuclear.jpg",
+      "newUrl": "/images/case/major-energy/major-energy-projects.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/cases/case-oil.jpg",
+      "newUrl": "/images/case/slope-landslide/geohazard-pipeline-monitoring.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/cases/case-rail.jpg",
+      "newUrl": "/images/case/rail-transit/rail-transit-hero.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-sliding-system.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/sliding-inclinometer-system.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-in-place-fixed-inclinometer.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-saa.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/flexible-inclinometer-shape-array.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-gnss-station.jpg",
+      "newUrl": "/images/products/gnss-monitoring-system/gnss-monitoring-station.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-hydrostatic.jpg",
+      "newUrl": "/images/products/hydrostatic-level-gauge/hydrostatic-level-gauge-product.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-tiltmeter.jpg",
+      "newUrl": "/images/products/tiltmeter-series/tiltmeter-product.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-wireless-tilt-vibration.jpg",
+      "newUrl": "/images/products/wireless-tilt-vibration/wireless-tilt-vibration-sensor.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-vw-stressmeter-20260710.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-stressmeter.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-products/prod-daq-gateway.jpg",
+      "newUrl": "/images/products/data-acquisition-monitoring-cloud/data-acquisition-gateway.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-sliding-system.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/sliding-inclinometer-system.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/sliding-auto-mode-system-20260710.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/sliding-auto-mode-system.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/sliding-detail-guide-wheels.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/sliding-detail-guide-wheels.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/sliding-detail-probe-body.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/sliding-detail-probe-body.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/sliding-detail-reel-probe.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/sliding-detail-reel-probe.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-sliding-casing.jpg",
+      "newUrl": "/images/products/sliding-inclinometer/sliding-inclinometer-casing.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-in-place-fixed-inclinometer.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-ipi-bundle.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/in-place-inclinometer-bundle.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-ipi-string.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/in-place-inclinometer-string.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/ipi-casing-schematic.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/ipi-casing-schematic.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/ipi-rope-clamps.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/ipi-rope-clamps.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/ipi-string-full.jpg",
+      "newUrl": "/images/products/in-place-inclinometer/ipi-string-full.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-saa.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/flexible-inclinometer-shape-array.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-saa-segments.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/flexible-inclinometer-segments.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/saa-casing-deformation.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/saa-casing-deformation.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/saa-convergence-monitoring.svg",
+      "newUrl": "/images/products/flexible-inclinometer/saa-convergence-monitoring.svg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/saa-displacement-profile.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/saa-displacement-profile.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/saa-reel-rack.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/saa-reel-rack.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/saa-structure-folded.jpg",
+      "newUrl": "/images/products/flexible-inclinometer/saa-structure-folded.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-gnss.jpg",
+      "newUrl": "/images/products/gnss-monitoring-system/gnss-monitoring-receiver.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-gnss-station.jpg",
+      "newUrl": "/images/products/gnss-monitoring-system/gnss-monitoring-station.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gnss-receiver-base.jpg",
+      "newUrl": "/images/products/gnss-monitoring-system/gnss-receiver-base.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gnss-station-ridge.jpg",
+      "newUrl": "/images/products/gnss-monitoring-system/gnss-station-ridge.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gnss-station-slope.jpg",
+      "newUrl": "/images/products/gnss-monitoring-system/gnss-station-slope.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gnss-station-solar.jpg",
+      "newUrl": "/images/products/gnss-monitoring-system/gnss-station-solar.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-hydrostatic.jpg",
+      "newUrl": "/images/products/hydrostatic-level-gauge/hydrostatic-level-gauge-product.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-level-gauge.jpg",
+      "newUrl": "/images/products/hydrostatic-level-gauge/hydrostatic-level-gauge-device.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-piezometer.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-piezometer.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-probe.jpg",
+      "newUrl": "/images/products/hydrostatic-level-gauge/water-level-probe.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-transducer.jpg",
+      "newUrl": "/images/products/hydrostatic-level-gauge/water-level-transducer.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gal-settle-dam.jpg",
+      "newUrl": "/images/products/hydrostatic-level-gauge/dam-settlement-monitoring.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gal-settle-metro.jpg",
+      "newUrl": "/images/home/monitoring-consultation-cta.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gal-settle-pit.jpg",
+      "newUrl": "/images/products/hydrostatic-level-gauge/foundation-pit-settlement-monitoring.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-tiltmeter.jpg",
+      "newUrl": "/images/products/tiltmeter-series/tiltmeter-product.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gal-tilt-bridge.jpg",
+      "newUrl": "/images/about/bridge-monitoring-hero.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gal-tilt-construction.jpg",
+      "newUrl": "/images/products/tiltmeter-series/building-tilt-monitoring.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/gal-tilt-unit.jpg",
+      "newUrl": "/images/products/tiltmeter-series/tiltmeter-unit.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/rwin030-fft-output.jpg",
+      "newUrl": "/images/products/wireless-tilt-vibration/wireless-vibration-fft-output.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-wireless-tilt-vibration.jpg",
+      "newUrl": "/images/products/wireless-tilt-vibration/wireless-tilt-vibration-sensor.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-vw-field.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-field-cabinet.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-vw-rebar-stressmeter-20260710.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-rebar-stressmeter.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-vw-stressmeter-20260710.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-stressmeter.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-vw-surface-strain-gauge-20260710.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-surface-strain-gauge.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/vw-field-cabinet.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-acquisition-cabinet.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/vw-piezometer-probe.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-piezometer-probe.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/vw-terminal-wiring.jpg",
+      "newUrl": "/images/products/vibrating-wire-sensors/vibrating-wire-terminal-wiring.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/prod-daq-gateway.jpg",
+      "newUrl": "/images/products/data-acquisition-monitoring-cloud/data-acquisition-gateway.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/scene-city-day.jpg",
+      "newUrl": "/images/home/monitoring-cloud-city.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/scene-city-day-20260710.jpg",
+      "newUrl": "/images/products/data-acquisition-monitoring-cloud/monitoring-cloud-city.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/case-rail.jpg",
+      "newUrl": "/images/case/rail-transit/rail-transit-hero.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/case-dam.jpg",
+      "newUrl": "/images/case/water-dam/water-dam-hero.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/case-bridge.jpg",
+      "newUrl": "/images/case/bridge-structure/bridge-structure-hero.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/case-oil.jpg",
+      "newUrl": "/images/case/slope-landslide/geohazard-pipeline-monitoring.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/case-nuclear.jpg",
+      "newUrl": "/images/case/major-energy/major-energy-projects.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/case-nuclear-clean.jpg",
+      "newUrl": "/images/case/major-energy/major-energy-clean.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/case-excavation.jpg",
+      "newUrl": "/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg",
+      "status": "deduplicated"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/hero-city.jpg",
+      "newUrl": "/images/solution/solution-hero-city.jpg",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/iso-city.png",
+      "newUrl": "/images/solution/iso-city-platform.png",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/logo-full-navy.png",
+      "newUrl": "/images/shared/legacy-logo/logo-full-navy.png",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/logo-full-white.png",
+      "newUrl": "/images/shared/legacy-logo/logo-full-white.png",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/logo-mark-navy.png",
+      "newUrl": "/images/shared/legacy-logo/logo-mark-navy.png",
+      "status": "moved"
+    },
+    {
+      "oldUrl": "/images/rasber-product-pages/logo-mark-white.png",
+      "newUrl": "/images/shared/legacy-logo/logo-mark-white.png",
+      "status": "moved"
+    }
+  ],
+  "changedFiles": 43,
+  "archived": []
+}

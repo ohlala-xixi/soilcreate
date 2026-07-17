@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  
+  <meta name="robots" content="noindex,nofollow,noarchive" /><meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SoilCreate Product Markdown Generator</title>
   <style>
@@ -43,7 +44,7 @@
         <div class="form-group"><label for="mainCat">Primary Category</label><select id="mainCat" onchange="updateSubCategories()"></select></div>
         <div class="form-group"><label for="subCat">Secondary Category</label><select id="subCat" onchange="generateMarkdown()"></select></div>
       </div>
-      <div class="form-group"><label for="slug">Recommended File Name</label><input type="text" id="slug" placeholder="sc-pz-420.md" oninput="generateMarkdown()" /><div class="hint">Save the generated content as this .md file under docs/products/geotechnical-monitoring/.</div></div>
+      <div class="form-group"><label for="slug">Recommended File Name</label><input type="text" id="slug" placeholder="sc-pz-420.md" oninput="generateMarkdown()" /><div class="hint">Save the generated content as this .md file under docs/products/deformation-monitoring/.</div></div>
       <div class="form-group"><label for="description">Meta Description / Hero Description</label><textarea id="description" rows="3" placeholder="Short product summary for SEO and hero section" oninput="generateMarkdown()"></textarea></div>
       <div class="form-grid">
         <div class="form-group"><label for="image">Image Path</label><input type="text" id="image" value="/images/shared/placeholders/product-placeholder.svg" oninput="generateMarkdown()" /></div>
