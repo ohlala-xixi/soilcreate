@@ -53,5 +53,5 @@ You may contact us to request correction or removal of your business contact inf
 
 For privacy-related questions, contact:
 
-- Email: sophia@kstpropack.com
+- Email: sales@soilcreate.com
 - WhatsApp: +86 15356046033

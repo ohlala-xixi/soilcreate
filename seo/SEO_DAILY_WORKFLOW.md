@@ -290,13 +290,13 @@ Case study detail template:
 
 Existing case study Markdown files:
 
-- `docs/case-studies/sydney-metro-tunnel.md`
-- `docs/case-studies/norway-hydro-dam.md`
+- `docs/solutions/sydney-metro-tunnel.md`
+- `docs/solutions/norway-hydro-dam.md`
 
 When adding a new case study:
 
 1. Use the case study generator.
-2. Save the generated `.md` under `docs/case-studies/`.
+2. Save the generated `.md` under `docs/solutions/`.
 3. Link the case study from relevant products using `relatedCaseStudies`.
 4. If it should appear on the case study listing page, update `docs/.vitepress/theme/components/CaseStudyPage.vue`.
 
@@ -345,7 +345,7 @@ Create these folders as the site grows:
 
 ```text
 docs/public/images/products/
-docs/public/images/case-studies/
+docs/public/images/solutions/
 docs/public/images/factory/
 docs/public/images/certificates/
 docs/public/specs/
@@ -367,13 +367,13 @@ imageAlt: MEMS in-place inclinometer sensor for tunnel and slope monitoring
 Recommended case study image path:
 
 ```text
-docs/public/images/case-studies/sydney-metro-tunnel-monitoring.jpg
+docs/public/images/solutions/sydney-metro-tunnel-monitoring.jpg
 ```
 
 Use in Markdown:
 
 ```yaml
-image: /images/case-studies/sydney-metro-tunnel-monitoring.jpg
+image: /images/solutions/sydney-metro-tunnel-monitoring.jpg
 imageAlt: Tunnel excavation monitoring with in-place inclinometers and piezometers
 ```
 
@@ -421,10 +421,10 @@ related:
     sku: "SC-PZ-420"
 relatedCaseStudies:
   - title: "Sydney Metro Underground Excavation"
-    href: "/case-studies/sydney-metro-tunnel"
+    href: "/solutions/sydney-metro-tunnel"
     category: "Tunnels"
     summary: "Automated deformation and pore pressure monitoring during tunnel excavation."
-    image: "/images/case-studies/sydney-metro-tunnel-monitoring.jpg"
+    image: "/images/solutions/sydney-metro-tunnel-monitoring.jpg"
     imageAlt: "Tunnel excavation monitoring case study"
 ---
 
@@ -454,7 +454,7 @@ category: "Tunnels"
 location: "Sydney, Australia"
 projectType: "Underground excavation monitoring"
 monitoringScope: "Ground movement, pore water pressure, and structural stability"
-image: "/images/case-studies/sydney-metro-tunnel-monitoring.jpg"
+image: "/images/solutions/sydney-metro-tunnel-monitoring.jpg"
 imageAlt: "Tunnel excavation monitoring with SoilCreate geotechnical instruments"
 challenge: "Describe the engineering risk and monitoring problem."
 solution: "Describe the SoilCreate instruments and monitoring workflow."

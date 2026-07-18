@@ -63,12 +63,12 @@ const organizationSchema = {
   name: siteName,
   url: siteUrl,
   logo: logoImage,
-  email: 'sophia@kstpropack.com',
+  email: 'sales@soilcreate.com',
   contactPoint: [
     {
       '@type': 'ContactPoint',
       contactType: 'sales',
-      email: 'sophia@kstpropack.com',
+      email: 'sales@soilcreate.com',
       telephone: '+86-153-5604-6033',
       availableLanguage: ['English', 'Chinese']
     }

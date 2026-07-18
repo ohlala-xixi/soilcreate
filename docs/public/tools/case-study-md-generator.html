@@ -33,7 +33,7 @@
 <body>
   <div class="wrapper">
     <h1>Soil<span>Create</span> Case Study MD Generator</h1>
-    <div class="subtitle">Generate VitePress case study Markdown. Save the output under docs/case-studies/ as a .md file.</div>
+    <div class="subtitle">Generate VitePress case study Markdown. Save the output under docs/solutions/ as a .md file.</div>
 
     <form id="mdForm">
       <div class="form-grid">
@@ -154,7 +154,7 @@ function generateMarkdown() {
   md += '## Project Challenge\n\n' + (challenge || 'Describe the project challenge and site condition.') + '\n\n';
   md += '## SoilCreate Solution\n\n' + (solution || 'Describe the SoilCreate equipment, installation approach, and support scope.') + '\n\n';
   md += '## Result\n\n' + (result || 'Describe the result, measured improvement, or client benefit.') + '\n';
-  md += '\n<!-- Suggested file path: docs/case-studies/' + fileName + ' -->\n';
+  md += '\n<!-- Suggested file path: docs/solutions/' + fileName + ' -->\n';
 
   document.getElementById('codeArea').textContent = md;
 }

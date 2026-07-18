@@ -16,6 +16,7 @@ import HomeDataSections from './HomeDataSections.vue'
     :show-authority="false"
     :show-manufacturer-block="true"
     :show-technology-stack="true"
+    :show-engineering-capability="true"
   />
 
   <TrustSection />

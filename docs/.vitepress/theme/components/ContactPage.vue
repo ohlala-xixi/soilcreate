@@ -12,7 +12,7 @@
           <div class="sc-icon">✉️</div>
           <div class="sc-info-content">
             <strong>Email Enquiries</strong>
-            <a href="mailto:sophia@kstpropack.com" @click="trackEvent('email_click', { location: 'contact_page' })">sophia@kstpropack.com</a>
+            <a href="mailto:sales@soilcreate.com" @click="trackEvent('email_click', { location: 'contact_page' })">sales@soilcreate.com</a>
           </div>
         </div>
         <div class="sc-info-item">

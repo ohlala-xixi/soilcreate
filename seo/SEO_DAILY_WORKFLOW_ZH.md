@@ -300,14 +300,14 @@ Case Study 详情页模板：
 
 现有 Case Study Markdown 文件：
 
-- `docs/case-studies/sydney-metro-tunnel.md`
-- `docs/case-studies/norway-hydro-dam.md`
+- `docs/solutions/sydney-metro-tunnel.md`
+- `docs/solutions/norway-hydro-dam.md`
 
 新增 Case Study 流程：
 
 1. 用 Case Study 生成器生成 Markdown。
 2. 把 `.md` 文件保存到：
-   - `docs/case-studies/`
+   - `docs/solutions/`
 3. 在相关产品页里用 `relatedCaseStudies` 关联这个案例。
 4. 如果要显示在 Case Study 列表页，更新：
    - `docs/.vitepress/theme/components/CaseStudyPage.vue`
@@ -357,7 +357,7 @@ TrustSection CTA 背景图：
 
 ```text
 docs/public/images/products/
-docs/public/images/case-studies/
+docs/public/images/solutions/
 docs/public/images/factory/
 docs/public/images/certificates/
 docs/public/specs/
@@ -379,13 +379,13 @@ imageAlt: MEMS in-place inclinometer sensor for tunnel and slope monitoring
 Case Study 图片示例：
 
 ```text
-docs/public/images/case-studies/sydney-metro-tunnel-monitoring.jpg
+docs/public/images/solutions/sydney-metro-tunnel-monitoring.jpg
 ```
 
 Case Study Markdown 中这样填写：
 
 ```yaml
-image: /images/case-studies/sydney-metro-tunnel-monitoring.jpg
+image: /images/solutions/sydney-metro-tunnel-monitoring.jpg
 imageAlt: Tunnel excavation monitoring with in-place inclinometers and piezometers
 ```
 
@@ -433,10 +433,10 @@ related:
     sku: "SC-PZ-420"
 relatedCaseStudies:
   - title: "Sydney Metro Underground Excavation"
-    href: "/case-studies/sydney-metro-tunnel"
+    href: "/solutions/sydney-metro-tunnel"
     category: "Tunnels"
     summary: "Automated deformation and pore pressure monitoring during tunnel excavation."
-    image: "/images/case-studies/sydney-metro-tunnel-monitoring.jpg"
+    image: "/images/solutions/sydney-metro-tunnel-monitoring.jpg"
     imageAlt: "Tunnel excavation monitoring case study"
 ---
 
@@ -466,7 +466,7 @@ category: "Tunnels"
 location: "Sydney, Australia"
 projectType: "Underground excavation monitoring"
 monitoringScope: "Ground movement, pore water pressure, and structural stability"
-image: "/images/case-studies/sydney-metro-tunnel-monitoring.jpg"
+image: "/images/solutions/sydney-metro-tunnel-monitoring.jpg"
 imageAlt: "Tunnel excavation monitoring with SoilCreate geotechnical instruments"
 challenge: "Describe the engineering risk and monitoring problem."
 solution: "Describe the SoilCreate instruments and monitoring workflow."

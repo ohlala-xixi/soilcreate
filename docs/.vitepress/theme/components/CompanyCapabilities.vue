@@ -1,5 +1,6 @@
 <script setup>
 import TechnologyStack from './TechnologyStack.vue'
+import EngineeringCapability from './EngineeringCapability.vue'
 
 defineProps({
   showAuthority: {
@@ -26,6 +27,10 @@ defineProps({
     type: Boolean,
     default: false
   },
+  showEngineeringCapability: {
+    type: Boolean,
+    default: false
+  },
   primaryActionLabel: {
     type: String,
     default: 'Products'
@@ -37,10 +42,10 @@ defineProps({
 })
 
 const scaleMetrics = [
-  { value: '20,000+', label: 'In-place inclinometer annual measurement points' },
-  { value: '50,000+', label: 'Flexible inclinometer annual measurement points' },
-  { value: '5,000+', label: 'Sliding inclinometers sold cumulatively' },
-  { value: '300 m', label: 'Ultra-deep borehole capability proven in high-risk projects' }
+  { value: '20,000+', label: 'IPI monitoring points in active projects annually' },
+  { value: '50,000+', label: 'Flexible inclinometer monitoring points in active projects annually' },
+  { value: '5,000+ units', label: 'Sliding inclinometers delivered to date' },
+  { value: 'Up to 300 m', label: 'Field-proven borehole monitoring depth' }
 ]
 
 const projectAreas = [
@@ -48,37 +53,37 @@ const projectAreas = [
     title: 'Rail Transit',
     copy: 'Tunnel portals, metro lines, retaining structures, and borehole deformation monitoring.',
     image: '/images/case/rail-transit/rail-transit-hero.jpg',
-    href: '/case/rail-transit'
+    href: '/cases/rail-transit'
   },
   {
     title: 'Water & Hydropower',
     copy: 'Dam safety monitoring, reservoir slopes, seepage-linked deformation, and long-term displacement data.',
     image: '/images/case/water-dam/water-dam-hero.jpg',
-    href: '/case/water-dam'
+    href: '/cases/water-dam'
   },
   {
     title: 'Bridge & Tunnel',
     copy: 'Structural response, tunnel convergence, slope movement, and construction-stage risk control.',
     image: '/images/case/bridge-structure/bridge-structure-hero.jpg',
-    href: '/case/bridge-structure'
+    href: '/cases/bridge-structure'
   },
   {
     title: 'Geohazard & Pipelines',
     copy: 'Landslide movement, pipeline corridor risk, and early-warning monitoring across remote sites.',
     image: '/images/case/slope-landslide/geohazard-pipeline-monitoring.jpg',
-    href: '/case/slope-landslide'
+    href: '/cases/slope-landslide'
   },
   {
     title: 'Major Energy Projects',
     copy: 'Long-term deep-displacement monitoring for demanding coastal, power, and infrastructure sites.',
     image: '/images/case/major-energy/major-energy-projects.jpg',
-    href: '/case/water-dam'
+    href: '/cases/water-dam'
   },
   {
     title: 'Deep Foundation Pits',
     copy: 'Automated retaining-structure monitoring through the full excavation process.',
     image: '/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg',
-    href: '/case/deep-foundation-pit'
+    href: '/cases/deep-foundation-pit'
   }
 ]
 
@@ -162,6 +167,8 @@ const serviceMetrics = [
           <a v-if="showAuthority" href="/about" class="sc-company-profile-link">Learn more about us <span aria-hidden="true">-></span></a>
         </div>
 
+        <EngineeringCapability v-if="showEngineeringCapability" />
+
         <div v-if="showManufacturerBlock" class="sc-manufacturer-block">
           <div class="sc-data-kicker">Capability</div>
           <h3>More Than a Sensor Manufacturer</h3>
@@ -243,6 +250,8 @@ const serviceMetrics = [
           </article>
         </div>
 
+        <EngineeringCapability v-if="showEngineeringCapability && !showProfile" />
+
         <TechnologyStack v-if="showTechnologyStack" />
 
         <div v-if="showTechnologyStack" class="sc-service-system">
@@ -267,11 +276,10 @@ const serviceMetrics = [
         </div>
 
         <div v-if="showScaleProof" class="sc-company-scale">
-          <div class="sc-data-kicker">Market Data</div>
+          <div class="sc-data-kicker">FIELD PERFORMANCE</div>
           <h2>Proven at Scale</h2>
           <p class="sc-data-lede">
-            These are not lab figures. They are monitoring points running continuously in real projects,
-            every year.
+            Real-world deployment, not just specifications.
           </p>
 
           <div class="sc-scale-grid">
@@ -299,7 +307,7 @@ const serviceMetrics = [
 
         <div class="sc-company-services-actions">
           <a :href="primaryActionHref" class="sc-company-services-button">{{ primaryActionLabel }}</a>
-          <a href="/solution" class="sc-company-services-button">Solutions</a>
+          <a href="/solutions/" class="sc-company-services-button">Solutions</a>
         </div>
       </div>
     </div>

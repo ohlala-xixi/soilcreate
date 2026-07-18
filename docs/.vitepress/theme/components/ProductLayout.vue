@@ -53,8 +53,8 @@ const normalizedRelatedProducts = computed(() =>
 const normalizedCaseStudies = computed(() =>
   (frontmatter.value.relatedCaseStudies || frontmatter.value.caseStudies || []).map((item) => ({
     title: item.title || item.label || 'Case Study',
-    href: item.href || item.link || '/case',
-    category: item.category || item.projectType || 'Case',
+    href: item.href || item.link || '/cases',
+    category: item.category || item.projectType || 'Cases',
     summary: item.summary || item.description || 'See how SoilCreate instruments support real engineering projects.',
     image: item.image || '',
     imageAlt: item.imageAlt || item.title || item.label || 'SoilCreate case study'
@@ -63,7 +63,7 @@ const normalizedCaseStudies = computed(() =>
 const normalizedSolutions = computed(() =>
   (frontmatter.value.relatedSolutions || []).map((item) => ({
     title: item.title || item.label || 'Solution',
-    href: item.href || item.link || '/solution',
+    href: item.href || item.link || '/solutions/',
     category: item.category || 'Solution',
     summary: item.summary || item.description || 'Explore related SoilCreate monitoring applications and technical guidance.',
     image: item.image || '',
@@ -192,7 +192,7 @@ const normalizedSolutions = computed(() =>
     </section>
 
     <section v-if="normalizedCaseStudies.length" class="sc-section">
-      <h2 class="sc-section-title">Related Case</h2>
+      <h2 class="sc-section-title">Related Cases</h2>
       <div class="sc-related-grid sc-case-related-grid">
         <a v-for="item in normalizedCaseStudies" :key="item.href" :href="item.href" class="sc-related-card sc-case-related-card">
           <div class="sc-related-img sc-case-related-img">

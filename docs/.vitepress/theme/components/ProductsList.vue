@@ -44,15 +44,18 @@ const toggleCategory = (categoryId) => {
 </script>
 
 <template>
-  <main class="sc-container sc-products-page">
-    <div class="sc-page-intro">
+  <div class="sc-products-hero">
+    <div class="sc-products-hero-inner">
       <h1>Products</h1>
+      <div class="sc-heading-line"></div>
       <p>
-        Five categories, one complete monitoring chain — from deformation, settlement, stress and environment sensing
+        Five categories, one complete monitoring chain from deformation, settlement, stress and environment sensing
         to data acquisition and software platform integration.
       </p>
     </div>
+  </div>
 
+  <main class="sc-container sc-products-page">
     <div class="sc-catalog-layout">
       <aside class="sc-sidebar" aria-label="Product categories">
         <div class="sc-sidebar-header">Product Categories</div>

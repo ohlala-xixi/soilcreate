@@ -10,15 +10,15 @@ const navItems = [
   { label: 'Home', href: '/', match: '/' },
   { label: 'About', href: '/about', match: '/about' },
   { label: 'Products', href: '/products/', match: '/products/' },
-  { label: 'Case', href: '/case', match: '/case' },
-  { label: 'Solutions', href: '/solution', match: '/solution' },
+  { label: 'Cases', href: '/cases', match: '/cases' },
+  { label: 'Solutions', href: '/solutions/', match: '/solutions/' },
   { label: 'Contact', href: '/contact', match: '/contact' }
 ]
 
 const isActive = (item) => {
   if (item.match === '/') return route.path === '/'
-  if (item.match === '/case') return route.path === '/case' || route.path.startsWith('/case/')
-  if (item.match === '/solution') return route.path === '/solution'
+  if (item.match === '/cases') return route.path === '/cases' || route.path.startsWith('/cases/')
+  if (item.match === '/solutions/') return route.path === '/solutions/' || route.path.startsWith('/solutions/')
   return route.path.startsWith(item.match)
 }
 </script>

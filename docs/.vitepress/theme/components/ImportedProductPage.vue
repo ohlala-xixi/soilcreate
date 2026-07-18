@@ -46,15 +46,15 @@ const defaultRelatedCases = {
   deformation: [
     {
       title: 'Deep Foundation Pit Monitoring Cases',
-      href: '/case/deep-foundation-pit',
-      category: 'Industry Case',
+      href: '/cases/deep-foundation-pit',
+      category: 'Industry Cases',
       image: '/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg',
       summary: 'Deep excavation monitoring workflows with displacement, support force, groundwater, and alarms.'
     },
     {
       title: 'Slope and Landslide Monitoring Cases',
-      href: '/case/slope-landslide',
-      category: 'Industry Case',
+      href: '/cases/slope-landslide',
+      category: 'Industry Cases',
       image: '/images/case/slope-landslide/geohazard-pipeline-monitoring.jpg',
       summary: 'Deep movement, rainfall, groundwater, and GNSS data for slope risk warning.'
     }
@@ -62,15 +62,15 @@ const defaultRelatedCases = {
   settlement: [
     {
       title: 'Deep Foundation Pit Monitoring Cases',
-      href: '/case/deep-foundation-pit',
-      category: 'Industry Case',
+      href: '/cases/deep-foundation-pit',
+      category: 'Industry Cases',
       image: '/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg',
       summary: 'Settlement, displacement, support-force, groundwater, and cloud alarm workflows.'
     },
     {
       title: 'Rail Transit Monitoring Cases',
-      href: '/case/rail-transit',
-      category: 'Industry Case',
+      href: '/cases/rail-transit',
+      category: 'Industry Cases',
       image: '/images/case/rail-transit/rail-transit-hero.jpg',
       summary: 'Metro station and tunnel monitoring across construction and operation stages.'
     }
@@ -78,15 +78,15 @@ const defaultRelatedCases = {
   stress: [
     {
       title: 'Water Conservancy and Dam Monitoring Cases',
-      href: '/case/water-dam',
-      category: 'Industry Case',
+      href: '/cases/water-dam',
+      category: 'Industry Cases',
       image: '/images/case/water-dam/water-dam-hero.jpg',
       summary: 'Long-term deformation, seepage, settlement, and dam-safety monitoring workflows.'
     },
     {
       title: 'Deep Foundation Pit Monitoring Cases',
-      href: '/case/deep-foundation-pit',
-      category: 'Industry Case',
+      href: '/cases/deep-foundation-pit',
+      category: 'Industry Cases',
       image: '/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg',
       summary: 'Integrated excavation monitoring with displacement, force, groundwater, and warnings.'
     }
@@ -94,15 +94,15 @@ const defaultRelatedCases = {
   data: [
     {
       title: 'Deep Foundation Pit Monitoring Cases',
-      href: '/case/deep-foundation-pit',
-      category: 'Industry Case',
+      href: '/cases/deep-foundation-pit',
+      category: 'Industry Cases',
       image: '/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg',
       summary: 'Integrated monitoring workflows using sensors, gateways, and cloud alarms.'
     },
     {
       title: 'Slope and Landslide Monitoring Cases',
-      href: '/case/slope-landslide',
-      category: 'Industry Case',
+      href: '/cases/slope-landslide',
+      category: 'Industry Cases',
       image: '/images/case/slope-landslide/geohazard-pipeline-monitoring.jpg',
       summary: 'Slope monitoring with deformation, rainfall, groundwater, GNSS, and warnings.'
     }
@@ -113,14 +113,14 @@ const defaultRelatedSolutions = {
   deformation: [
     {
       title: 'Inclinometer Selection Guide',
-      href: '/case-studies/inclinometer-selection-guide-deep-excavation-slope-dam-tunnel',
+      href: '/solutions/inclinometer-selection-guide-deep-excavation-slope-dam-tunnel',
       category: 'Product Guide',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'Choose the right inclinometer setup by project risk, installation conditions, and data frequency.'
     },
     {
       title: 'Tunnel Monitoring System',
-      href: '/case-studies/tunnel-monitoring-system-how-to-track-convergence-and-rock-mass-stability-over-time',
+      href: '/solutions/tunnel-monitoring-system-how-to-track-convergence-and-rock-mass-stability-over-time',
       category: 'Monitoring Application',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'Track tunnel convergence, crown settlement, rock mass response, and automated alarms.'
@@ -129,14 +129,14 @@ const defaultRelatedSolutions = {
   settlement: [
     {
       title: 'Bridge Health Monitoring System',
-      href: '/case-studies/bridge-health-monitoring-system-what-to-track-from-construction-to-operation',
+      href: '/solutions/bridge-health-monitoring-system-what-to-track-from-construction-to-operation',
       category: 'Monitoring Application',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'Bridge monitoring points, sensor choices, alarm logic, and long-term maintenance data.'
     },
     {
       title: 'Tunnel Monitoring System',
-      href: '/case-studies/tunnel-monitoring-system-how-to-track-convergence-and-rock-mass-stability-over-time',
+      href: '/solutions/tunnel-monitoring-system-how-to-track-convergence-and-rock-mass-stability-over-time',
       category: 'Monitoring Application',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'Convergence, settlement, deformation, and alarm workflows for tunnel projects.'
@@ -145,14 +145,14 @@ const defaultRelatedSolutions = {
   stress: [
     {
       title: 'Dam Safety Monitoring System',
-      href: '/case-studies/dam-safety-monitoring-system-how-seepage-deformation-rainfall-and-water-level-work-togethe',
+      href: '/solutions/dam-safety-monitoring-system-how-seepage-deformation-rainfall-and-water-level-work-togethe',
       category: 'Monitoring Application',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'How seepage, deformation, rainfall, and water level data work together in dam monitoring.'
     },
     {
       title: 'Deep Excavation Monitoring with Strut Force and Groundwater',
-      href: '/case-studies/deep-excavation-horizontal-displacement-monitoring-strut-force-settlement-groundwater',
+      href: '/solutions/deep-excavation-horizontal-displacement-monitoring-strut-force-settlement-groundwater',
       category: 'Data & Alarms',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'Read excavation movement together with strut force, settlement, and groundwater data.'
@@ -161,28 +161,28 @@ const defaultRelatedSolutions = {
   data: [
     {
       title: 'Automated Inclinometer Monitoring System',
-      href: '/case-studies/automated-inclinometer-monitoring-system-from-sensor-data-to-cloud-alarms',
+      href: '/solutions/automated-inclinometer-monitoring-system-from-sensor-data-to-cloud-alarms',
       category: 'Automation & Monitoring Technology',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'How sensors, data loggers, telemetry, alarm rules, and cloud dashboards work together.'
     },
     {
       title: 'Deep Excavation Monitoring Alarm Values',
-      href: '/case-studies/deep-excavation-monitoring-alarm-values-why-cumulative-movement-and-rate-both-matter',
+      href: '/solutions/deep-excavation-monitoring-alarm-values-why-cumulative-movement-and-rate-both-matter',
       category: 'Data & Alarms',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'Why cumulative movement and rate both matter in monitoring alarm values.'
     },
     {
       title: 'Open-Pit Mine Slope Monitoring',
-      href: '/case-studies/open-pit-mine-slope-monitoring-how-automation-reduces-inspection-blind-spots',
+      href: '/solutions/open-pit-mine-slope-monitoring-how-automation-reduces-inspection-blind-spots',
       category: 'Monitoring Application',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'Automation reduces inspection blind spots in slope and mine monitoring.'
     },
     {
       title: 'Solutions',
-      href: '/solution',
+      href: '/solutions/',
       category: 'Solutions',
       image: '/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg',
       summary: 'Practical SoilCreate monitoring solutions for critical projects.'
@@ -274,12 +274,12 @@ const relatedCases = computed(() => {
       </section>
 
       <section v-if="relatedCases.length" class="sc-section">
-        <h2 class="sc-section-title">Related Case</h2>
+        <h2 class="sc-section-title">Related Cases</h2>
         <div class="sc-related-grid sc-case-related-grid">
           <a v-for="solution in relatedCases" :key="solution.href" :href="solution.href" class="sc-related-card sc-case-related-card">
             <div class="sc-related-img sc-case-related-img">
               <img v-if="solution.image" :src="solution.image" :alt="solution.imageAlt || solution.title" width="480" height="300" loading="lazy" decoding="async" />
-              <span v-else>{{ solution.category || 'Case' }}</span>
+              <span v-else>{{ solution.category || 'Cases' }}</span>
             </div>
             <div class="sc-related-title">{{ solution.title }}</div>
             <div class="sc-related-sku">{{ solution.summary }}</div>

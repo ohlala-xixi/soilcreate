@@ -45,5 +45,5 @@ SoilCreate is not liable for losses arising from misuse of website content, inco
 
 For questions about these terms, contact:
 
-- Email: sophia@kstpropack.com
+- Email: sales@soilcreate.com
 - WhatsApp: +86 15356046033
