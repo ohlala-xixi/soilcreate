@@ -7,11 +7,13 @@ import catalog from '../data/products.json'
 const heroSlides = [
   {
     image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
-    alt: 'Bridge infrastructure monitored with SoilCreate inclinometer systems'
+    alt: 'Bridge infrastructure monitored with SoilCreate inclinometer systems',
+    title: 'Your Inclinometer Specialist for Deep Ground Movement Monitoring'
   },
   {
     image: '/images/home/soilcreate-monitoring-instruments-hero.jpg',
-    alt: 'SoilCreate geotechnical monitoring instruments and data acquisition systems'
+    alt: 'SoilCreate geotechnical monitoring instruments and data acquisition systems',
+    title: '5 CATEGORIES · 30+ SENSOR MODELS · CLOUD-EDGE-DEVICE'
   }
 ]
 
@@ -72,7 +74,7 @@ const hotProducts = catalog.products
 
     <div class="sc-hero-inner">
       <h1>
-        <span>5 CATEGORIES · 30+ SENSOR MODELS · CLOUD-EDGE-DEVICE</span>
+        <span>{{ currentHeroSlide.title }}</span>
       </h1>
       <div class="sc-heading-line"></div>
       <div class="sc-hero-actions">

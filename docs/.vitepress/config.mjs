@@ -134,7 +134,7 @@ const schemaForPage = ({ frontmatter, canonical, pageTitle, pageDescription, ima
     schemas.push(organizationSchema, websiteSchema)
   }
 
-  if (frontmatter.layout === 'product') {
+  if (frontmatter.layout === 'product' || frontmatter.schemaType === 'product') {
     schemas.push(productSchema(frontmatter, canonical, pageTitle, pageDescription, image))
   }
 
