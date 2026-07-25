@@ -70,6 +70,8 @@ onBeforeUnmount(() => {
             :src="currentSlide.src"
             :alt="currentSlide.alt"
             :class="{ 'is-contained': currentSlide.fit === 'contain' }"
+            width="900"
+            height="680"
             loading="lazy"
             decoding="async"
           >
@@ -88,7 +90,16 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="sc-engineering-field-grid">
-          <img v-for="image in fieldImages" :key="image.src" :src="image.src" :alt="image.alt" loading="lazy" decoding="async">
+          <img
+            v-for="image in fieldImages"
+            :key="image.src"
+            :src="image.src"
+            :alt="image.alt"
+            width="360"
+            height="220"
+            loading="lazy"
+            decoding="async"
+          >
         </div>
       </div>
 

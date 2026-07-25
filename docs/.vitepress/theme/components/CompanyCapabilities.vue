@@ -207,7 +207,14 @@ const serviceMetrics = [
           </div>
 
           <div class="sc-company-profile-media">
-            <img src="/images/case/rail-transit/rail-transit-hero.jpg" alt="Rail transit infrastructure project for geotechnical and structural monitoring">
+            <img
+              src="/images/case/rail-transit/rail-transit-hero.jpg"
+              alt="Rail transit infrastructure project for geotechnical and structural monitoring"
+              width="640"
+              height="420"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </div>

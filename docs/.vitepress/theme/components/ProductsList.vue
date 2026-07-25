@@ -119,7 +119,15 @@ const toggleCategory = (categoryId) => {
         <div class="sc-grid">
           <article v-for="product in filteredProducts" :key="product.sku" class="sc-product-card">
             <a :href="product.href" class="sc-card-image">
-              <img v-if="product.image" :src="product.image" :alt="product.name" loading="lazy" />
+              <img
+                v-if="product.image"
+                :src="product.image"
+                :alt="product.imageAlt || product.name"
+                width="480"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              />
               <span v-else>[ Image: {{ product.name }} ]</span>
             </a>
             <div class="sc-card-sku">{{ product.sku }}</div>

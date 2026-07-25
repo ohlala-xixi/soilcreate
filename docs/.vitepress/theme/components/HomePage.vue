@@ -100,7 +100,14 @@ const hotProducts = catalog.products
     <div class="sc-grid">
       <a v-for="product in hotProducts" :key="product.sku" :href="product.href" class="sc-cat-card">
         <div class="sc-cat-img">
-          <img :src="product.image" :alt="product.name" loading="lazy" decoding="async">
+          <img
+            :src="product.image"
+            :alt="product.imageAlt || product.name"
+            width="480"
+            height="320"
+            loading="lazy"
+            decoding="async"
+          >
         </div>
         <div class="sc-cat-content">
           <h3>{{ product.name }}</h3>

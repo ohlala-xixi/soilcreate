@@ -63,7 +63,14 @@ const relatedArticles = computed(() => (frontmatter.value.relatedArticles || [])
     </header>
 
     <figure v-if="frontmatter.image" class="sc-article-cover">
-      <img :src="frontmatter.image" :alt="frontmatter.imageAlt || frontmatter.title" loading="lazy" decoding="async" />
+      <img
+        :src="frontmatter.image"
+        :alt="frontmatter.imageAlt || frontmatter.title"
+        width="1600"
+        height="700"
+        loading="lazy"
+        decoding="async"
+      />
       <figcaption>Featured image: {{ frontmatter.imageAlt || frontmatter.title }}</figcaption>
     </figure>
 

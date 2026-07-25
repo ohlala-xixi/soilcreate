@@ -40,7 +40,15 @@ const caseSections = computed(() => [
   <main class="sc-case-detail">
     <section class="sc-case-hero">
       <div class="sc-case-hero__media">
-        <img v-if="frontmatter.image" :src="frontmatter.image" :alt="frontmatter.imageAlt || frontmatter.title" />
+        <img
+          v-if="frontmatter.image"
+          :src="frontmatter.image"
+          :alt="frontmatter.imageAlt || frontmatter.title"
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        />
         <div v-else class="sc-case-placeholder">
           <div class="sc-case-placeholder__icon">⌂</div>
           <p>{{ frontmatter.imageAlt || frontmatter.title }}</p>

@@ -32,7 +32,7 @@ const isActive = (item) => {
   </div>
 
   <header class="sc-header">
-    <a href="/" class="sc-logo"><img src="/images/logo/soilcreate-icon.png" alt="SoilCreate icon" class="sc-logo-icon" />Soil<span>Create</span></a>
+    <a href="/" class="sc-logo"><img src="/images/logo/soilcreate-icon.png" alt="SoilCreate icon" class="sc-logo-icon" width="32" height="32" decoding="async" />Soil<span>Create</span></a>
     <nav class="sc-nav" aria-label="Primary navigation">
       <a
         v-for="item in navItems"

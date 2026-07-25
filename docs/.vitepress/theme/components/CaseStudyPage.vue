@@ -313,7 +313,14 @@ const submitSubscribe = async () => {
         <div v-if="filteredArticles.length" class="sc-cs-grid sc-cs-grid--sidebar">
           <a v-for="article in filteredArticles" :key="article.href" :href="article.href" class="sc-cs-card">
             <div class="sc-cs-img">
-              <img :src="article.image" :alt="article.imageAlt" loading="lazy" decoding="async">
+              <img
+                :src="article.image"
+                :alt="article.imageAlt"
+                width="480"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
               <span class="sc-cs-tag">{{ article.category }}</span>
             </div>
             <div class="sc-cs-content">
