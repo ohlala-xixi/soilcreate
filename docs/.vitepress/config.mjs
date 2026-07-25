@@ -161,6 +161,15 @@ export default defineConfig({
     footer: false
   },
   head: [
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-KBD5FBWBZK' }],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KBD5FBWBZK');`
+    ],
     [
       'script',
       {},
