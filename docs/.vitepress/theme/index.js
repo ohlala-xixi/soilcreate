@@ -1,4 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
+import { defineAsyncComponent } from 'vue'
 import './style.css'
 import Layout from './Layout.vue'
 import ProductCatalog from './components/ProductCatalog.vue'
@@ -30,5 +31,8 @@ export default {
     app.component('ImportedCasePage', ImportedCasePage)
     app.component('ImportedProductPage', ImportedProductPage)
     app.component('HomeDataSections', HomeDataSections)
+    if (import.meta.env.DEV) {
+      app.component('SiteManagerPage', defineAsyncComponent(() => import('./components/SiteManagerPage.vue')))
+    }
   }
 }

@@ -4,3 +4,7 @@ docs/.vitepress/dist/
 .DS_Store
 npm-debug.log*
 image-backups/
+docs/tools/
+local-tools/
+docs/.vitepress/theme/components/SiteManagerPage.vue
+PROJECT.md

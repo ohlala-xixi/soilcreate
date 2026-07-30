@@ -145,7 +145,7 @@ const defaultRelatedSolutions = {
   stress: [
     {
       title: 'Dam Safety Monitoring System',
-      href: '/solutions/dam-safety-monitoring-system-how-seepage-deformation-rainfall-and-water-level-work-togethe',
+      href: '/solutions/dam-safety-monitoring-system',
       category: 'Monitoring Application',
       image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
       summary: 'How seepage, deformation, rainfall, and water level data work together in dam monitoring.'
@@ -274,7 +274,7 @@ const relatedCases = computed(() => {
       </section>
 
       <section v-if="relatedCases.length" class="sc-section">
-        <h2 class="sc-section-title">Related Cases</h2>
+        <h2 class="sc-section-title">Applications &amp; Case Studies</h2>
         <div class="sc-related-grid sc-case-related-grid">
           <a v-for="solution in relatedCases" :key="solution.href" :href="solution.href" class="sc-related-card sc-case-related-card">
             <div class="sc-related-img sc-case-related-img">

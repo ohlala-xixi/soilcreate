@@ -8,6 +8,7 @@ import SeoArticleLayout from './components/SeoArticleLayout.vue'
 import InquiryModal from './components/InquiryModal.vue'
 import { onMounted, onUnmounted } from 'vue'
 import { openInquiry } from './utils/inquiry.js'
+import { initSmartInquiryTriggers } from './utils/smartInquiryTriggers.js'
 
 const { frontmatter } = useData()
 
@@ -17,12 +18,16 @@ const handleGlobalEnquiryClick = (event) => {
   openInquiry(target.dataset.product || 'General Inquiry')
 }
 
+let disposeSmartInquiryTriggers
+
 onMounted(() => {
   document.addEventListener('click', handleGlobalEnquiryClick)
+  disposeSmartInquiryTriggers = initSmartInquiryTriggers()
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleGlobalEnquiryClick)
+  disposeSmartInquiryTriggers?.()
 })
 </script>
 

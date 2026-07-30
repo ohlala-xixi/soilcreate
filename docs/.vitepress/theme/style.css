@@ -4780,3 +4780,349 @@ a { text-underline-offset: 3px; }
     font-size: 2.5rem;
   }
 }
+
+.sc-manager-hero {
+  background: linear-gradient(rgba(38, 50, 61, 0.82), rgba(38, 50, 61, 0.88)), url('/images/shared/hero/bridge-infrastructure-hero.jpg') center/cover;
+  color: #fff;
+  padding: 92px 0 86px;
+}
+
+.sc-manager-wrap {
+  width: min(calc(100% - (var(--sc-content-gutter) * 2)), var(--sc-content-width));
+  margin: 0 auto;
+}
+
+.sc-manager-kicker {
+  margin: 0 0 16px;
+  color: var(--sc-orange);
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.sc-manager-hero h1 {
+  max-width: 900px;
+  margin: 0 0 18px;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.sc-manager-hero p {
+  max-width: 780px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.14rem;
+  line-height: 1.75;
+}
+
+.sc-manager-section {
+  background: var(--sc-gray-light);
+  padding: 56px 0 86px;
+}
+
+.sc-manager-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.sc-manager-status > div,
+.sc-manager-panel,
+.sc-manager-products article,
+.sc-manager-file-list article {
+  border: 1px solid var(--sc-gray-border);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(38, 50, 61, 0.05);
+}
+
+.sc-manager-status > div {
+  padding: 18px 20px;
+}
+
+.sc-manager-status span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--sc-text-muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sc-manager-status strong {
+  color: var(--sc-dark);
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.sc-manager-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.sc-manager-tabs button {
+  border: 1px solid var(--sc-gray-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--sc-dark);
+  padding: 11px 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.sc-manager-tabs button.active,
+.sc-manager-tabs button:hover {
+  border-color: var(--sc-orange);
+  color: var(--sc-orange);
+}
+
+.sc-manager-panel {
+  padding: 26px;
+}
+
+.sc-manager-current-picker {
+  margin-bottom: 22px;
+  border: 1px solid rgba(217, 107, 58, 0.24);
+  border-radius: 8px;
+  background: rgba(217, 107, 58, 0.06);
+  padding: 18px;
+}
+
+.sc-manager-current-picker p {
+  margin: 10px 0 0;
+  color: var(--sc-text-muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.sc-manager-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.sc-manager-panel label {
+  display: block;
+  color: var(--sc-dark);
+  font-size: 0.94rem;
+  font-weight: 750;
+}
+
+.sc-manager-panel input,
+.sc-manager-panel select,
+.sc-manager-panel textarea {
+  width: 100%;
+  margin-top: 8px;
+  border: 1px solid #cfd7df;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--sc-dark);
+  padding: 12px 13px;
+}
+
+.sc-manager-panel input:focus,
+.sc-manager-panel select:focus,
+.sc-manager-panel textarea:focus {
+  outline: none;
+  border-color: var(--sc-orange);
+  box-shadow: 0 0 0 3px rgba(217, 107, 58, 0.12);
+}
+
+.sc-manager-full {
+  margin-top: 18px;
+}
+
+.sc-manager-output {
+  margin-top: 24px;
+  border: 1px solid var(--sc-gray-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sc-manager-output-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--sc-gray-border);
+  background: #fff;
+}
+
+.sc-manager-output-head h2 {
+  margin: 0;
+  color: var(--sc-dark);
+  font-size: 1.05rem;
+}
+
+.sc-manager-output-head button {
+  border: 1px solid var(--sc-orange);
+  border-radius: 6px;
+  background: var(--sc-orange);
+  color: #fff;
+  padding: 9px 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.sc-manager-output pre {
+  margin: 0;
+  padding: 18px;
+  background: #f8fafc;
+  color: var(--sc-dark);
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.sc-manager-products {
+  display: grid;
+  gap: 18px;
+}
+
+.sc-manager-products article {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 22px;
+  padding: 18px;
+}
+
+.sc-manager-products img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #f3f5f7;
+}
+
+.sc-manager-products h2 {
+  margin: 4px 0 8px;
+  color: var(--sc-dark);
+  font-size: 1.25rem;
+}
+
+.sc-manager-products p,
+.sc-manager-products span,
+.sc-manager-products small,
+.sc-manager-products li {
+  color: var(--sc-text-muted);
+  line-height: 1.6;
+}
+
+.sc-manager-products span {
+  display: block;
+  color: var(--sc-orange);
+  font-weight: 800;
+}
+
+.sc-manager-products small {
+  display: block;
+  margin: 8px 0 12px;
+  font-size: 0.95rem;
+}
+
+.sc-manager-products ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.sc-manager-products li {
+  border: 1px solid rgba(217, 107, 58, 0.22);
+  border-radius: 999px;
+  background: rgba(217, 107, 58, 0.08);
+  padding: 4px 10px;
+  color: var(--sc-dark);
+  font-size: 0.82rem;
+}
+
+.sc-manager-products a {
+  color: var(--sc-orange);
+  font-weight: 800;
+}
+
+.sc-manager-file-list {
+  display: grid;
+  gap: 14px;
+}
+
+.sc-manager-file-list article {
+  padding: 18px;
+}
+
+.sc-manager-file-list h2 {
+  margin: 0 0 8px;
+  color: var(--sc-dark);
+  font-size: 1.05rem;
+}
+
+.sc-manager-file-list p {
+  margin: 0 0 10px;
+  color: var(--sc-text-muted);
+}
+
+.sc-manager-file-list code {
+  display: block;
+  overflow-x: auto;
+  color: var(--sc-dark);
+  background: #f8fafc;
+  border: 1px solid var(--sc-gray-border);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.sc-manager-checklist {
+  display: grid;
+  gap: 14px;
+}
+
+.sc-manager-checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--sc-gray-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #fff;
+  color: var(--sc-dark);
+  line-height: 1.55;
+}
+
+.sc-manager-checklist input {
+  width: auto;
+  margin-top: 4px;
+  accent-color: var(--sc-orange);
+}
+
+.sc-manager-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  margin: 0;
+  border-radius: 6px;
+  background: var(--sc-dark);
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .sc-manager-status,
+  .sc-manager-grid,
+  .sc-manager-products article {
+    grid-template-columns: 1fr;
+  }
+
+  .sc-manager-panel {
+    padding: 18px;
+  }
+}

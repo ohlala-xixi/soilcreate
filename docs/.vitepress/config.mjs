@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 const siteUrl = 'https://soilcreate.com'
 const siteName = 'SoilCreate'
+const isProductionBuild = process.argv.includes('build')
 const defaultDescription =
   'Advanced geotechnical monitoring instruments and precision sensor systems for global engineering projects.'
 const defaultImage = `${siteUrl}/images/shared/hero/bridge-infrastructure-hero.jpg`
@@ -150,6 +151,7 @@ export default defineConfig({
   title: siteName,
   titleTemplate: ':title | SoilCreate',
   description: defaultDescription,
+  srcExclude: isProductionBuild ? ['tools/**'] : [],
   cleanUrls: true,
   lastUpdated: true,
   appearance: false,

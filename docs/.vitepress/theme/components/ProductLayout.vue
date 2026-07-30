@@ -192,7 +192,7 @@ const normalizedSolutions = computed(() =>
     </section>
 
     <section v-if="normalizedCaseStudies.length" class="sc-section">
-      <h2 class="sc-section-title">Related Cases</h2>
+      <h2 class="sc-section-title">Applications &amp; Case Studies</h2>
       <div class="sc-related-grid sc-case-related-grid">
         <a v-for="item in normalizedCaseStudies" :key="item.href" :href="item.href" class="sc-related-card sc-case-related-card">
           <div class="sc-related-img sc-case-related-img">

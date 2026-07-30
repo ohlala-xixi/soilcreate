@@ -11,13 +11,22 @@ const handleOpen = (event) => {
   document.documentElement.classList.add('sc-modal-open')
 }
 
-const close = () => {
+const close = ({ emitDismissed = true } = {}) => {
+  const wasOpen = open.value
   open.value = false
   document.documentElement.classList.remove('sc-modal-open')
+  if (wasOpen && emitDismissed) {
+    window.dispatchEvent(new CustomEvent('soilcreate:inquiry-dismissed'))
+  }
+}
+
+const handleSubmitted = () => {
+  window.dispatchEvent(new CustomEvent('soilcreate:inquiry-submitted'))
+  close({ emitDismissed: false })
 }
 
 const handleKeydown = (event) => {
-  if (event.key === 'Escape') close()
+  if (event.key === 'Escape' && open.value) close()
 }
 
 onMounted(() => {
@@ -38,7 +47,7 @@ onUnmounted(() => {
       <button class="sc-inquiry-modal__backdrop" type="button" aria-label="Close inquiry form" @click="close" />
       <div class="sc-inquiry-modal__panel">
         <button class="sc-inquiry-modal__close" type="button" aria-label="Close inquiry form" @click="close">×</button>
-        <InquiryForm :product-name="productName" compact @submitted="close" />
+        <InquiryForm :product-name="productName" compact @submitted="handleSubmitted" />
       </div>
     </div>
   </Teleport>

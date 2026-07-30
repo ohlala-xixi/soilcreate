@@ -50,7 +50,7 @@ const articles = [
   },
   {
     title: 'Dam Safety Monitoring System: How Seepage, Deformation, Rainfall, and Water Level Work Together',
-    href: '/solutions/dam-safety-monitoring-system-how-seepage-deformation-rainfall-and-water-level-work-togethe',
+    href: '/solutions/dam-safety-monitoring-system',
     categoryId: 'monitoring-applications',
     category: 'Monitoring Applications',
     image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
