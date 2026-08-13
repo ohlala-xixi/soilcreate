@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
 import { Content, useData } from 'vitepress'
 import { openInquiry } from '../utils/inquiry.js'
 
@@ -40,6 +40,27 @@ const relatedProducts = computed(() => {
   return products.length ? products : fallbackProducts
 })
 const relatedArticles = computed(() => (frontmatter.value.relatedArticles || []).slice(0, 4))
+
+const clearPreviewFocus = () => {
+  document.querySelectorAll('.seo-generator-focus').forEach((element) => element.classList.remove('seo-generator-focus'))
+}
+
+const focusPreviewModule = (event) => {
+  if (event.origin !== 'http://127.0.0.1:5173') return
+  if (event.data?.type !== 'soilcreate:focus-module') return
+  clearPreviewFocus()
+  const { moduleId, moduleType } = event.data
+  let target
+  if (moduleType === 'takeaways') target = document.querySelector('.sc-article-takeaways')
+  else if (moduleType === 'internalLinks') target = document.querySelector('.sc-article-final-cta')
+  else target = document.querySelector(`[data-seo-module="${CSS.escape(moduleId)}"]`)?.nextElementSibling
+  if (!target) return
+  target.classList.add('seo-generator-focus')
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+}
+
+onMounted(() => window.addEventListener('message', focusPreviewModule))
+onUnmounted(() => window.removeEventListener('message', focusPreviewModule))
 </script>
 
 <template>
@@ -74,7 +95,7 @@ const relatedArticles = computed(() => (frontmatter.value.relatedArticles || [])
       <figcaption>Featured image: {{ frontmatter.imageAlt || frontmatter.title }}</figcaption>
     </figure>
 
-    <section v-if="takeaways.length" class="sc-article-takeaways">
+    <section v-if="takeaways.length" class="sc-article-takeaways" data-seo-module="takeaways">
       <h2>Key Takeaways</h2>
       <ol>
         <li v-for="item in takeaways" :key="item">{{ item }}</li>

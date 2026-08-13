@@ -5,16 +5,60 @@ import TechnologyStack from './TechnologyStack.vue'
 import catalog from '../data/products.json'
 import { importedProducts } from '../data/importedProducts.js'
 import { rasberProductPages } from '../data/rasberProductPages.js'
+import { spanishProductCards, spanishProductPages } from '../data/spanish.js'
+import { spanishProductPageHtml } from '../data/spanishProductPageHtml.js'
 
 const props = defineProps({
   product: {
     type: String,
     required: true
+  },
+  locale: {
+    type: String,
+    default: 'en'
   }
 })
 
+const isSpanish = computed(() => props.locale === 'es')
 const item = computed(() => importedProducts[props.product])
-const rawHtml = computed(() => rasberProductPages[props.product] || '')
+const spanishItem = computed(() => spanishProductPages[props.product])
+const displayTitle = computed(() => (isSpanish.value && spanishItem.value?.title) || item.value?.title)
+const rawHtml = computed(() => {
+  if (isSpanish.value && spanishProductPageHtml[props.product]) return spanishProductPageHtml[props.product]
+  return rasberProductPages[props.product] || ''
+})
+const spanishProductByHref = computed(() => Object.fromEntries(spanishProductCards.map((product) => [product.href.replace('/es', ''), product])))
+const spanishProductHrefs = new Set(
+  Object.keys(spanishProductPages).map((slug) => `/products/deformation-monitoring/${slug}`)
+)
+const localizedHref = (href) => {
+  if (!isSpanish.value) return href
+  if (href === '/products/' || href === '/products') return '/es/products/'
+  if (href === '/cases/' || href === '/cases') return '/es/cases'
+  if (href === '/solutions/' || href === '/solutions') return '/es/solutions/'
+  if (href.startsWith('/products/')) return spanishProductHrefs.has(href) ? `/es${href}` : href
+  if (href.startsWith('/cases/')) return href
+  if (href.startsWith('/solutions/')) return href
+  return href
+}
+
+const copy = computed(() => isSpanish.value
+  ? {
+      downloads: 'Descargas y recursos',
+      defaultMeta: 'PDF | Archivo tecnico',
+      relatedProducts: 'Productos relacionados',
+      relatedCases: 'Aplicaciones y casos de estudio',
+      relatedSolutions: 'Soluciones relacionadas',
+      catalog: 'Volver al catalogo de productos'
+    }
+  : {
+      downloads: 'Downloads & Resources',
+      defaultMeta: 'PDF | Technical file',
+      relatedProducts: 'Related Products',
+      relatedCases: 'Applications & Case Studies',
+      relatedSolutions: 'Related Solutions',
+      catalog: 'Back to Product Catalog'
+    })
 const dataChainSectionPattern =
   /<!-- ====== CLOUD-EDGE-DEVICE DATA CHAIN ====== -->\n<section>[\s\S]*?<div class="arch-banner reveal">FULL-CHAIN IN-HOUSE R&amp;D&nbsp;&nbsp;\|&nbsp;&nbsp;NO BLACK-BOX DEPENDENCE&nbsp;&nbsp;\|&nbsp;&nbsp;FULL DATA SOVEREIGNTY<\/div>\n  <\/div>\n<\/section>\n/
 const usesSharedTechnologyStack = computed(
@@ -191,6 +235,13 @@ const defaultRelatedSolutions = {
 }
 
 const downloads = computed(() => {
+  if (isSpanish.value && spanishItem.value?.downloads?.length) {
+    return spanishItem.value.downloads.map((download) => ({
+      name: download.label,
+      meta: copy.value.defaultMeta,
+      link: download.href
+    }))
+  }
   if (item.value?.downloads?.length) return item.value.downloads
   return [
     {
@@ -208,7 +259,16 @@ const relatedProducts = computed(() =>
         const currentHref = currentHrefByKey[props.product]
         return product.href !== currentHref && product.category === item.value.category
       })
-  ).slice(0, 4)
+  ).slice(0, 4).map((product) => {
+    if (!isSpanish.value) return product
+    const spanishProduct = spanishProductByHref.value[product.href]
+    return {
+      ...product,
+      href: localizedHref(product.href),
+      name: spanishProduct?.name || product.name,
+      summary: spanishProduct?.summary || product.summary
+    }
+  })
 )
 
 const relatedSolutions = computed(() => {
@@ -226,6 +286,20 @@ const relatedCases = computed(() => {
   if (item.value.category === 'Stress & Environment Monitoring') return defaultRelatedCases.stress
   return defaultRelatedCases.data
 })
+
+const localizedRelatedCases = computed(() =>
+  relatedCases.value.map((entry) => ({
+    ...entry,
+    href: localizedHref(entry.href)
+  }))
+)
+
+const localizedRelatedSolutions = computed(() =>
+  relatedSolutions.value.map((entry) => ({
+    ...entry,
+    href: localizedHref(entry.href)
+  }))
+)
 </script>
 
 <template>
@@ -242,7 +316,7 @@ const relatedCases = computed(() => {
 
     <div class="sc-container sc-pdp-page sc-rasber-soilcreate-tail">
       <section v-if="downloads.length" class="sc-section" id="downloads">
-        <h2 class="sc-section-title">Downloads & Resources</h2>
+        <h2 class="sc-section-title">{{ copy.downloads }}</h2>
         <div class="sc-downloads-row">
           <a
             v-for="download in downloads"
@@ -254,14 +328,14 @@ const relatedCases = computed(() => {
             <span class="sc-download-icon">📄</span>
             <div>
               <div class="sc-download-title">{{ download.name }}</div>
-              <div class="sc-download-meta">{{ download.meta || 'PDF | Technical file' }}</div>
+              <div class="sc-download-meta">{{ download.meta || copy.defaultMeta }}</div>
             </div>
           </a>
         </div>
       </section>
 
       <section v-if="relatedProducts.length" class="sc-section">
-        <h2 class="sc-section-title">Related Products</h2>
+        <h2 class="sc-section-title">{{ copy.relatedProducts }}</h2>
         <div class="sc-related-grid">
           <a v-for="product in relatedProducts" :key="product.href" :href="product.href" class="sc-related-card">
             <div class="sc-related-img">
@@ -273,10 +347,10 @@ const relatedCases = computed(() => {
         </div>
       </section>
 
-      <section v-if="relatedCases.length" class="sc-section">
-        <h2 class="sc-section-title">Applications &amp; Case Studies</h2>
+      <section v-if="localizedRelatedCases.length" class="sc-section">
+        <h2 class="sc-section-title">{{ copy.relatedCases }}</h2>
         <div class="sc-related-grid sc-case-related-grid">
-          <a v-for="solution in relatedCases" :key="solution.href" :href="solution.href" class="sc-related-card sc-case-related-card">
+          <a v-for="solution in localizedRelatedCases" :key="solution.href" :href="solution.href" class="sc-related-card sc-case-related-card">
             <div class="sc-related-img sc-case-related-img">
               <img v-if="solution.image" :src="solution.image" :alt="solution.imageAlt || solution.title" width="480" height="300" loading="lazy" decoding="async" />
               <span v-else>{{ solution.category || 'Cases' }}</span>
@@ -287,10 +361,10 @@ const relatedCases = computed(() => {
         </div>
       </section>
 
-      <section v-if="relatedSolutions.length" class="sc-section">
-        <h2 class="sc-section-title">Related Solutions</h2>
+      <section v-if="localizedRelatedSolutions.length" class="sc-section">
+        <h2 class="sc-section-title">{{ copy.relatedSolutions }}</h2>
         <div class="sc-related-grid sc-case-related-grid">
-          <a v-for="solution in relatedSolutions" :key="solution.href" :href="solution.href" class="sc-related-card sc-case-related-card">
+          <a v-for="solution in localizedRelatedSolutions" :key="solution.href" :href="solution.href" class="sc-related-card sc-case-related-card">
             <div class="sc-related-img sc-case-related-img">
               <img v-if="solution.image" :src="solution.image" :alt="solution.imageAlt || solution.title" width="480" height="300" loading="lazy" decoding="async" />
               <span v-else>{{ solution.category || 'Solution' }}</span>
@@ -302,11 +376,11 @@ const relatedCases = computed(() => {
       </section>
 
       <section class="sc-section" id="quote-form">
-        <InquiryForm :product-name="item.title" />
+        <InquiryForm :product-name="displayTitle" :locale="props.locale" />
       </section>
 
       <div class="sc-pdp-bottom-actions">
-        <a href="/products/" class="sc-btn-secondary sc-btn-catalog">Back to Product Catalog</a>
+        <a :href="isSpanish ? '/es/products/' : '/products/'" class="sc-btn-secondary sc-btn-catalog">{{ copy.catalog }}</a>
       </div>
     </div>
   </main>

@@ -3,8 +3,18 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import CompanyCapabilities from './CompanyCapabilities.vue'
 import HomeDataSections from './HomeDataSections.vue'
 import catalog from '../data/products.json'
+import { spanishFeaturedProducts } from '../data/spanish.js'
 
-const heroSlides = [
+const props = defineProps({
+  locale: {
+    type: String,
+    default: 'en'
+  }
+})
+
+const isSpanish = computed(() => props.locale === 'es')
+
+const englishHeroSlides = [
   {
     image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     alt: 'Bridge infrastructure monitored with SoilCreate inclinometer systems',
@@ -17,13 +27,55 @@ const heroSlides = [
   }
 ]
 
+const spanishHeroSlides = [
+  {
+    image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
+    alt: 'Puente monitoreado con sistemas de inclinometro SoilCreate',
+    title: 'Su especialista en inclinometros para monitoreo profundo del terreno'
+  },
+  {
+    image: '/images/home/soilcreate-monitoring-instruments-hero.jpg',
+    alt: 'Instrumentos SoilCreate de monitoreo geotecnico y adquisicion de datos',
+    title: '5 CATEGORIAS · 30+ MODELOS DE SENSORES · CLOUD-EDGE-DEVICE'
+  }
+]
+
+const copy = computed(() => isSpanish.value
+  ? {
+      previousHero: 'Mostrar imagen anterior',
+      nextHero: 'Mostrar imagen siguiente',
+      productsCta: 'Explorar productos',
+      engineeringCta: 'Contactar ingenieria',
+      consultationProduct: 'Consulta de ingenieria',
+      trust: ['✓ PRECISION CALIBRADA', '✓ REGISTRO DE DATOS EN TIEMPO REAL', '✓ INTEGRACION INTELIGENTE', '✓ DURABILIDAD EXTREMA IP68'],
+      hotProducts: 'Productos principales',
+      viewDetails: 'Ver detalles ➔',
+      exploreMore: 'Explorar mas',
+      primaryActionLabel: 'Cases',
+      primaryActionHref: '/es/cases'
+    }
+  : {
+      previousHero: 'Show previous hero image',
+      nextHero: 'Show next hero image',
+      productsCta: 'Explore Products',
+      engineeringCta: 'Contact Engineering',
+      consultationProduct: 'Engineering Consultation',
+      trust: ['✓ PRECISION CALIBRATED', '✓ REAL-TIME DATA LOGGING', '✓ SMART SYSTEM INTEGRATION', '✓ IP68 EXTREME DURABILITY'],
+      hotProducts: 'Our Hot Products',
+      viewDetails: 'View Details ➔',
+      exploreMore: 'Explore More',
+      primaryActionLabel: 'Cases',
+      primaryActionHref: '/cases'
+    })
+
+const heroSlides = computed(() => isSpanish.value ? spanishHeroSlides : englishHeroSlides)
 const activeHeroSlide = ref(0)
 let heroTimer
 
-const currentHeroSlide = computed(() => heroSlides[activeHeroSlide.value])
+const currentHeroSlide = computed(() => heroSlides.value[activeHeroSlide.value])
 
 const moveHeroSlide = (step) => {
-  activeHeroSlide.value = (activeHeroSlide.value + step + heroSlides.length) % heroSlides.length
+  activeHeroSlide.value = (activeHeroSlide.value + step + heroSlides.value.length) % heroSlides.value.length
 }
 
 onMounted(() => {
@@ -47,6 +99,18 @@ const hotProducts = catalog.products
       'shape-array': 'Ideal for Deep 3D Deformation Monitoring'
     }[product.subcategoryId]
   }))
+
+const localizedHotProducts = computed(() => {
+  if (!isSpanish.value) return hotProducts
+  return spanishFeaturedProducts.map((product) => ({
+    ...product,
+    useLabel: {
+      'sliding-inclinometer': 'Ideal para mediciones manuales en sondeos',
+      'in-place-inclinometer': 'Ideal para monitoreo automatizado 24/7',
+      'shape-array': 'Ideal para monitoreo profundo de deformacion 3D'
+    }[product.subcategoryId]
+  }))
+})
 </script>
 
 <template>
@@ -58,7 +122,7 @@ const hotProducts = catalog.products
     <button
       type="button"
       class="sc-hero-arrow sc-hero-arrow--prev"
-      aria-label="Show previous hero image"
+      :aria-label="copy.previousHero"
       @click="moveHeroSlide(-1)"
     >
       ‹
@@ -66,7 +130,7 @@ const hotProducts = catalog.products
     <button
       type="button"
       class="sc-hero-arrow sc-hero-arrow--next"
-      aria-label="Show next hero image"
+      :aria-label="copy.nextHero"
       @click="moveHeroSlide(1)"
     >
       ›
@@ -78,29 +142,26 @@ const hotProducts = catalog.products
       </h1>
       <div class="sc-heading-line"></div>
       <div class="sc-hero-actions">
-        <a href="/products/" class="sc-btn-primary">Explore Products</a>
-        <button type="button" class="sc-btn-secondary sc-js-enquiry" data-product="Engineering Consultation">Contact Engineering</button>
+        <a :href="isSpanish ? '/es/products/' : '/products/'" class="sc-btn-primary">{{ copy.productsCta }}</a>
+        <button type="button" class="sc-btn-secondary sc-js-enquiry" :data-product="copy.consultationProduct">{{ copy.engineeringCta }}</button>
       </div>
     </div>
   </section>
 
   <div class="sc-trust-bar">
-    <span>✓ PRECISION CALIBRATED</span>
-    <span>✓ REAL-TIME DATA LOGGING</span>
-    <span>✓ SMART SYSTEM INTEGRATION</span>
-    <span>✓ IP68 EXTREME DURABILITY</span>
+    <span v-for="item in copy.trust" :key="item">{{ item }}</span>
   </div>
 
-  <CompanyCapabilities class="sc-home-authority-block" :show-profile="false" :show-services="false" />
+  <CompanyCapabilities class="sc-home-authority-block" :locale="props.locale" :show-profile="false" :show-services="false" />
 
   <section class="sc-categories">
     <div class="sc-section-title">
-      <h2>Our Hot Products</h2>
+      <h2>{{ copy.hotProducts }}</h2>
       <div class="sc-heading-line"></div>
     </div>
 
     <div class="sc-grid">
-      <a v-for="product in hotProducts" :key="product.sku" :href="product.href" class="sc-cat-card">
+      <a v-for="product in localizedHotProducts" :key="product.sku" :href="product.href" class="sc-cat-card">
         <div class="sc-cat-img">
           <img
             :src="product.image"
@@ -123,13 +184,13 @@ const hotProducts = catalog.products
             </span>
             <span>{{ product.useLabel }}</span>
           </span>
-          <div class="sc-cat-link">View Details ➔</div>
+          <div class="sc-cat-link">{{ copy.viewDetails }}</div>
         </div>
       </a>
     </div>
 
     <div class="sc-explore-wrapper">
-      <a href="/products/" class="sc-btn-primary">Explore More</a>
+      <a :href="isSpanish ? '/es/products/' : '/products/'" class="sc-btn-primary">{{ copy.exploreMore }}</a>
     </div>
   </section>
 
@@ -139,11 +200,12 @@ const hotProducts = catalog.products
     :show-profile="false"
     :show-scale-proof="true"
     :show-engineering-capability="true"
-    primary-action-label="Cases"
-    primary-action-href="/cases"
+    :primary-action-label="copy.primaryActionLabel"
+    :primary-action-href="copy.primaryActionHref"
+    :locale="props.locale"
   />
 
-  <TrustSection />
+  <TrustSection :locale="props.locale" />
 
-  <HomeDataSections />
+  <HomeDataSections :locale="props.locale" />
 </template>

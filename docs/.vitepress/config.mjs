@@ -26,6 +26,35 @@ const imageFromFrontmatter = (frontmatter) => {
 
 const stripTrailingSlash = (url) => url.replace(/\/$/, '')
 
+const englishToSpanishRoutes = new Map([
+  ['/', '/es/'],
+  ['/about', '/es/about'],
+  ['/products/', '/es/products/'],
+  ['/cases', '/es/cases'],
+  ['/solutions/', '/es/solutions/'],
+  ['/contact', '/es/contact'],
+  ['/products/deformation-monitoring/in-place-inclinometer', '/es/products/deformation-monitoring/in-place-inclinometer'],
+  ['/products/deformation-monitoring/flexible-inclinometer', '/es/products/deformation-monitoring/flexible-inclinometer'],
+  ['/products/deformation-monitoring/sliding-inclinometer', '/es/products/deformation-monitoring/sliding-inclinometer']
+])
+
+const spanishToEnglishRoutes = new Map([...englishToSpanishRoutes].map(([english, spanish]) => [spanish, english]))
+const isSpanishRoute = (route) => route === '/es/' || route.startsWith('/es/')
+const languageForRoute = (route) => isSpanishRoute(route) ? 'es-ES' : 'en-US'
+const localeForRoute = (route) => isSpanishRoute(route) ? 'es_ES' : 'en_US'
+
+const alternateLinksForRoute = (route) => {
+  const englishRoute = isSpanishRoute(route) ? spanishToEnglishRoutes.get(route) : route
+  const spanishRoute = isSpanishRoute(route) ? route : englishToSpanishRoutes.get(route)
+  if (!englishRoute || !spanishRoute) return []
+
+  return [
+    ['link', { rel: 'alternate', hreflang: 'en', href: absoluteUrl(englishRoute) }],
+    ['link', { rel: 'alternate', hreflang: 'es', href: absoluteUrl(spanishRoute) }],
+    ['link', { rel: 'alternate', hreflang: 'x-default', href: absoluteUrl(englishRoute) }]
+  ]
+}
+
 const breadcrumbSchema = (canonical, pageTitle) => {
   const path = new URL(canonical).pathname
   const segments = path.split('/').filter(Boolean)
@@ -71,7 +100,7 @@ const organizationSchema = {
       contactType: 'sales',
       email: 'sales@soilcreate.com',
       telephone: '+86-153-5604-6033',
-      availableLanguage: ['English', 'Chinese']
+      availableLanguage: ['English', 'Spanish', 'Chinese']
     }
   ]
 }
@@ -88,7 +117,7 @@ const websiteSchema = {
   inLanguage: 'en-US'
 }
 
-const productSchema = (frontmatter, canonical, pageTitle, pageDescription, image) => ({
+const productSchema = (frontmatter, canonical, pageTitle, pageDescription, image, language) => ({
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: pageTitle,
@@ -104,6 +133,7 @@ const productSchema = (frontmatter, canonical, pageTitle, pageDescription, image
     '@id': `${siteUrl}/#organization`
   },
   url: canonical,
+  inLanguage: language,
   additionalProperty: (frontmatter.specs || []).map((spec) => ({
     '@type': 'PropertyValue',
     name: spec.label || spec.key || spec.parameter,
@@ -111,7 +141,7 @@ const productSchema = (frontmatter, canonical, pageTitle, pageDescription, image
   })).filter((item) => item.name && item.value)
 })
 
-const articleSchema = (frontmatter, canonical, pageTitle, pageDescription, image) => ({
+const articleSchema = (frontmatter, canonical, pageTitle, pageDescription, image, language) => ({
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: pageTitle,
@@ -124,23 +154,24 @@ const articleSchema = (frontmatter, canonical, pageTitle, pageDescription, image
     '@id': `${siteUrl}/#organization`
   },
   mainEntityOfPage: canonical,
-  inLanguage: 'en-US',
+  inLanguage: language,
   about: frontmatter.industry || frontmatter.projectType || 'Geotechnical monitoring'
 })
 
 const schemaForPage = ({ frontmatter, canonical, pageTitle, pageDescription, image, route }) => {
   const schemas = [breadcrumbSchema(canonical, pageTitle)]
+  const language = languageForRoute(route)
 
-  if (route === '/') {
-    schemas.push(organizationSchema, websiteSchema)
+  if (route === '/' || route === '/es/') {
+    schemas.push(organizationSchema, { ...websiteSchema, inLanguage: language })
   }
 
   if (frontmatter.layout === 'product' || frontmatter.schemaType === 'product') {
-    schemas.push(productSchema(frontmatter, canonical, pageTitle, pageDescription, image))
+    schemas.push(productSchema(frontmatter, canonical, pageTitle, pageDescription, image, language))
   }
 
   if (frontmatter.layout === 'case-study' || frontmatter.layout === 'seo-article') {
-    schemas.push(articleSchema(frontmatter, canonical, pageTitle, pageDescription, image))
+    schemas.push(articleSchema(frontmatter, canonical, pageTitle, pageDescription, image, language))
   }
 
   return schemas
@@ -198,6 +229,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const pageTitle = title || frontmatter.title || siteName
     const pageDescription = description || frontmatter.description || defaultDescription
     const image = imageFromFrontmatter(frontmatter)
+    const language = frontmatter.lang || languageForRoute(route)
     const robots = frontmatter.noindex
       ? 'noindex,nofollow'
       : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'
@@ -206,7 +238,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     return [
       ['link', { rel: 'canonical', href: canonical }],
+      ...alternateLinksForRoute(route),
       ['meta', { name: 'robots', content: robots }],
+      ['meta', { property: 'og:locale', content: localeForRoute(route) }],
       ['meta', { property: 'og:type', content: frontmatter.layout === 'case-study' || frontmatter.layout === 'seo-article' ? 'article' : 'website' }],
       ['meta', { property: 'og:title', content: pageTitle }],
       ['meta', { property: 'og:description', content: pageDescription }],
@@ -215,6 +249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       ['meta', { name: 'twitter:title', content: pageTitle }],
       ['meta', { name: 'twitter:description', content: pageDescription }],
       ['meta', { name: 'twitter:image', content: image }],
+      ['meta', { name: 'language', content: language }],
       ...schemas.map((schema) => [
         'script',
         { type: 'application/ld+json' },

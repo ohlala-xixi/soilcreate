@@ -5,6 +5,9 @@ docs/.vitepress/dist/
 npm-debug.log*
 image-backups/
 docs/tools/
+docs/public/tools/
+docs/solutions/seo-generator-preview.md
+docs/es/solutions/seo-generator-preview.md
 local-tools/
 docs/.vitepress/theme/components/SiteManagerPage.vue
 PROJECT.md

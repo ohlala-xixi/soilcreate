@@ -3,11 +3,53 @@ import { computed, ref } from 'vue'
 import { contactEmail, formspreeEndpoint } from '../data/site.js'
 import { trackEvent } from '../utils/tracking.js'
 
+const props = defineProps({
+  locale: {
+    type: String,
+    default: 'en'
+  }
+})
+
+const isSpanish = computed(() => props.locale === 'es')
 const subscriberEmail = ref('')
 const subscribing = ref(false)
 const subscribeStatus = ref('')
 const subscribeStatusType = ref('success')
 const activeCategory = ref('all')
+
+const copy = computed(() => isSpanish.value
+  ? {
+      heroTitle: 'Soluciones y proyectos',
+      heroIntro: 'Explore soluciones practicas de monitoreo para excavaciones profundas, taludes, presas, tuneles y sitios industriales. SoilCreate ayuda a contratistas y distribuidores a elegir instrumentos confiables y rentables para condiciones reales de campo.',
+      subscribeLabel: 'Mas soluciones de proyecto, mensualmente.',
+      emailPlaceholder: 'Email corporativo',
+      loading: 'Enviando...',
+      subscribe: 'Suscribirse',
+      subscribed: '✓ Suscripcion completada',
+      failed: 'La suscripcion fallo. Intente nuevamente mas tarde.',
+      sidebar: 'Categorias de soluciones',
+      sidebarAria: 'Categorias de soluciones',
+      allNews: 'Todos los articulos',
+      readArticle: 'Leer articulo ➔',
+      emptyTitle: 'Articulos proximamente',
+      emptyCopy: 'Esta categoria esta preparada para futuros articulos SEO y notas de campo.'
+    }
+  : {
+      heroTitle: 'Solutions & Projects',
+      heroIntro: 'Explore practical monitoring solutions for deep excavations, slopes, dams, tunnels, and industrial sites. SoilCreate helps contractors and distributors choose reliable, cost-effective instruments that fit real project budgets and field conditions.',
+      subscribeLabel: 'More project solutions, delivered monthly.',
+      emailPlaceholder: 'Your Business Email',
+      loading: 'Loading...',
+      subscribe: 'Subscribe',
+      subscribed: '✓ Subscribed successfully',
+      failed: 'Subscription failed. Please try again later.',
+      sidebar: 'Solutions Categories',
+      sidebarAria: 'Solutions categories',
+      allNews: 'All News',
+      readArticle: 'Read Article ➔',
+      emptyTitle: 'Articles coming soon',
+      emptyCopy: 'This category is ready for future SEO articles and field notes.'
+    })
 
 const categories = [
   { id: 'inclinometer-basics', label: 'Inclinometer Basics' },
@@ -238,10 +280,10 @@ const submitSubscribe = async () => {
     })
     subscriberEmail.value = ''
     subscribeStatusType.value = 'success'
-    subscribeStatus.value = '✓ Subscribed successfully'
+    subscribeStatus.value = copy.value.subscribed
   } catch (error) {
     subscribeStatusType.value = 'error'
-    subscribeStatus.value = 'Subscription failed. Please try again later.'
+    subscribeStatus.value = copy.value.failed
   } finally {
     subscribing.value = false
   }
@@ -252,23 +294,23 @@ const submitSubscribe = async () => {
 <template>
   <div class="sc-cs-hero">
     <div class="sc-cs-hero-inner">
-      <h1>Solutions & Projects</h1>
+      <h1>{{ copy.heroTitle }}</h1>
       <div class="sc-heading-line"></div>
-      <p>Explore practical monitoring solutions for deep excavations, slopes, dams, tunnels, and industrial sites. SoilCreate helps contractors and distributors choose reliable, cost-effective instruments that fit real project budgets and field conditions.</p>
+      <p>{{ copy.heroIntro }}</p>
       <form class="sc-cs-subscribe" @submit.prevent="submitSubscribe">
-        <label for="case-study-subscribe">More project solutions, delivered monthly.</label>
+        <label for="case-study-subscribe">{{ copy.subscribeLabel }}</label>
         <div class="sc-cs-subscribe-row">
           <input
             id="case-study-subscribe"
             v-model="subscriberEmail"
             type="email"
             name="email"
-            placeholder="Your Business Email"
+            :placeholder="copy.emailPlaceholder"
             autocomplete="email"
             required
           />
           <button type="submit" :disabled="subscribing">
-            {{ subscribing ? 'Loading...' : 'Subscribe' }}
+            {{ subscribing ? copy.loading : copy.subscribe }}
           </button>
         </div>
         <p v-if="subscribeStatus" class="sc-cs-subscribe-status" :class="subscribeStatusType">
@@ -280,8 +322,8 @@ const submitSubscribe = async () => {
 
   <main class="sc-container sc-news-container">
     <div class="sc-catalog-layout sc-news-layout">
-      <aside class="sc-sidebar sc-news-sidebar" aria-label="Solutions categories">
-        <div class="sc-sidebar-header">Solutions Categories</div>
+      <aside class="sc-sidebar sc-news-sidebar" :aria-label="copy.sidebarAria">
+        <div class="sc-sidebar-header">{{ copy.sidebar }}</div>
         <ul class="sc-category-list">
           <li class="sc-has-submenu">
             <button
@@ -290,7 +332,7 @@ const submitSubscribe = async () => {
               type="button"
               @click="setCategory('all')"
             >
-              All News ({{ categoryCounts.all }})
+              {{ copy.allNews }} ({{ categoryCounts.all }})
             </button>
             <ul class="sc-submenu">
               <li v-for="category in categories" :key="category.id">
@@ -326,13 +368,13 @@ const submitSubscribe = async () => {
             <div class="sc-cs-content">
               <h3>{{ article.title }}</h3>
               <p>{{ article.summary }}</p>
-              <span class="sc-cs-readmore">Read Article ➔</span>
+              <span class="sc-cs-readmore">{{ copy.readArticle }}</span>
             </div>
           </a>
         </div>
         <div v-else class="sc-news-empty">
-          <h2>Articles coming soon</h2>
-          <p>This category is ready for future SEO articles and field notes.</p>
+          <h2>{{ copy.emptyTitle }}</h2>
+          <p>{{ copy.emptyCopy }}</p>
         </div>
       </section>
     </div>

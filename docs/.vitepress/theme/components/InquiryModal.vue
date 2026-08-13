@@ -1,9 +1,12 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useRoute } from 'vitepress'
 import InquiryForm from './InquiryForm.vue'
 
+const route = useRoute()
 const open = ref(false)
 const productName = ref('General Inquiry')
+const locale = computed(() => route.path.startsWith('/es/') || route.path === '/es' ? 'es' : 'en')
 
 const handleOpen = (event) => {
   productName.value = event.detail?.productName || 'General Inquiry'
@@ -47,7 +50,7 @@ onUnmounted(() => {
       <button class="sc-inquiry-modal__backdrop" type="button" aria-label="Close inquiry form" @click="close" />
       <div class="sc-inquiry-modal__panel">
         <button class="sc-inquiry-modal__close" type="button" aria-label="Close inquiry form" @click="close">×</button>
-        <InquiryForm :product-name="productName" compact @submitted="handleSubmitted" />
+        <InquiryForm :product-name="productName" :locale="locale" compact @submitted="handleSubmitted" />
       </div>
     </div>
   </Teleport>

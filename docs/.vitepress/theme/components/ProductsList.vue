@@ -1,14 +1,51 @@
 <script setup>
 import { computed, ref } from 'vue'
 import catalog from '../data/products.json'
+import { spanishCategories, spanishProductCards } from '../data/spanish.js'
 import { openInquiry } from '../utils/inquiry.js'
 
+const props = defineProps({
+  locale: {
+    type: String,
+    default: 'en'
+  }
+})
+
+const isSpanish = computed(() => props.locale === 'es')
+const categories = computed(() => isSpanish.value ? spanishCategories : catalog.categories)
+const products = computed(() => isSpanish.value ? spanishProductCards : catalog.products)
 const activeFilter = ref('all')
 const openCategoryIds = ref(new Set(catalog.categories.map((category) => category.id)))
 
+const copy = computed(() => isSpanish.value
+  ? {
+      title: 'Productos',
+      intro: 'Cinco categorias, una cadena completa de monitoreo: desde deformacion, asentamiento, esfuerzo y sensores ambientales hasta adquisicion de datos e integracion con plataforma.',
+      sidebar: 'Categorias de productos',
+      sidebarAria: 'Categorias de productos',
+      all: 'Todos los productos',
+      collapse: 'Contraer categoria',
+      expand: 'Expandir categoria',
+      manual: 'Manual de seleccion',
+      viewDetails: 'Ver detalles',
+      quote: 'Cotizar'
+    }
+  : {
+      title: 'Products',
+      intro: 'Five categories, one complete monitoring chain from deformation, settlement, stress and environment sensing to data acquisition and software platform integration.',
+      sidebar: 'Product Categories',
+      sidebarAria: 'Product categories',
+      all: 'All Products',
+      collapse: 'Collapse category',
+      expand: 'Expand category',
+      manual: 'Selection Manual',
+      viewDetails: 'View Details',
+      quote: 'Quote'
+    })
+
 const categoryCounts = computed(() => {
-  const counts = { all: catalog.products.length }
-  for (const product of catalog.products) {
+  const counts = { all: products.value.length }
+  for (const product of products.value) {
     counts[product.categoryId] = (counts[product.categoryId] || 0) + 1
     counts[product.subcategoryId] = (counts[product.subcategoryId] || 0) + 1
   }
@@ -16,15 +53,15 @@ const categoryCounts = computed(() => {
 })
 
 const filteredProducts = computed(() => {
-  if (activeFilter.value === 'all') return catalog.products
-  return catalog.products.filter(
+  if (activeFilter.value === 'all') return products.value
+  return products.value.filter(
     (product) => product.categoryId === activeFilter.value || product.subcategoryId === activeFilter.value
   )
 })
 
 const setFilter = (filterId) => {
   activeFilter.value = filterId
-  const parent = catalog.categories.find((category) => category.children?.some((child) => child.id === filterId))
+  const parent = categories.value.find((category) => category.children?.some((child) => child.id === filterId))
   if (parent) {
     openCategoryIds.value = new Set([...openCategoryIds.value, parent.id])
   }
@@ -46,19 +83,16 @@ const toggleCategory = (categoryId) => {
 <template>
   <div class="sc-products-hero">
     <div class="sc-products-hero-inner">
-      <h1>Products</h1>
+      <h1>{{ copy.title }}</h1>
       <div class="sc-heading-line"></div>
-      <p>
-        Five categories, one complete monitoring chain from deformation, settlement, stress and environment sensing
-        to data acquisition and software platform integration.
-      </p>
+      <p>{{ copy.intro }}</p>
     </div>
   </div>
 
   <main class="sc-container sc-products-page">
     <div class="sc-catalog-layout">
-      <aside class="sc-sidebar" aria-label="Product categories">
-        <div class="sc-sidebar-header">Product Categories</div>
+      <aside class="sc-sidebar" :aria-label="copy.sidebarAria">
+        <div class="sc-sidebar-header">{{ copy.sidebar }}</div>
         <ul class="sc-category-list">
           <li class="sc-has-submenu">
             <button
@@ -67,11 +101,11 @@ const toggleCategory = (categoryId) => {
               type="button"
               @click="setFilter('all')"
             >
-              All Products ({{ categoryCounts.all }})
+              {{ copy.all }} ({{ categoryCounts.all }})
             </button>
           </li>
 
-          <li v-for="category in catalog.categories" :key="category.id" class="sc-has-submenu">
+          <li v-for="category in categories" :key="category.id" class="sc-has-submenu">
             <div class="sc-category-row">
               <button
                 class="sc-category-title"
@@ -85,7 +119,7 @@ const toggleCategory = (categoryId) => {
                 class="sc-category-toggle"
                 type="button"
                 :aria-expanded="isCategoryOpen(category.id)"
-                :aria-label="isCategoryOpen(category.id) ? 'Collapse category' : 'Expand category'"
+                :aria-label="isCategoryOpen(category.id) ? copy.collapse : copy.expand"
                 @click="toggleCategory(category.id)"
               >
                 {{ isCategoryOpen(category.id) ? '−' : '+' }}
@@ -111,7 +145,7 @@ const toggleCategory = (categoryId) => {
           download
         >
           <span>↓</span>
-          Selection Manual
+          {{ copy.manual }}
         </a>
       </aside>
 
@@ -136,8 +170,8 @@ const toggleCategory = (categoryId) => {
             </h3>
             <p class="sc-card-summary">{{ product.summary }}</p>
             <div class="sc-card-actions">
-              <a :href="product.href" class="sc-card-link">View Details</a>
-              <button type="button" class="sc-card-quote" @click="openInquiry(product.name)">Quote</button>
+              <a :href="product.href" class="sc-card-link">{{ copy.viewDetails }}</a>
+              <button type="button" class="sc-card-quote" @click="openInquiry(product.name)">{{ copy.quote }}</button>
             </div>
           </article>
         </div>
