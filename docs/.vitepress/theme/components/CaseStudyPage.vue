@@ -16,6 +16,7 @@ const subscribing = ref(false)
 const subscribeStatus = ref('')
 const subscribeStatusType = ref('success')
 const activeCategory = ref('all')
+const searchQuery = ref('')
 
 const copy = computed(() => isSpanish.value
   ? {
@@ -30,9 +31,11 @@ const copy = computed(() => isSpanish.value
       sidebar: 'Categorias de soluciones',
       sidebarAria: 'Categorias de soluciones',
       allNews: 'Todos los articulos',
+      searchLabel: 'Buscar soluciones',
+      searchPlaceholder: 'Buscar por tema o producto...',
       readArticle: 'Leer articulo ➔',
       emptyTitle: 'Articulos proximamente',
-      emptyCopy: 'Esta categoria esta preparada para futuros articulos SEO y notas de campo.'
+      emptyCopy: 'Pruebe con otra palabra clave o seleccione otra categoria.'
     }
   : {
       heroTitle: 'Solutions & Projects',
@@ -46,9 +49,11 @@ const copy = computed(() => isSpanish.value
       sidebar: 'Solutions Categories',
       sidebarAria: 'Solutions categories',
       allNews: 'All News',
+      searchLabel: 'Search solutions',
+      searchPlaceholder: 'Search by topic or product...',
       readArticle: 'Read Article ➔',
       emptyTitle: 'Articles coming soon',
-      emptyCopy: 'This category is ready for future SEO articles and field notes.'
+      emptyCopy: 'Try another keyword or select a different category.'
     })
 
 const categories = [
@@ -107,6 +112,15 @@ const articles = [
     image: '/images/shared/hero/bridge-infrastructure-hero.jpg',
     imageAlt: 'Infrastructure bridge project representing deep excavation and geotechnical monitoring risk control',
     summary: 'A practical field note on how linked monitoring data, alarm rules, and data quality checks help contractors interpret deep excavation movement before risks escalate.'
+  },
+  {
+    title: 'Deep Excavation Monitoring with IPI: First-Hand Data from the Huajiachi Station Incident',
+    href: '/solutions/deep-excavation-monitoring-huajiachi-station',
+    categoryId: 'solutions-field-notes',
+    category: 'Solutions & Field Notes',
+    image: '/images/solutions/deep-excavation-monitoring-huajiachi-station/hero.webp',
+    imageAlt: 'IPI deep excavation monitoring showing retaining wall deformation and deep movement at Huajiachi Station',
+    summary: 'See how IPI monitoring captured deep excavation deformation at Huajiachi Station, including a 31 m deformation zone and displacement approaching 70 mm.'
   },
   {
     title: 'Deep Excavation Horizontal Displacement Monitoring: Warning Signs Before Failure',
@@ -245,8 +259,20 @@ const categoryCounts = computed(() => {
 })
 
 const filteredArticles = computed(() => {
-  if (activeCategory.value === 'all') return articles
-  return articles.filter((article) => article.categoryId === activeCategory.value)
+  const query = searchQuery.value.trim().toLowerCase()
+  const scopedArticles = activeCategory.value === 'all'
+    ? articles
+    : articles.filter((article) => article.categoryId === activeCategory.value)
+
+  if (!query) return scopedArticles
+
+  return scopedArticles.filter((article) => [
+    article.title,
+    article.summary,
+    article.category,
+    article.href,
+    article.imageAlt
+  ].join(' ').toLowerCase().includes(query))
 })
 
 const setCategory = (categoryId) => {
@@ -324,6 +350,16 @@ const submitSubscribe = async () => {
     <div class="sc-catalog-layout sc-news-layout">
       <aside class="sc-sidebar sc-news-sidebar" :aria-label="copy.sidebarAria">
         <div class="sc-sidebar-header">{{ copy.sidebar }}</div>
+        <div class="sc-news-search">
+          <label for="solutions-search">{{ copy.searchLabel }}</label>
+          <input
+            id="solutions-search"
+            v-model="searchQuery"
+            type="search"
+            :placeholder="copy.searchPlaceholder"
+            autocomplete="off"
+          />
+        </div>
         <ul class="sc-category-list">
           <li class="sc-has-submenu">
             <button
