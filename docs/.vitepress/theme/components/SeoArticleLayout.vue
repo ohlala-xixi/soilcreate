@@ -40,6 +40,8 @@ const relatedProducts = computed(() => {
   return products.length ? products : fallbackProducts
 })
 const relatedArticles = computed(() => (frontmatter.value.relatedArticles || []).slice(0, 4))
+const relatedCases = computed(() => (frontmatter.value.relatedCases || []).slice(0, 4))
+const relatedSolutions = computed(() => (frontmatter.value.relatedSolutions || []).slice(0, 4))
 
 const clearPreviewFocus = () => {
   document.querySelectorAll('.seo-generator-focus').forEach((element) => element.classList.remove('seo-generator-focus'))
@@ -136,6 +138,26 @@ onUnmounted(() => window.removeEventListener('message', focusPreviewModule))
           <a v-for="item in relatedArticles" :key="item.href || item.title" :href="item.href" class="sc-article-link-card">
             <strong>{{ item.title }}</strong>
             <span>{{ item.summary || item.category || 'Read article' }}</span>
+          </a>
+        </div>
+      </div>
+
+      <div v-if="relatedCases.length" class="sc-article-link-block">
+        <h2>Related Cases</h2>
+        <div class="sc-article-link-grid">
+          <a v-for="item in relatedCases" :key="item.href || item.title" :href="item.href" class="sc-article-link-card">
+            <img v-if="item.image" :src="item.image" :alt="item.imageAlt || item.title" width="360" height="220" loading="lazy" decoding="async" />
+            <div class="sc-article-link-card__body"><strong>{{ item.title }}</strong><span>{{ item.summary || 'Read case study' }}</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div v-if="relatedSolutions.length" class="sc-article-link-block">
+        <h2>Related Solutions</h2>
+        <div class="sc-article-link-grid">
+          <a v-for="item in relatedSolutions" :key="item.href || item.title" :href="item.href" class="sc-article-link-card">
+            <img v-if="item.image" :src="item.image" :alt="item.imageAlt || item.title" width="360" height="220" loading="lazy" decoding="async" />
+            <div class="sc-article-link-card__body"><strong>{{ item.title }}</strong><span>{{ item.summary || 'Read solution' }}</span></div>
           </a>
         </div>
       </div>
