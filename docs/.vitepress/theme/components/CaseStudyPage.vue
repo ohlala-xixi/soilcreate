@@ -32,7 +32,7 @@ const copy = computed(() => isSpanish.value
       sidebarAria: 'Categorias de soluciones',
       allNews: 'Todos los articulos',
       searchLabel: 'Buscar soluciones',
-      searchPlaceholder: 'Buscar por tema o producto...',
+      searchPlaceholder: 'Buscar tema o producto',
       readArticle: 'Leer articulo ➔',
       emptyTitle: 'Articulos proximamente',
       emptyCopy: 'Pruebe con otra palabra clave o seleccione otra categoria.'
@@ -50,7 +50,7 @@ const copy = computed(() => isSpanish.value
       sidebarAria: 'Solutions categories',
       allNews: 'All News',
       searchLabel: 'Search solutions',
-      searchPlaceholder: 'Search by topic or product...',
+      searchPlaceholder: 'Search topic or product',
       readArticle: 'Read Article ➔',
       emptyTitle: 'Articles coming soon',
       emptyCopy: 'Try another keyword or select a different category.'
@@ -352,13 +352,17 @@ const submitSubscribe = async () => {
         <div class="sc-sidebar-header">{{ copy.sidebar }}</div>
         <div class="sc-news-search">
           <label for="solutions-search">{{ copy.searchLabel }}</label>
-          <input
-            id="solutions-search"
-            v-model="searchQuery"
-            type="search"
-            :placeholder="copy.searchPlaceholder"
-            autocomplete="off"
-          />
+          <div class="sc-news-search-control">
+            <span class="sc-news-search-icon" aria-hidden="true">⌕</span>
+            <input
+              id="solutions-search"
+              v-model="searchQuery"
+              type="search"
+              :placeholder="copy.searchPlaceholder"
+              autocomplete="off"
+            />
+            <button v-if="searchQuery" type="button" class="sc-news-search-clear" aria-label="Clear search" @click="searchQuery = ''">×</button>
+          </div>
         </div>
         <ul class="sc-category-list">
           <li class="sc-has-submenu">
