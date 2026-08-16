@@ -8,6 +8,14 @@ const defaultDescription =
 const defaultImage = `${siteUrl}/images/shared/hero/bridge-infrastructure-hero.jpg`
 const logoImage = `${siteUrl}/images/logo/site-icon.png`
 
+const stripDuplicateSiteName = (value) => {
+  if (!value || typeof value !== 'string') return value
+  const brandSuffix = new RegExp(`(?:\\s*\\|\\s*${siteName})+$`, 'i')
+  const brandPrefix = new RegExp(`^${siteName}\\s*\\|\\s*`, 'i')
+  const title = value.trim().replace(brandSuffix, '').replace(brandPrefix, '').trim()
+  return title || siteName
+}
+
 const routeFromPage = (page) => {
   const withoutExt = page.replace(/\.md$/, '')
   if (withoutExt === 'index') return '/'
@@ -222,11 +230,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ['meta', { property: 'og:site_name', content: siteName }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
   ],
+  transformPageData(pageData) {
+    pageData.title = stripDuplicateSiteName(pageData.title)
+  },
   transformHead({ page, pageData, title, description }) {
     const frontmatter = pageData.frontmatter || {}
     const route = routeFromPage(page)
     const canonical = frontmatter.canonical || absoluteUrl(route)
-    const pageTitle = title || frontmatter.title || siteName
+    const pageTitle = stripDuplicateSiteName(title || frontmatter.title || siteName)
     const pageDescription = description || frontmatter.description || defaultDescription
     const image = imageFromFrontmatter(frontmatter)
     const language = frontmatter.lang || languageForRoute(route)
