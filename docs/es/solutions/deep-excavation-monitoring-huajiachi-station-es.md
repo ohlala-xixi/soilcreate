@@ -19,45 +19,11 @@ takeaways:
   - "Se registró un aumento repentino en el movimiento del muro hacia adentro después del evento de filtración."
   - "El caso muestra por qué la tasa de deformación, la profundidad de desplazamiento y los cambios de perfil deben evaluarse juntos en el monitoreo de excavaciones profundas."
 relatedProducts:
-  - title: "Data Acquisition and Monitoring Cloud | SoilCreate"
-    href: "/products/data-acquisition/data-acquisition-monitoring-cloud"
-    summary: "Data acquisition gateway and monitoring cloud system for geotechnical sensors, LoRa networking, vibrating-wire acquisition, alarms, dashboards, and API integration."
-    image: "/images/products/data-acquisition-monitoring-cloud/data-acquisition-gateway.jpg"
-    imageAlt: "Data Acquisition and Monitoring Cloud | SoilCreate"
-  - title: "In-Place Inclinometer IPI for Automated Borehole Monitoring"
-    href: "/products/deformation-monitoring/in-place-inclinometer"
-    summary: "Automated in-place inclinometer IPI sensor chain for real-time borehole displacement monitoring in deep excavations, slopes, tunnels, dams, and retaining walls."
-    image: "/images/products/in-place-inclinometer/in-place-inclinometer-bundle.jpg"
-    imageAlt: "In-Place Inclinometer IPI for Automated Borehole Monitoring"
-  - title: "Portable Sliding Inclinometer for Manual Borehole Surveys"
-    href: "/products/deformation-monitoring/sliding-inclinometer"
-    summary: "Portable Bluetooth sliding inclinometer system for manual borehole inclinometer surveys, A0/A180 readings, deep horizontal displacement profiles, and field data checks."
-    image: "/images/products/sliding-inclinometer/high-precision-sliding-inclinometer-product.jpg"
-    imageAlt: "Portable Sliding Inclinometer for Manual Borehole Surveys"
+
 relatedCases:
-  - title: "Deep Foundation Pit Monitoring Cases"
-    href: "/cases/deep-foundation-pit"
-    summary: "SoilCreate deep foundation pit monitoring cases: retaining-wall deep displacement, support axial force, groundwater and automated cloud alarms."
-    image: "/images/case/deep-foundation-pit/deep-foundation-pit-hero.jpg"
-    imageAlt: "Deep Foundation Pit Monitoring Cases"
-  - title: "Rail Transit Monitoring Cases"
-    href: "/cases/rail-transit"
-    summary: "SoilCreate rail transit monitoring cases for metro construction and operation: inclinometers, settlement, support force, water level and cloud platform."
-    image: "/images/case/rail-transit/rail-transit-hero.jpg"
-    imageAlt: "Rail Transit Monitoring Cases"
+
 relatedSolutions:
-  - title: "Deep Excavation Collapse Case Study: What Monitoring Failure Teaches Contractors"
-    href: "/solutions/deep-excavation-collapse-case-study-what-monitoring-failure-teaches-contractors"
-    summary: "Case Studies & Field Notes"
-    imageAlt: "Deep Excavation Collapse Case Study: What Monitoring Failure Teaches Contractors"
-  - title: "Deep Excavation Horizontal Displacement Monitoring: How to Link Strut Force, Settlement, and Groundwater Data"
-    href: "/solutions/deep-excavation-horizontal-displacement-monitoring-strut-force-settlement-groundwater"
-    summary: "Data, Alarms & Risk Warning"
-    imageAlt: "Deep Excavation Horizontal Displacement Monitoring: How to Link Strut Force, Settlement, and Groundwater Data"
-  - title: "Deep Excavation Horizontal Displacement Monitoring: 5 Warning Signs Before Failure"
-    href: "/solutions/deep-excavation-horizontal-displacement-monitoring-warning-signs"
-    summary: "Data, Alarms & Risk Warning"
-    imageAlt: "Deep Excavation Horizontal Displacement Monitoring: 5 Warning Signs Before Failure"
+
 ---
 Las fallas en excavaciones profundas a menudo se documentan después del evento a través de grietas superficiales, asentamiento, respuesta de emergencia o investigación posterior al incidente.
 

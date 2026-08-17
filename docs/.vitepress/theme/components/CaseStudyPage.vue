@@ -57,15 +57,20 @@ const copy = computed(() => isSpanish.value
     })
 
 const categories = [
-  { id: 'inclinometer-basics', label: 'Inclinometer Basics' },
-  { id: 'product-guides', label: 'Product Guides' },
-  { id: 'installation-troubleshooting', label: 'Installation & Troubleshooting' },
-  { id: 'monitoring-applications', label: 'Monitoring Applications' },
-  { id: 'data-alarms-risk-warning', label: 'Data, Alarms & Risk Warning' },
-  { id: 'automation-monitoring-technology', label: 'Automation & Monitoring Technology' },
-  { id: 'distributor-procurement-insights', label: 'Distributor & Procurement Insights' },
-  { id: 'solutions-field-notes', label: 'Solutions & Field Notes' }
+  { id: 'inclinometer-basics', label: 'Inclinometer Basics', labelEs: 'Fundamentos de inclinometros' },
+  { id: 'product-guides', label: 'Product Guides', labelEs: 'Guias de productos' },
+  { id: 'installation-troubleshooting', label: 'Installation & Troubleshooting', labelEs: 'Instalacion y solucion de problemas' },
+  { id: 'monitoring-applications', label: 'Monitoring Applications', labelEs: 'Aplicaciones de monitoreo' },
+  { id: 'data-alarms-risk-warning', label: 'Data, Alarms & Risk Warning', labelEs: 'Datos, alarmas y alerta de riesgos' },
+  { id: 'automation-monitoring-technology', label: 'Automation & Monitoring Technology', labelEs: 'Automatizacion y tecnologia de monitoreo' },
+  { id: 'distributor-procurement-insights', label: 'Distributor & Procurement Insights', labelEs: 'Distribuidores y compras tecnicas' },
+  { id: 'solutions-field-notes', label: 'Solutions & Field Notes', labelEs: 'Soluciones y notas de campo' }
 ]
+
+const localizedCategories = computed(() => categories.map((category) => ({
+  ...category,
+  displayLabel: isSpanish.value ? category.labelEs : category.label
+})))
 
 const articles = [
   {
@@ -250,9 +255,23 @@ const articles = [
   }
 ]
 
+const spanishSolutionArticles = [
+  {
+    title: 'Monitoreo de Excavación Profunda con IPI: Datos de Primera Mano del Incidente en la Estación Huajiachi',
+    href: '/es/solutions/deep-excavation-monitoring-huajiachi-station-es',
+    categoryId: 'solutions-field-notes',
+    category: 'Soluciones y notas de campo',
+    image: '/images/solutions/deep-excavation-monitoring-huajiachi-station/hero.webp',
+    imageAlt: 'Monitoreo de excavación profunda IPI que muestra la deformación del muro de contención y el movimiento profundo en la Estación Huajiachi',
+    summary: 'Vea cómo el monitoreo IPI capturó la deformación de una excavación profunda en la Estación Huajiachi, incluyendo una zona de deformación de 31 m y desplazamiento cercano a 70 mm.'
+  }
+]
+
+const displayedArticles = computed(() => isSpanish.value ? spanishSolutionArticles : articles)
+
 const categoryCounts = computed(() => {
-  const counts = { all: articles.length }
-  for (const article of articles) {
+  const counts = { all: displayedArticles.value.length }
+  for (const article of displayedArticles.value) {
     counts[article.categoryId] = (counts[article.categoryId] || 0) + 1
   }
   return counts
@@ -261,8 +280,8 @@ const categoryCounts = computed(() => {
 const filteredArticles = computed(() => {
   const query = searchQuery.value.trim().toLowerCase()
   const scopedArticles = activeCategory.value === 'all'
-    ? articles
-    : articles.filter((article) => article.categoryId === activeCategory.value)
+    ? displayedArticles.value
+    : displayedArticles.value.filter((article) => article.categoryId === activeCategory.value)
 
   if (!query) return scopedArticles
 
@@ -375,14 +394,14 @@ const submitSubscribe = async () => {
               {{ copy.allNews }} ({{ categoryCounts.all }})
             </button>
             <ul class="sc-submenu">
-              <li v-for="category in categories" :key="category.id">
+              <li v-for="category in localizedCategories" :key="category.id">
                 <button
                   class="sc-sub-item"
                   :class="{ active: activeCategory === category.id }"
                   type="button"
                   @click="setCategory(category.id)"
                 >
-                  {{ category.label }}
+                  {{ category.displayLabel }}
                   <span v-if="categoryCounts[category.id]">({{ categoryCounts[category.id] }})</span>
                 </button>
               </li>

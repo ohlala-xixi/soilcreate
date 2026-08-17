@@ -46,8 +46,15 @@ const navItems = computed(() => isSpanish.value
       { label: 'Contact', href: '/contact', match: '/contact' }
     ])
 
+const isProductDetailPath = (path) => path.startsWith('/products/') && path !== '/products/'
+
 const englishHref = computed(() => isSpanish.value ? spanishToEnglish[route.path] || '/' : route.path)
-const spanishHref = computed(() => isSpanish.value ? route.path : englishToSpanish[route.path] || '/es/')
+const spanishHref = computed(() => {
+  if (isSpanish.value) return route.path
+  if (englishToSpanish[route.path]) return englishToSpanish[route.path]
+  if (isProductDetailPath(route.path)) return route.path
+  return '/es/'
+})
 const logoHref = computed(() => isSpanish.value ? '/es/' : '/')
 
 const isActive = (item) => {
