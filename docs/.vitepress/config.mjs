@@ -49,6 +49,7 @@ const englishToSpanishRoutes = new Map([
 const spanishToEnglishRoutes = new Map([...englishToSpanishRoutes].map(([english, spanish]) => [spanish, english]))
 const isSpanishRoute = (route) => route === '/es/' || route.startsWith('/es/')
 const languageForRoute = (route) => isSpanishRoute(route) ? 'es-ES' : 'en-US'
+const languageForPage = (page, frontmatter = {}) => frontmatter.lang || languageForRoute(routeFromPage(page))
 const localeForRoute = (route) => isSpanishRoute(route) ? 'es_ES' : 'en_US'
 
 const alternateLinksForRoute = (route) => {
@@ -233,6 +234,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   transformPageData(pageData) {
     pageData.title = stripDuplicateSiteName(pageData.title)
   },
+  transformHtml(html, _id, { page, pageData }) {
+    const language = languageForPage(page, pageData.frontmatter || {})
+    return html.replace(/<html\b[^>]*\blang="[^"]*"/, `<html lang="${language}"`)
+  },
   transformHead({ page, pageData, title, description }) {
     const frontmatter = pageData.frontmatter || {}
     const route = routeFromPage(page)
@@ -240,7 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const pageTitle = stripDuplicateSiteName(title || frontmatter.title || siteName)
     const pageDescription = description || frontmatter.description || defaultDescription
     const image = imageFromFrontmatter(frontmatter)
-    const language = frontmatter.lang || languageForRoute(route)
+    const language = languageForPage(page, frontmatter)
     const robots = frontmatter.noindex
       ? 'noindex,nofollow'
       : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'

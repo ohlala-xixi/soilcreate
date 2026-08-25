@@ -1,14 +1,27 @@
 import { promises as fs } from 'node:fs'
+import { execFile } from 'node:child_process'
 import path from 'node:path'
+import { promisify } from 'node:util'
 
 const siteUrl = 'https://soilcreate.com'
 const docsDir = path.resolve('docs')
 const distDir = path.resolve('docs/.vitepress/dist')
 const output = path.join(distDir, 'sitemap.xml')
+const execFileAsync = promisify(execFile)
 
 const isIgnored = (file) => {
   const normalized = file.split(path.sep).join('/')
   return normalized.includes('/.vitepress/') || normalized.includes('/public/')
+}
+
+const isGitIgnored = async (file) => {
+  try {
+    await execFileAsync('git', ['check-ignore', '--quiet', '--', file])
+    return true
+  } catch (error) {
+    if (error.code === 1) return false
+    return false
+  }
 }
 
 const routeFromFile = (file) => {
@@ -34,7 +47,7 @@ const walk = async (dir) => {
     if (entry.isDirectory()) {
       if (entry.name === '.vitepress') continue
       files.push(...(await walk(fullPath)))
-    } else if (entry.isFile() && entry.name.endsWith('.md') && !isIgnored(fullPath)) {
+    } else if (entry.isFile() && entry.name.endsWith('.md') && !isIgnored(fullPath) && !(await isGitIgnored(fullPath))) {
       files.push(fullPath)
     }
   }
