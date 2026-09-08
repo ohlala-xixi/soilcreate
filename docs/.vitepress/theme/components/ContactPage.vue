@@ -15,7 +15,7 @@ const isSpanish = computed(() => props.locale === 'es')
 const copy = computed(() => isSpanish.value
   ? {
       title: 'Contactar con SoilCreate',
-      intro: 'Hable con SoilCreate sobre inclinometros, sensores geotecnicos, adquisicion de datos, nube de monitoreo y soporte tecnico para su proximo proyecto.',
+      intro: 'Comparta su proyecto, los instrumentos requeridos y el país de destino. SoilCreate responderá por email o WhatsApp.',
       email: 'Email',
       phone: 'WhatsApp / Telefono',
       office: 'Sede',
@@ -24,7 +24,7 @@ const copy = computed(() => isSpanish.value
     }
   : {
       title: 'Contact SoilCreate',
-      intro: 'Contact SoilCreate for expert geotechnical monitoring instruments, precision sensor systems, and project support. Whether you need technical guidance, installation support, or a quote for your project, our team is ready to assist you. Reach out using the contact form, email, or WhatsApp below.',
+      intro: 'Share your project type, target instruments, and destination country. SoilCreate will respond by email or WhatsApp.',
       email: 'Email Enquiries',
       phone: 'WhatsApp / Phone',
       office: 'Headquarters',

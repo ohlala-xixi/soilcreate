@@ -40,7 +40,7 @@ const subjectLine = computed(() => (isSpanish.value ? 'Consulta SoilCreate: ' : 
 const copy = computed(() => isSpanish.value
   ? {
       title: 'Solicitar cotizacion',
-      intro: 'Envie su solicitud sin salir de la pagina. La negociacion de precios se mantiene fuera del catalogo publico.',
+      intro: 'Comparta modelo, cantidad, país del proyecto y requisitos técnicos clave.',
       name: 'Nombre',
       company: 'Empresa',
       email: 'Correo de trabajo',
@@ -56,7 +56,7 @@ const copy = computed(() => isSpanish.value
     }
   : {
       title: 'Make an enquiry',
-      intro: 'Submit your request without leaving the page. Price negotiation stays off the public catalog.',
+      intro: 'Share the model, quantity, project country, and key technical requirements.',
       name: 'Your name',
       company: 'Company name',
       email: 'Work email',

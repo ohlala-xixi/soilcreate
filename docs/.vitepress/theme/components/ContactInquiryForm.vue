@@ -24,6 +24,7 @@ const form = ref({
 const submitting = ref(false)
 const status = ref('')
 const statusType = ref('success')
+const fieldId = (name) => `contact-inquiry-${props.locale || 'en'}-${name}`
 
 const subjectLine = computed(() => 'SoilCreate inquiry: ' + props.productName)
 const isSpanish = computed(() => props.locale === 'es')
@@ -97,28 +98,29 @@ const submit = async () => {
   <form class="sc-form" @submit.prevent="submit">
     <div class="sc-row">
       <div>
-        <label>{{ copy.name }}</label>
-        <input v-model="form.name" type="text" name="name" autocomplete="name" required />
+        <label :for="fieldId('name')">{{ copy.name }}</label>
+        <input :id="fieldId('name')" v-model="form.name" type="text" name="name" autocomplete="name" required />
       </div>
       <div>
-        <label>{{ copy.company }}</label>
-        <input v-model="form.company" type="text" name="company" autocomplete="organization" />
+        <label :for="fieldId('company')">{{ copy.company }}</label>
+        <input :id="fieldId('company')" v-model="form.company" type="text" name="company" autocomplete="organization" />
       </div>
     </div>
 
     <div class="sc-row">
       <div>
-        <label>{{ copy.email }}</label>
-        <input v-model="form.email" type="email" name="email" autocomplete="email" required />
+        <label :for="fieldId('email')">{{ copy.email }}</label>
+        <input :id="fieldId('email')" v-model="form.email" type="email" name="email" autocomplete="email" required />
       </div>
       <div>
-        <label>{{ copy.phone }}</label>
-        <input v-model="form.phone" type="tel" name="phone" autocomplete="tel" :placeholder="copy.phonePlaceholder" />
+        <label :for="fieldId('phone')">{{ copy.phone }}</label>
+        <input :id="fieldId('phone')" v-model="form.phone" type="tel" name="phone" autocomplete="tel" :placeholder="copy.phonePlaceholder" />
       </div>
     </div>
 
-    <label>{{ copy.details }}</label>
+    <label :for="fieldId('message')">{{ copy.details }}</label>
     <textarea
+      :id="fieldId('message')"
       v-model="form.message"
       name="message"
       rows="6"
@@ -130,6 +132,6 @@ const submit = async () => {
       {{ submitting ? copy.sending : copy.submit }}
     </button>
 
-    <p v-if="status" class="status" :class="statusType">{{ status }}</p>
+    <p v-if="status" class="status" :class="statusType" role="status" aria-live="polite">{{ status }}</p>
   </form>
 </template>

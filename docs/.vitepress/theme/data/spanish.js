@@ -188,28 +188,28 @@ export const spanishCaseCards = [
     summary: 'Desplazamiento de muros, fuerza axial, nivel de agua y alarmas conectadas en una sola cadena de datos.'
   },
   {
-    title: 'Transito ferroviario',
+    title: 'Tránsito ferroviario',
     href: '/cases/rail-transit',
     image: '/images/case/rail-transit/rail-transit-hero.jpg',
-    summary: 'Monitoreo de tuneles, portales y excavaciones de metro con sensores IPI, SAA y nivel de agua.'
+    summary: 'Monitoreo de túneles, portales y excavaciones de metro con sensores IPI, SAA y nivel de agua.'
   },
   {
     title: 'Taludes y deslizamientos',
     href: '/cases/slope-landslide',
     image: '/images/case/slope-landslide/geohazard-pipeline-monitoring.jpg',
-    summary: 'Seguimiento de movimiento profundo, desplazamiento superficial, lluvia y aguas subterraneas.'
+    summary: 'Seguimiento de movimiento profundo, desplazamiento superficial, lluvia y aguas subterráneas.'
   },
   {
     title: 'Presas y agua',
     href: '/cases/water-dam',
     image: '/images/case/water-dam/water-dam-hero.jpg',
-    summary: 'Deformacion profunda, asentamiento, filtracion y datos de seguridad para presas y embalses.'
+    summary: 'Deformación profunda, asentamiento, filtración y datos de seguridad para presas y embalses.'
   },
   {
-    title: 'Tuneles',
+    title: 'Túneles',
     href: '/cases/tunnel-convergence',
     image: '/images/case/rail-transit/rail-transit-hero.jpg',
-    summary: 'Convergencia de seccion y deformacion de roca o revestimiento durante construccion y operacion.'
+    summary: 'Convergencia de sección y deformación de roca o revestimiento durante construcción y operación.'
   },
   {
     title: 'Puentes',

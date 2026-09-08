@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { getEnglishRoute, getSpanishRoute } from './theme/data/languageRoutes.js'
 
 const siteUrl = 'https://soilcreate.com'
 const siteName = 'SoilCreate'
@@ -34,27 +35,14 @@ const imageFromFrontmatter = (frontmatter) => {
 
 const stripTrailingSlash = (url) => url.replace(/\/$/, '')
 
-const englishToSpanishRoutes = new Map([
-  ['/', '/es/'],
-  ['/about', '/es/about'],
-  ['/products/', '/es/products/'],
-  ['/cases', '/es/cases'],
-  ['/solutions/', '/es/solutions/'],
-  ['/contact', '/es/contact'],
-  ['/products/deformation-monitoring/in-place-inclinometer', '/es/products/deformation-monitoring/in-place-inclinometer'],
-  ['/products/deformation-monitoring/flexible-inclinometer', '/es/products/deformation-monitoring/flexible-inclinometer'],
-  ['/products/deformation-monitoring/sliding-inclinometer', '/es/products/deformation-monitoring/sliding-inclinometer']
-])
-
-const spanishToEnglishRoutes = new Map([...englishToSpanishRoutes].map(([english, spanish]) => [spanish, english]))
 const isSpanishRoute = (route) => route === '/es/' || route.startsWith('/es/')
 const languageForRoute = (route) => isSpanishRoute(route) ? 'es-ES' : 'en-US'
 const languageForPage = (page, frontmatter = {}) => frontmatter.lang || languageForRoute(routeFromPage(page))
 const localeForRoute = (route) => isSpanishRoute(route) ? 'es_ES' : 'en_US'
 
 const alternateLinksForRoute = (route) => {
-  const englishRoute = isSpanishRoute(route) ? spanishToEnglishRoutes.get(route) : route
-  const spanishRoute = isSpanishRoute(route) ? route : englishToSpanishRoutes.get(route)
+  const englishRoute = isSpanishRoute(route) ? getEnglishRoute(route) : route
+  const spanishRoute = isSpanishRoute(route) ? route : getSpanishRoute(route)
   if (!englishRoute || !spanishRoute) return []
 
   return [
@@ -150,22 +138,31 @@ const productSchema = (frontmatter, canonical, pageTitle, pageDescription, image
   })).filter((item) => item.name && item.value)
 })
 
-const articleSchema = (frontmatter, canonical, pageTitle, pageDescription, image, language) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: pageTitle,
-  description: pageDescription,
-  image,
-  author: {
-    '@id': `${siteUrl}/#organization`
-  },
-  publisher: {
-    '@id': `${siteUrl}/#organization`
-  },
-  mainEntityOfPage: canonical,
-  inLanguage: language,
-  about: frontmatter.industry || frontmatter.projectType || 'Geotechnical monitoring'
-})
+const articleSchema = (frontmatter, canonical, pageTitle, pageDescription, image, language) => {
+  const datePublished = frontmatter.datePublished || frontmatter.published
+  const dateModified = frontmatter.dateModified || frontmatter.updated || datePublished
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: pageTitle,
+    description: pageDescription,
+    ...(frontmatter.answerFirst ? { abstract: frontmatter.answerFirst } : {}),
+    image,
+    author: {
+      '@type': 'Organization',
+      name: siteName,
+      url: `${siteUrl}/about`
+    },
+    publisher: {
+      '@id': `${siteUrl}/#organization`
+    },
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    mainEntityOfPage: canonical,
+    inLanguage: language,
+    about: frontmatter.industry || frontmatter.projectType || 'Geotechnical monitoring'
+  }
+}
 
 const schemaForPage = ({ frontmatter, canonical, pageTitle, pageDescription, image, route }) => {
   const schemas = [breadcrumbSchema(canonical, pageTitle)]
@@ -188,6 +185,10 @@ const schemaForPage = ({ frontmatter, canonical, pageTitle, pageDescription, ima
 
 export default defineConfig({
   lang: 'en-US',
+  locales: {
+    root: { label: 'English', lang: 'en-US' },
+    es: { label: 'Español', lang: 'es-ES' }
+  },
   title: siteName,
   titleTemplate: ':title | SoilCreate',
   description: defaultDescription,

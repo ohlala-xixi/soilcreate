@@ -2,6 +2,7 @@
 layout: seo-article
 title: "Monitoreo de Excavación Profunda con IPI: Datos de Primera Mano del Incidente en la Estación Huajiachi"
 description: "Vea cómo el monitoreo IPI capturó la deformación de la excavación profunda en la Estación Huajiachi, incluyendo una zona de deformación de 31 m y un desplazamiento que se aproxima a 70 mm."
+answerFirst: "El caso de monitoreo de excavacion profunda en la estacion Huajiachi muestra por que los datos de inclinometros, asentamiento, soporte y secuencia de obra deben analizarse juntos. El valor del monitoreo depende de convertir las senales de advertencia en una respuesta tecnica clara."
 category: "Case Studies & Field Notes"
 categoryId: "case-studies-field-notes"
 primaryKeyword: "deep excavation monitoring"

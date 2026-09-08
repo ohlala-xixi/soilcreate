@@ -4,28 +4,9 @@ import { useRoute } from 'vitepress'
 import { openInquiry } from '../utils/inquiry.js'
 import { contactEmail, whatsappLink, whatsappNumber } from '../data/site.js'
 import { trackEvent } from '../utils/tracking.js'
+import { getEnglishRoute, getSpanishRoute } from '../data/languageRoutes.js'
 
 const route = useRoute()
-
-const englishToSpanish = {
-  '/': '/es/',
-  '/about': '/es/about',
-  '/products/': '/es/products/',
-  '/cases': '/es/cases',
-  '/cases/deep-foundation-pit': '/es/cases/deep-foundation-pit',
-  '/cases/rail-transit': '/es/cases/rail-transit',
-  '/cases/slope-landslide': '/es/cases/slope-landslide',
-  '/cases/water-dam': '/es/cases/water-dam',
-  '/cases/tunnel-convergence': '/es/cases/tunnel-convergence',
-  '/cases/bridge-structure': '/es/cases/bridge-structure',
-  '/solutions/': '/es/solutions/',
-  '/contact': '/es/contact',
-  '/products/deformation-monitoring/in-place-inclinometer': '/es/products/deformation-monitoring/in-place-inclinometer',
-  '/products/deformation-monitoring/flexible-inclinometer': '/es/products/deformation-monitoring/flexible-inclinometer',
-  '/products/deformation-monitoring/sliding-inclinometer': '/es/products/deformation-monitoring/sliding-inclinometer'
-}
-
-const spanishToEnglish = Object.fromEntries(Object.entries(englishToSpanish).map(([english, spanish]) => [spanish, english]))
 const isSpanish = computed(() => route.path === '/es/' || route.path.startsWith('/es/'))
 
 const navItems = computed(() => isSpanish.value
@@ -48,10 +29,11 @@ const navItems = computed(() => isSpanish.value
 
 const isProductDetailPath = (path) => path.startsWith('/products/') && path !== '/products/'
 
-const englishHref = computed(() => isSpanish.value ? spanishToEnglish[route.path] || '/' : route.path)
+const englishHref = computed(() => isSpanish.value ? getEnglishRoute(route.path) || '/' : route.path)
 const spanishHref = computed(() => {
   if (isSpanish.value) return route.path
-  if (englishToSpanish[route.path]) return englishToSpanish[route.path]
+  const translatedRoute = getSpanishRoute(route.path)
+  if (translatedRoute) return translatedRoute
   if (isProductDetailPath(route.path)) return route.path
   return '/es/'
 })

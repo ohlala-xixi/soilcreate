@@ -2,6 +2,7 @@
 layout: seo-article
 title: "Deep Excavation Monitoring with IPI: First-Hand Data from the Huajiachi Station Incident"
 description: "See how IPI monitoring captured deep excavation deformation at Huajiachi Station, including a 31 m deformation zone and displacement approaching 70 mm."
+answerFirst: "The Huajiachi Station deep excavation incident shows why inclinometer data, settlement, strut response, and field timing must be read together. Monitoring is valuable only when warning signs are connected to a clear engineering response."
 category: "Case Studies & Field Notes"
 categoryId: "case-studies-field-notes"
 primaryKeyword: "deep excavation monitoring"

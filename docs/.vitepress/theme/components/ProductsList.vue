@@ -28,7 +28,9 @@ const copy = computed(() => isSpanish.value
       expand: 'Expandir categoria',
       manual: 'Manual de seleccion',
       viewDetails: 'Ver detalles',
-      quote: 'Cotizar'
+      quote: 'Cotizar',
+      emptyTitle: 'No hay productos directos en esta categoría',
+      emptyCopy: 'Seleccione una subcategoría relacionada o vuelva a todos los productos.'
     }
   : {
       title: 'Products',
@@ -40,23 +42,31 @@ const copy = computed(() => isSpanish.value
       expand: 'Expand category',
       manual: 'Selection Manual',
       viewDetails: 'View Details',
-      quote: 'Quote'
+      quote: 'Quote',
+      emptyTitle: 'No direct products in this category',
+      emptyCopy: 'Choose a related subcategory or return to all products.'
     })
+
+const productFilterIds = (product) => [
+  product.categoryId,
+  product.subcategoryId,
+  ...(product.categoryIds || []),
+  ...(product.subcategoryIds || [])
+].filter(Boolean)
 
 const categoryCounts = computed(() => {
   const counts = { all: products.value.length }
   for (const product of products.value) {
-    counts[product.categoryId] = (counts[product.categoryId] || 0) + 1
-    counts[product.subcategoryId] = (counts[product.subcategoryId] || 0) + 1
+    for (const filterId of new Set(productFilterIds(product))) {
+      counts[filterId] = (counts[filterId] || 0) + 1
+    }
   }
   return counts
 })
 
 const filteredProducts = computed(() => {
   if (activeFilter.value === 'all') return products.value
-  return products.value.filter(
-    (product) => product.categoryId === activeFilter.value || product.subcategoryId === activeFilter.value
-  )
+  return products.value.filter((product) => productFilterIds(product).includes(activeFilter.value))
 })
 
 const setFilter = (filterId) => {
@@ -150,7 +160,7 @@ const toggleCategory = (categoryId) => {
       </aside>
 
       <section class="sc-product-grid-area">
-        <div class="sc-grid">
+        <div v-if="filteredProducts.length" class="sc-grid">
           <article v-for="product in filteredProducts" :key="product.sku" class="sc-product-card">
             <a :href="product.href" class="sc-card-image">
               <img
@@ -174,6 +184,11 @@ const toggleCategory = (categoryId) => {
               <button type="button" class="sc-card-quote" @click="openInquiry(product.name)">{{ copy.quote }}</button>
             </div>
           </article>
+        </div>
+        <div v-else class="sc-product-empty" role="status">
+          <h2>{{ copy.emptyTitle }}</h2>
+          <p>{{ copy.emptyCopy }}</p>
+          <button type="button" class="sc-card-quote" @click="setFilter('all')">{{ copy.all }}</button>
         </div>
       </section>
     </div>

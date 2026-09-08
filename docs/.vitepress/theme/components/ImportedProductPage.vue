@@ -5,7 +5,8 @@ import TechnologyStack from './TechnologyStack.vue'
 import catalog from '../data/products.json'
 import { importedProducts } from '../data/importedProducts.js'
 import { rasberProductPages } from '../data/rasberProductPages.js'
-import { spanishProductCards, spanishProductPages } from '../data/spanish.js'
+import { spanishCaseCards, spanishProductCards, spanishProductPages } from '../data/spanish.js'
+import { getSpanishRoute } from '../data/languageRoutes.js'
 import { spanishProductPageHtml } from '../data/spanishProductPageHtml.js'
 
 const props = defineProps({
@@ -28,18 +29,8 @@ const rawHtml = computed(() => {
   return rasberProductPages[props.product] || ''
 })
 const spanishProductByHref = computed(() => Object.fromEntries(spanishProductCards.map((product) => [product.href.replace('/es', ''), product])))
-const spanishProductHrefs = new Set(
-  Object.keys(spanishProductPages).map((slug) => `/products/deformation-monitoring/${slug}`)
-)
 const localizedHref = (href) => {
-  if (!isSpanish.value) return href
-  if (href === '/products/' || href === '/products') return '/es/products/'
-  if (href === '/cases/' || href === '/cases') return '/es/cases'
-  if (href === '/solutions/' || href === '/solutions') return '/es/solutions/'
-  if (href.startsWith('/products/')) return spanishProductHrefs.has(href) ? `/es${href}` : href
-  if (href.startsWith('/cases/')) return href
-  if (href.startsWith('/solutions/')) return href
-  return href
+  return isSpanish.value ? getSpanishRoute(href) || href : href
 }
 
 const copy = computed(() => isSpanish.value
@@ -288,10 +279,14 @@ const relatedCases = computed(() => {
 })
 
 const localizedRelatedCases = computed(() =>
-  relatedCases.value.map((entry) => ({
-    ...entry,
-    href: localizedHref(entry.href)
-  }))
+  relatedCases.value.map((entry) => {
+    const translated = isSpanish.value && spanishCaseCards.find((item) => item.href === entry.href)
+    return {
+      ...entry,
+      ...(translated ? { ...translated, category: 'Casos de estudio', imageAlt: translated.title } : {}),
+      href: localizedHref(entry.href)
+    }
+  })
 )
 
 const localizedRelatedSolutions = computed(() =>

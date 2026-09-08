@@ -233,6 +233,13 @@
       "name": "Data Acquisition & Monitoring Cloud",
       "categoryId": "data-acquisition",
       "subcategoryId": "data-logger-gateway",
+      "categoryIds": [
+        "software-platform"
+      ],
+      "subcategoryIds": [
+        "monitoring-cloud",
+        "api-integration"
+      ],
       "category": "Data Acquisition",
       "subcategory": "Data Logger & Gateway",
       "image": "/images/products/data-acquisition-monitoring-cloud/data-acquisition-gateway.jpg",

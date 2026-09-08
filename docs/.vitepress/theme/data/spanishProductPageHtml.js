@@ -6,6 +6,13 @@ const applyReplacements = (html, replacements) =>
 const commonReplacements = [
   ['Home', 'Inicio'],
   ['Products', 'Productos'],
+  ['<a href="/">Inicio</a>', '<a href="/es/">Inicio</a>'],
+  ['<a href="/products/">Productos</a>', '<a href="/es/products/">Productos</a>'],
+  ['Wiring', 'Cableado'],
+  ['Signal &amp; addressing', 'Señal y direccionamiento'],
+  ['Signal & addressing', 'Señal y direccionamiento'],
+  ['Rod weight', 'Peso de la varilla'],
+  ['Offline resilience', 'Funcionamiento sin conexión'],
   ['Overview', 'Descripcion general'],
   ['Applications', 'Aplicaciones'],
   ['Technical Specifications', 'Especificaciones tecnicas'],
@@ -739,12 +746,32 @@ const flexibleResidualReplacements = [
   ['A sudden jump across the entire curve indicates a broken flexible joint: the full array is lifted and re-laid. Long-term slow drift usually means the trench itself is settling and dragging the array — reconcile readings against the benchmark point to separate true displacement from foundation movement. A drift surge on one single segment points instead to sensor damage or water ingress in that segment; it is located remotely so only that segment needs lifting.', 'Un salto repentino en toda la curva indica una junta flexible rota: se levanta y reinstala toda la matriz. Una deriva lenta a largo plazo suele significar que la zanja se esta asentando y arrastra la matriz; compare las lecturas con el punto de referencia para separar desplazamiento real de movimiento de cimentacion. Un aumento de deriva en un solo segmento apunta a dano del sensor o entrada de agua; se localiza remotamente para levantar solo ese segmento.']
 ]
 
+const ipiReviewedReplacements = [
+  ['Automated trend data between manual surveys', 'Datos de tendencias automatizados entre mediciones manuales'],
+  ['If the sliding inclinometer solves manual-survey efficiency, the in-place inclinometer answers the need for 7×24 automated monitoring. With a configured sampling interval as fast as one reading per minute, it records short-term deformation trends that daily or weekly manual site visits may miss.', 'El inclinómetro deslizante mejora la eficiencia de las mediciones manuales; el inclinómetro fijo permite el monitoreo automatizado 7×24. Con un intervalo configurado de hasta una lectura por minuto, registra tendencias de deformación a corto plazo que las visitas diarias o semanales pueden pasar por alto.'],
+  ['Optional electrolytic-solution sensing element for projects where long-term drift control is a selection priority; confirm the applicable model, range, unit and test conditions before specification.', 'Sensor electrolítico opcional para proyectos que priorizan el control de deriva a largo plazo; confirme el modelo, rango, unidad y condiciones de ensayo antes de especificarlo.'],
+  ['A sliding system competes on flexibility: one probe can survey many boreholes during periodic construction checks. The in-place type is selected when the risk level, required sampling frequency, remote access needs, or project workflow justify a fixed automated sensor chain.', 'Un sistema deslizante permite medir varios sondeos en las inspecciones periódicas de obra. El tipo fijo se selecciona cuando el nivel de riesgo, la frecuencia de muestreo, el acceso remoto o el flujo de trabajo justifican una cadena automatizada de sensores.'],
+  ['Each segment measures tilt over its gauge length; the platform converts the chain of readings into a displacement-vs-depth profile. With automatic scheduled sampling, the profile can be refreshed at configured intervals, showing how deflection develops over time instead of waiting for the next manual survey.', 'Cada segmento mide la inclinación a lo largo de su longitud de referencia; la plataforma convierte las lecturas en un perfil de desplazamiento por profundidad. El muestreo programado actualiza el perfil a intervalos configurados y muestra la evolución de la deformación entre mediciones manuales.'],
+  ['On network loss, the paired controller or data logger can buffer readings in 16 GB of local storage and resume upload automatically once the connection recovers; storage duration depends on configuration and sampling interval.', 'Si se pierde la conexión, el controlador o registrador asociado puede almacenar lecturas en 16 GB de memoria local y reanudar la carga al recuperar la red. La retención depende de la configuración y del intervalo de muestreo.'],
+  ['The core measuring element is a MEMS or optional electrolytic-solution sensor; confirm stability and calibration requirements for the selected model.', 'El elemento de medición es un sensor MEMS o electrolítico opcional; confirme los requisitos de estabilidad y calibración del modelo seleccionado.'],
+  ['Scheduled sampling configurable from 1 min to 24 h; ultra-low-power sleep mode; network-loss buffering in the paired controller or data logger with 16 GB local storage; remote configuration and firmware upgrades.', 'Muestreo programable de 1 min a 24 h; modo de reposo de muy bajo consumo; almacenamiento durante interrupciones de red en el controlador o registrador asociado con 16 GB de memoria local; configuración y actualizaciones de firmware remotas.'],
+  ['For long-term deployments, compare the selected MEMS or electrolytic-solution sensing option under the same range, unit, temperature and duration conditions. SoilCreate can confirm the applicable stability data and recalibration plan for the specified configuration.', 'Para instalaciones a largo plazo, compare las opciones MEMS y electrolítica bajo las mismas condiciones de rango, unidad, temperatura y duración. SoilCreate puede confirmar los datos de estabilidad y el plan de recalibración de la configuración especificada.'],
+  ['<b>In-place + sliding, better together:</b> the in-place type records frequent automated trend data, while the sliding type supports manual A0/A180 checks and baseline comparison. Used together, they provide a stronger deep-displacement monitoring workflow.', '<b>IPI y deslizante, mejor juntos:</b> el tipo fijo registra tendencias mediante muestreo automatizado frecuente; el deslizante permite comprobaciones manuales A0/A180 y comparación con la referencia inicial. Juntos refuerzan el seguimiento del desplazamiento profundo.'],
+  ['Paired controller/logger: 16 GB storage, breakpoint-resume, remote upgrade', 'Controlador/registrador asociado: memoria de 16 GB, reanudación de carga y actualización remota'],
+  ['Sensor Options', 'Opciones de sensor'],
+  ['Confirm model-specific stability data and test conditions before selection.', 'Confirme los datos de estabilidad y las condiciones de ensayo del modelo antes de seleccionarlo.'],
+  ["Check remotely before dismantling anything on site: first the 4G SIM card (including balance), then the APN configuration, then the controller's 12 V DC supply. With the paired controller or data logger configured for 16 GB local storage, readings can be buffered during a network outage and uploaded after reconnection. Retention depends on sampling interval, channel count and configuration; confirm these with the supplied system.", 'Antes de desmontar equipos, revise de forma remota la tarjeta SIM 4G y su saldo, la configuración APN y la alimentación de 12 V CC del controlador. Con el controlador o registrador asociado configurado con 16 GB de memoria local, las lecturas pueden almacenarse durante una interrupción de red y cargarse al reconectar. La retención depende del intervalo de muestreo, número de canales y configuración; confírmela para el sistema suministrado.'],
+  ["Compare the selected MEMS and electrolytic-solution models using documented drift, temperature, range and calibration conditions. The suitable option depends on the project's measurement requirements and maintenance plan, not duration alone. Ask SoilCreate for the applicable test report and recalibration requirements before specification.", 'Compare los modelos MEMS y electrolíticos con datos documentados de deriva, temperatura, rango y condiciones de calibración. La opción adecuada depende de los requisitos de medición y del plan de mantenimiento, además de la duración del proyecto. Solicite a SoilCreate el informe de ensayo y los requisitos de recalibración antes de especificar el equipo.'],
+  ['Confirm the selected model, measurement range, units, temperature range, test duration and calibration conditions before using the specifications below for procurement. Storage specifications apply to the paired controller or data logger.', 'Confirme el modelo, rango de medición, unidades, rango de temperatura, duración del ensayo y condiciones de calibración antes de utilizar estas especificaciones para compras. Las especificaciones de almacenamiento corresponden al controlador o registrador asociado.']
+]
+
 export const spanishProductPageHtml = {
   'sliding-inclinometer': applyReplacements(rasberProductPages['sliding-inclinometer'], [
     ...commonReplacements,
     ...slidingReplacements
   ]),
   'in-place-inclinometer': applyReplacements(rasberProductPages['in-place-inclinometer'], [
+    ...ipiReviewedReplacements,
     ...commonReplacements,
     ...ipiExtendedReplacements,
     ...ipiResidualReplacements,
