@@ -41,6 +41,17 @@ relatedArticles:
     href: "/solutions/"
     category: "All Solutions"
     summary: "Explore SoilCreate field notes, product guides, monitoring applications, and procurement insights."
+faqs:
+  - question: "What is an automated inclinometer monitoring system?"
+    answer: "It is a monitoring workflow that connects installed inclinometer sensors, a data logger, communication, software, and alarm settings so deformation trends can be reviewed without waiting for manual surveys."
+  - question: "Can automated monitoring replace field inspection?"
+    answer: "No. Automated monitoring helps reduce blind spots and improves trend visibility, but field inspection and engineering judgment are still required."
+  - question: "What should contractors check before buying a system?"
+    answer: "They should check the failure mode, required reading frequency, installation method, data logger, cloud platform, alarm rules, and supplier support."
+  - question: "Why do many projects need more than one sensor type?"
+    answer: "Ground and structures move for many reasons. Displacement, water, load, settlement, and field observations often need to be reviewed together."
+  - question: "How can SoilCreate fit into this workflow?"
+    answer: "SoilCreate automated inclinometer systems can help teams collect frequent readings, send data to a cloud platform, and review trends with fewer site visits."
 ---
 ## Definition
 

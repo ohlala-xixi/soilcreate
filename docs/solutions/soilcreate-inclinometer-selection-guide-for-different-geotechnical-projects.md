@@ -41,6 +41,17 @@ relatedArticles:
     href: "/solutions/"
     category: "All Solutions"
     summary: "Explore SoilCreate field notes, product guides, monitoring applications, and procurement insights."
+faqs:
+  - question: "What is the SoilCreate inclinometer selection guide used for?"
+    answer: "It is used to prepare RFQ information and compare SoilCreate manual, in-place, flexible, and combined inclinometer packages by objective, depth, frequency, access, data output, and support needs."
+  - question: "Can SoilCreate compare manual, in-place, and flexible inclinometer options in one RFQ?"
+    answer: "Yes. A combined RFQ is often useful when the project needs manual verification in some boreholes and automated or continuous monitoring in critical locations."
+  - question: "Is this page a general inclinometer design standard?"
+    answer: "No. It is a SoilCreate RFQ and configuration guide. Engineering design, alarm values, and final monitoring layout should be confirmed by the project engineer and applicable project documents."
+  - question: "What makes a distributor quotation stronger?"
+    answer: "A stronger quotation defines the full package: instrument, accessories, logger, platform, training, spare parts, warranty or service scope, and expected data workflow."
+  - question: "Should temporary monitoring projects mention recovery needs?"
+    answer: "Yes. If the equipment will be reused, the RFQ should state recovery expectations so the installation method, protection, and accessory package can be discussed before delivery."
 ---
 ## Definition
 

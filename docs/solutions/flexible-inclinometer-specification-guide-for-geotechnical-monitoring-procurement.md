@@ -41,6 +41,17 @@ relatedArticles:
     href: "/solutions/"
     category: "All Solutions"
     summary: "Explore SoilCreate field notes, product guides, monitoring applications, and procurement insights."
+faqs:
+  - question: "What should a flexible inclinometer specification include?"
+    answer: "It should include the monitoring objective, total length, segment or node layout, installation method, protection, recovery needs, logger, power, communication, data output, and support requirements."
+  - question: "Can automated monitoring replace field inspection?"
+    answer: "No. Automated monitoring helps reduce blind spots and improves trend visibility, but field inspection and engineering judgment are still required."
+  - question: "What should contractors check before buying a system?"
+    answer: "They should check the failure mode, required reading frequency, installation method, data logger, cloud platform, alarm rules, and supplier support."
+  - question: "Why do many projects need more than one sensor type?"
+    answer: "Ground and structures move for many reasons. Displacement, water, load, settlement, and field observations often need to be reviewed together."
+  - question: "How can SoilCreate fit into this workflow?"
+    answer: "SoilCreate flexible inclinometers and displacement arrays can support segmented deformation-profile monitoring when the project needs more than periodic manual readings."
 ---
 ## Definition
 

@@ -41,6 +41,17 @@ relatedArticles:
     href: "/solutions/"
     category: "All Solutions"
     summary: "Explore SoilCreate field notes, product guides, monitoring applications, and procurement insights."
+faqs:
+  - question: "How do you choose the right inclinometer system?"
+    answer: "Start from the movement mechanism, expected monitoring depth, reading frequency, access constraints, and required data output, then match those needs to manual, in-place, flexible, or combined inclinometer workflows."
+  - question: "When should a project consider a flexible displacement array?"
+    answer: "A flexible displacement array is useful when the project needs a segmented shape profile or when deformation may be distributed along a borehole, embankment, slope, retaining structure, or tunnel-related alignment."
+  - question: "Is reading frequency enough to choose the right inclinometer?"
+    answer: "No. Frequency matters, but the team should also check the deformation mechanism, monitoring depth, access, installation protection, data workflow, and how the readings will support field decisions."
+  - question: "Can one project use more than one inclinometer type?"
+    answer: "Yes. A project may use manual surveys for verification, in-place sensor chains for critical automated readings, and flexible arrays where a segmented profile is needed."
+  - question: "What information should be prepared before requesting a recommendation?"
+    answer: "Prepare the project type, expected deformation mechanism, borehole depth, access limits, reading frequency, alarm needs, data export format, and any existing casing condition."
 ---
 ## Definition
 

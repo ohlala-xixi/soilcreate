@@ -164,6 +164,34 @@ const articleSchema = (frontmatter, canonical, pageTitle, pageDescription, image
   }
 }
 
+const faqPageSchema = (frontmatter, canonical, language) => {
+  const faqs = Array.isArray(frontmatter.faqs) ? frontmatter.faqs : []
+  const mainEntity = faqs
+    .map((faq) => ({
+      question: String(faq?.question || '').trim(),
+      answer: String(faq?.answer || '').trim()
+    }))
+    .filter((faq) => faq.question && faq.answer)
+    .map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+
+  if (!mainEntity.length) return null
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntityOfPage: canonical,
+    inLanguage: language,
+    mainEntity
+  }
+}
+
 const schemaForPage = ({ frontmatter, canonical, pageTitle, pageDescription, image, route }) => {
   const schemas = [breadcrumbSchema(canonical, pageTitle)]
   const language = languageForRoute(route)
@@ -179,6 +207,9 @@ const schemaForPage = ({ frontmatter, canonical, pageTitle, pageDescription, ima
   if (frontmatter.layout === 'case-study' || frontmatter.layout === 'seo-article') {
     schemas.push(articleSchema(frontmatter, canonical, pageTitle, pageDescription, image, language))
   }
+
+  const faqSchema = faqPageSchema(frontmatter, canonical, language)
+  if (faqSchema) schemas.push(faqSchema)
 
   return schemas
 }

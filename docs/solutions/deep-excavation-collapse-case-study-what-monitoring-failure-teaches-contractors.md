@@ -41,6 +41,17 @@ relatedArticles:
     href: "/solutions/"
     category: "All News"
     summary: "Explore SoilCreate field notes, product guides, monitoring applications, and procurement insights."
+faqs:
+  - question: "What does a deep excavation collapse case study teach contractors?"
+    answer: "It shows how weak baselines, ignored displacement trends, unclear alarm duties, or missing field context can turn monitoring into a late warning instead of an early decision tool."
+  - question: "What should contractors check before buying a system?"
+    answer: "They should check the failure mode, required reading frequency, installation method, data logger, cloud platform, alarm rules, and supplier support."
+  - question: "Why do many projects need more than one sensor type?"
+    answer: "Ground and structures move for many reasons. Displacement, water, load, settlement, and field observations often need to be reviewed together."
+  - question: "How often should readings be collected?"
+    answer: "The reading frequency depends on project risk, construction stage, site access, and alarm requirements. A stable low-risk site may use periodic readings. A high-risk stage may need frequent or automated readings."
+  - question: "What makes a monitoring alarm useful?"
+    answer: "A useful alarm has a clear threshold, a clear receiver, and a clear response action. If no one knows what to do after the alarm, the system is only sending noise."
 ---
 
 ## Definition

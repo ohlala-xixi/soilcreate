@@ -41,6 +41,17 @@ relatedArticles:
     href: "/solutions/"
     category: "All Solutions"
     summary: "Explore SoilCreate field notes, product guides, monitoring applications, and procurement insights."
+faqs:
+  - question: "What is an in-place inclinometer or IPI?"
+    answer: "It is an installed inclinometer sensor chain or sensor group that records lateral displacement automatically through a data logger or monitoring platform."
+  - question: "Can automated monitoring replace field inspection?"
+    answer: "No. Automated monitoring helps reduce blind spots and improves trend visibility, but field inspection and engineering judgment are still required."
+  - question: "What should contractors check before buying a system?"
+    answer: "They should check the failure mode, required reading frequency, installation method, data logger, cloud platform, alarm rules, and supplier support."
+  - question: "Why do many projects need more than one sensor type?"
+    answer: "Ground and structures move for many reasons. Displacement, water, load, settlement, and field observations often need to be reviewed together."
+  - question: "How can SoilCreate fit into this workflow?"
+    answer: "SoilCreate in-place inclinometer options can support long-term monitoring where a fixed sensor string is more practical than repeated manual readings."
 ---
 ## Definition
 

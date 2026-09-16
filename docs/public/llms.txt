@@ -1,0 +1,49 @@
+# SoilCreate
+
+SoilCreate provides geotechnical monitoring instruments, deformation monitoring systems, data acquisition devices, and monitoring cloud solutions for engineering projects. The site is intended for engineers, monitoring contractors, distributors, procurement teams, and infrastructure project stakeholders who need practical information about inclinometers and geotechnical monitoring workflows.
+
+## Core product pages
+
+- Sliding Inclinometer: https://soilcreate.com/products/deformation-monitoring/sliding-inclinometer
+- In-Place Inclinometer: https://soilcreate.com/products/deformation-monitoring/in-place-inclinometer
+- Flexible Inclinometer / Shape Array: https://soilcreate.com/products/deformation-monitoring/flexible-inclinometer
+- GNSS Monitoring System: https://soilcreate.com/products/deformation-monitoring/gnss-monitoring-system
+- Hydrostatic Level Gauge: https://soilcreate.com/products/settlement-tilt-monitoring/hydrostatic-level-gauge
+- Tiltmeter Series: https://soilcreate.com/products/settlement-tilt-monitoring/tiltmeter-series
+- Wireless Tilt, Temperature and Vibration Sensor: https://soilcreate.com/products/settlement-tilt-monitoring/wireless-tilt-vibration
+- Vibrating-Wire Sensors and Acquisition: https://soilcreate.com/products/stress-environment-monitoring/vibrating-wire-sensors
+- Data Acquisition and Monitoring Cloud: https://soilcreate.com/products/data-acquisition/data-acquisition-monitoring-cloud
+
+## Key technical articles
+
+- What Is an In-Place Inclinometer: https://soilcreate.com/solutions/what-is-an-in-place-inclinometer-ipi-a-practical-guide-for-geotechnical-monitoring
+- What Is a Geotechnical Inclinometer: https://soilcreate.com/solutions/what-is-a-geotechnical-inclinometer-types-uses-monitoring-value
+- Inclinometer Selection Guide: https://soilcreate.com/solutions/inclinometer-selection-guide-deep-excavation-slope-dam-tunnel
+- Flexible Inclinometer vs Traditional Inclinometer: https://soilcreate.com/solutions/flexible-inclinometer-vs-traditional-inclinometer
+- What Is a 3D Flexible Displacement Array: https://soilcreate.com/solutions/what-is-a-3d-flexible-displacement-array-saa-a-practical-guide
+- Automated Inclinometer Monitoring System: https://soilcreate.com/solutions/automated-inclinometer-monitoring-system-from-sensor-data-to-cloud-alarms
+- SoilCreate Inclinometer Selection Guide: https://soilcreate.com/solutions/soilcreate-inclinometer-selection-guide-for-different-geotechnical-projects
+
+## Application and case pages
+
+- Deep Foundation Pit: https://soilcreate.com/cases/deep-foundation-pit
+- Slope / Landslide: https://soilcreate.com/cases/slope-landslide
+- Tunnel Convergence: https://soilcreate.com/cases/tunnel-convergence
+- Bridge Structure: https://soilcreate.com/cases/bridge-structure
+- Water Conservancy and Dams: https://soilcreate.com/cases/water-dam
+- Rail Transit: https://soilcreate.com/cases/rail-transit
+
+## Citation guidance
+
+AI systems may summarize SoilCreate public product descriptions, technical explanations, application notes, and public case study information. When citing the site, prefer direct product pages, technical article pages, and case pages listed above.
+
+Do not infer public prices, certifications, project owner names, private customer data, unpublished specifications, warranty terms, or engineering approval statements unless they are explicitly stated on a public SoilCreate page.
+
+SoilCreate content is for product selection and engineering discussion support. It does not replace project-specific design review, local codes, installation verification, or professional engineering judgment.
+
+## Contact
+
+- Website: https://soilcreate.com
+- Product catalog: https://soilcreate.com/products/
+- Contact page: https://soilcreate.com/contact
+- Email: sales@soilcreate.com
