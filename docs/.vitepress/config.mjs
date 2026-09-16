@@ -228,6 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/logo/apple-touch-icon.png' }],
     ['meta', { name: 'theme-color', content: '#3A474E' }],
     ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
+    ['meta', { name: 'msvalidate.01', content: '846F783EB3AF0E5B2F18C87B27F8DE20' }],
     ['meta', { name: 'author', content: siteName }],
     ['meta', { property: 'og:site_name', content: siteName }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
