@@ -227,6 +227,9 @@ const spanishTextMap = {
   Maintenance: 'Mantenimiento'
 }
 
+const spanishTextEntries = Object.entries(spanishTextMap)
+  .sort(([left], [right]) => right.length - left.length)
+
 function localizeHtml(html) {
   if (props.locale !== 'es') return html
   let localized = html
@@ -235,7 +238,7 @@ function localizeHtml(html) {
     .replaceAll('href="/contact"', 'href="/es/contact"')
     .replaceAll('href="/products/"', 'href="/es/products/"')
     .replaceAll('href="/"', 'href="/es/"')
-  for (const [from, to] of Object.entries(spanishTextMap)) {
+  for (const [from, to] of spanishTextEntries) {
     localized = localized.replaceAll(from, to)
   }
   return localized

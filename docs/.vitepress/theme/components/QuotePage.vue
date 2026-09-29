@@ -17,13 +17,72 @@ import ContactInquiryForm from './ContactInquiryForm.vue'
       </p>
     </section>
 
+    <section class="sc-quote-paths" aria-labelledby="quote-product-heading">
+      <div class="sc-quote-section-heading">
+        <p class="sc-eyebrow">Choose a starting point</p>
+        <h2 id="quote-product-heading">Which measurement approach fits your project?</h2>
+        <p>You do not need a finished specification. Start with the closest operating method and we will confirm the configuration.</p>
+      </div>
+
+      <div class="sc-quote-product-grid">
+        <a href="/products/deformation-monitoring/sliding-inclinometer">
+          <span>Manual surveys</span>
+          <strong>Portable Sliding Inclinometer</strong>
+          <small>For scheduled borehole surveys across multiple locations.</small>
+        </a>
+        <a href="/products/deformation-monitoring/in-place-inclinometer">
+          <span>Automated monitoring</span>
+          <strong>In-Place Inclinometer (IPI)</strong>
+          <small>For continuous borehole displacement data and remote alarms.</small>
+        </a>
+        <a href="/products/deformation-monitoring/flexible-inclinometer">
+          <span>Distributed deformation</span>
+          <strong>Flexible Inclinometer / SAA</strong>
+          <small>For continuous shape and deformation profiles along an installation.</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="sc-quote-factors" aria-labelledby="quote-factors-heading">
+      <div class="sc-quote-section-heading">
+        <p class="sc-eyebrow">Quotation factors</p>
+        <h2 id="quote-factors-heading">What determines the project quotation?</h2>
+      </div>
+      <dl class="sc-quote-factor-grid">
+        <div>
+          <dt>Measurement scope</dt>
+          <dd>Monitoring target, borehole depth, number of locations, axes, and required accuracy.</dd>
+        </div>
+        <div>
+          <dt>System configuration</dt>
+          <dd>Probe or sensor quantity, cable length, readout, data logger, gateway, and accessories.</dd>
+        </div>
+        <div>
+          <dt>Data delivery</dt>
+          <dd>Manual collection or automation, sampling frequency, communications, cloud access, and alarms.</dd>
+        </div>
+        <div>
+          <dt>Project delivery</dt>
+          <dd>Destination country, documentation, installation support, commissioning, and delivery schedule.</dd>
+        </div>
+      </dl>
+    </section>
+
     <section class="sc-contact-wrapper">
       <aside class="sc-info-card">
-        <h2>Quote information</h2>
+        <p class="sc-eyebrow">Before you submit</p>
+        <h2>Details that speed up selection</h2>
         <p>
           For faster matching, include borehole depth, monitoring frequency, communication
           method, and whether the project requires manual surveys or automated monitoring.
         </p>
+
+        <ul class="sc-quote-checklist">
+          <li>Project application and monitoring target</li>
+          <li>Depth, quantity, range, and accuracy</li>
+          <li>Manual or automated data collection</li>
+          <li>Destination and required delivery date</li>
+        </ul>
 
         <div class="sc-info-item">
           <div class="sc-info-content">

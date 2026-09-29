@@ -18,6 +18,7 @@ const copy = computed(() => isSpanish.value
       products: 'Productos',
       cases: 'Casos',
       solutions: 'Soluciones',
+      quote: 'Solicitar cotizacion',
       media: 'Media',
       stayUpdated: 'Mantengase actualizado',
       newsletterNote: 'Ideas de ingenieria, cada mes',
@@ -37,6 +38,7 @@ const copy = computed(() => isSpanish.value
         products: '/es/products/',
         cases: '/es/cases',
         solutions: '/es/solutions/',
+        quote: '/es/contact',
         privacy: '/privacy',
         terms: '/terms'
       }
@@ -48,6 +50,7 @@ const copy = computed(() => isSpanish.value
       products: 'All Products',
       cases: 'Cases',
       solutions: 'Solutions',
+      quote: 'Request a Quote',
       media: 'Media',
       stayUpdated: 'Stay Updated',
       newsletterNote: 'Engineering insights, delivered monthly',
@@ -67,6 +70,7 @@ const copy = computed(() => isSpanish.value
         products: '/products/',
         cases: '/cases',
         solutions: '/solutions/',
+        quote: '/quote',
         privacy: '/privacy',
         terms: '/terms'
       }
@@ -130,6 +134,7 @@ const submitSubscribe = async () => {
           <li><a :href="copy.hrefs.products">{{ copy.products }}</a></li>
           <li><a :href="copy.hrefs.cases">{{ copy.cases }}</a></li>
           <li><a :href="copy.hrefs.solutions">{{ copy.solutions }}</a></li>
+          <li><a :href="copy.hrefs.quote">{{ copy.quote }}</a></li>
         </ul>
       </div>
 
