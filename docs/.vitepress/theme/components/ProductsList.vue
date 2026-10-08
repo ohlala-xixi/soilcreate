@@ -26,7 +26,7 @@ const copy = computed(() => isSpanish.value
       all: 'Todos los productos',
       collapse: 'Contraer categoria',
       expand: 'Expandir categoria',
-      manual: 'Manual de seleccion',
+      manual: 'Descargar manual de seleccion',
       viewDetails: 'Ver detalles',
       quote: 'Cotizar',
       emptyTitle: 'No hay productos directos en esta categoría',
@@ -40,7 +40,7 @@ const copy = computed(() => isSpanish.value
       all: 'All Products',
       collapse: 'Collapse category',
       expand: 'Expand category',
-      manual: 'Selection Manual',
+      manual: 'Download Selection Manual',
       viewDetails: 'View Details',
       quote: 'Quote',
       emptyTitle: 'No direct products in this category',
@@ -96,6 +96,12 @@ const toggleCategory = (categoryId) => {
       <h1>{{ copy.title }}</h1>
       <div class="sc-heading-line"></div>
       <p>{{ copy.intro }}</p>
+      <a
+        href="/specs/monitoring-product-selection-manual.pdf"
+        class="sc-products-manual-download"
+        download
+        type="application/pdf"
+      >{{ copy.manual }}</a>
     </div>
   </div>
 
@@ -149,14 +155,6 @@ const toggleCategory = (categoryId) => {
             </ul>
           </li>
         </ul>
-        <a
-          href="/specs/monitoring-product-selection-manual.pdf"
-          class="sc-sidebar-manual-download"
-          download
-        >
-          <span>↓</span>
-          {{ copy.manual }}
-        </a>
       </aside>
 
       <section class="sc-product-grid-area">

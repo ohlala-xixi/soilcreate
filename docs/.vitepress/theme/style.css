@@ -4965,6 +4965,33 @@ a { text-underline-offset: 3px; }
   line-height: 1.7;
 }
 
+.sc-products-manual-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 30px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  background: var(--sc-orange);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  color: #fff;
+  font-size: 0.96em;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sc-products-manual-download:hover,
+.sc-products-manual-download:focus-visible {
+  background: var(--sc-orange-hover);
+  color: #fff;
+}
+
+.sc-products-manual-download:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
 .sc-products-page {
   margin-top: 0;
 }

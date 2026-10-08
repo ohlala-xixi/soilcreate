@@ -5,7 +5,7 @@ title: "In-Place Inclinometer IPI for Automated Borehole Monitoring"
 description: "Automated in-place inclinometer IPI sensor chain for real-time borehole displacement monitoring in deep excavations, slopes, tunnels, dams, and retaining walls."
 category: "Deformation Monitoring"
 subcategory: "In-Place Inclinometer"
-model: "SCIS-IPI-01"
+model: "RIPI 1025S"
 image: "/images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg"
 imageAlt: "In-place inclinometer IPI sensor chain for automated borehole displacement monitoring"
 specs:

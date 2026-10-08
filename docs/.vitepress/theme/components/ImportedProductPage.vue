@@ -24,9 +24,21 @@ const isSpanish = computed(() => props.locale === 'es')
 const item = computed(() => importedProducts[props.product])
 const spanishItem = computed(() => spanishProductPages[props.product])
 const displayTitle = computed(() => (isSpanish.value && spanishItem.value?.title) || item.value?.title)
+const measurementTermsFaq = `<details>
+  <summary>What is the difference between measurement accuracy, displacement resolution, and angular repeatability?</summary>
+  <div class="faq-body">
+    <p><strong>Measurement accuracy</strong> describes how close a measured value is to the true or reference value. The stated displacement accuracy is 0.01 mm over a 500 mm gauge length.</p>
+    <p><strong>Displacement resolution</strong> is the smallest displacement change the system can distinguish. A resolution of 0.01 mm/m corresponds to 0.01 mm over a 1 m gauge length.</p>
+    <p><strong>Angular repeatability</strong> describes how consistently the sensor reads the same angle under the same conditions. The stated repeatability is &plusmn;0.002&deg;.</p>
+    <p>In short: accuracy is closeness to a reference, resolution is the smallest distinguishable change, and repeatability is consistency across repeated measurements. These are different performance measures and should not be treated as interchangeable.</p>
+  </div>
+</details>`
 const rawHtml = computed(() => {
   if (isSpanish.value && spanishProductPageHtml[props.product]) return spanishProductPageHtml[props.product]
-  return rasberProductPages[props.product] || ''
+  const html = rasberProductPages[props.product] || ''
+  return props.product === 'flexible-inclinometer'
+    ? html.replace(/(<div class="faq-list reveal">\s*)/, `$1${measurementTermsFaq}\n      `)
+    : html
 })
 const spanishProductByHref = computed(() => Object.fromEntries(spanishProductCards.map((product) => [product.href.replace('/es', ''), product])))
 const localizedHref = (href) => {

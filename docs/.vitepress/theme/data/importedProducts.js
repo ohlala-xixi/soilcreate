@@ -48,18 +48,13 @@ export const importedProducts = {
   'in-place-inclinometer': {
     title: 'In-Place Inclinometer',
     seoTitle: 'In-Place Inclinometer (IPI) | SoilCreate',
-    description: 'Automated in-place inclinometer for 7x24 deep-displacement monitoring. One RS485 cable chains up to 128 sensors with lightweight carbon-fiber rods, 0.005 mm resolution, and IP68 protection.',
+    description: 'RIPI 1025S in-place inclinometer for 7x24 deep-displacement monitoring. One RS485 cable chains up to 128 sensors with lightweight carbon-fiber rods, 0.005 mm/m displacement resolution at a 1 m gauge length, and IP68 / 5 MPa protection.',
     category: 'Deformation Monitoring',
     subcategory: 'In-Place Inclinometer',
-    model: 'SCIS-IPI-01 · RS485 x128 · Carbon Fiber',
+    model: 'RIPI 1025S · RS485 x128 · Carbon Fiber',
     image: '/images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg',
     imageAlt: 'In-place inclinometer sensor chain with lightweight rods and RS485 bus cabling',
     downloads: [
-      {
-        name: 'In-Place Inclinometer Product Information',
-        meta: 'PDF | Product brochure',
-        link: '/specs/sc-ipi-26.pdf'
-      },
       {
         name: 'IPI / SAA RS485 Proprietary Protocol',
         meta: 'PDF | RS485 communication protocol',
@@ -78,10 +73,11 @@ export const importedProducts = {
       'Sensor segments are installed bottom-up in the borehole, and each segment is mapped to a depth record. Later abnormal readings can be traced directly to a specific node at a specific depth.'
     ],
     metrics: [
-      { value: '0.005 mm', label: 'Resolution / 500 mm' },
+      { value: '0.005 mm/m', label: 'Displacement resolution / 1 m gauge' },
       { value: '128 nodes', label: 'Sensors on one RS485 bus' },
       { value: '120 g/m', label: 'Carbon-fiber rod reference' },
-      { value: 'IP68 / 2 MPa', label: 'Waterproof rating' }
+      { value: '+/-0.001°', label: 'Repeatability' },
+      { value: 'IP68 / 5 MPa', label: 'Protection rating' }
     ],
     features: [
       'Continuous automated monitoring for foundation pits, slopes, tunnels, dams, and retaining structures.',
@@ -99,22 +95,23 @@ export const importedProducts = {
     ],
     specs: [
       ['Product type', 'In-place inclinometer sensor chain'],
-      ['Sensor principle', 'MEMS inclination measurement'],
+      ['Sensor principle', 'MEMS accelerometer / electrolytic-solution sensor (optional)'],
       ['Communication', 'RS485 bus'],
       ['Sensor quantity', 'Up to 128 nodes per bus depending on project configuration'],
       ['Rod material', 'Carbon fiber and aluminum alloy structure'],
-      ['Resolution', '0.005 mm / 500 mm reference'],
-      ['Protection', 'IP68, 2 MPa waterproof rating'],
+      ['Displacement resolution', '0.005 mm/m at 1 m gauge length'],
+      ['Repeatability', '+/-0.001°'],
+      ['Protection', 'IP68 / 5 MPa'],
       ['Monitoring mode', 'Automated continuous acquisition with platform alarms']
     ]
   },
   'flexible-inclinometer': {
     title: 'Flexible Inclinometer (Shape Array, SAA)',
     seoTitle: 'Flexible Inclinometer / Shape Array SAA | SoilCreate',
-    description: 'Flexible inclinometer shape array for 3D deformation monitoring. Segmented, recoverable, reusable hardware with +/-0.002 degree accuracy, 0.005 mm resolution, and IP68 protection.',
+    description: 'RIPI 2010S flexible inclinometer shape array for 3D deformation monitoring. Segmented, recoverable, reusable hardware with +/-0.002 degree repeatability, 0.01 mm/m displacement resolution at a 1 m gauge length, and IP68 / 5 MPa protection.',
     category: 'Deformation Monitoring',
     subcategory: 'Flexible Inclinometer / SAA',
-    model: 'SCIS-SAA-02 · 3-Axis · Segmented & Recoverable',
+    model: 'RIPI 2010S · 3-Axis · Segmented & Recoverable',
     image: '/images/products/flexible-inclinometer/flexible-inclinometer-shape-array.jpg',
     imageAlt: 'Flexible inclinometer shape array with rigid sensing segments and flexible joints',
     downloads: [
@@ -141,10 +138,10 @@ export const importedProducts = {
       'Because the array is segmented, it can be assembled on site, dismantled at project end, inspected, and redeployed on the next project.'
     ],
     metrics: [
-      { value: '+/-0.002°', label: 'Measurement accuracy' },
-      { value: '0.005 mm', label: 'Displacement resolution' },
+      { value: '+/-0.002°', label: 'Repeatability' },
+      { value: '0.01 mm/m', label: 'Resolution at 1 m gauge length' },
       { value: '180°', label: 'Maximum bending' },
-      { value: 'IP68 / 3 MPa', label: 'Waterproof pressure rating' }
+      { value: 'IP68 / 5 MPa', label: 'Waterproof pressure rating' }
     ],
     features: [
       '3-axis measurement reconstructs a continuous 3D deformation shape.',
@@ -163,11 +160,11 @@ export const importedProducts = {
     specs: [
       ['Measurement dimensions', '3D measurement, X / Y / Z axes'],
       ['Angular range', '0-360 degrees'],
-      ['Measurement accuracy', '+/-0.002 degrees'],
-      ['Displacement resolution', '0.005 mm'],
+      ['Repeatability', '+/-0.002 degrees'],
+      ['Displacement resolution', '0.01 mm/m at 1 m gauge length'],
       ['Segment length options', '0.3 m / 0.5 m / 1 m'],
       ['Communication', 'RS485, AutoID addressing'],
-      ['Protection', 'IP68, 3 MPa water pressure'],
+      ['Protection', 'IP68 / 5 MPa; 8 MPa available by project configuration'],
       ['Deployment modes', 'Vertical, horizontal, and ring installation']
     ]
   },
