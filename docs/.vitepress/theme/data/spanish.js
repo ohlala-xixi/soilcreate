@@ -9,7 +9,7 @@ const spanishHrefMap = {
 const spanishSummaries = {
   'SCIS Series':
     'Sistema Portable Sliding Inclinometer con Bluetooth para mediciones manuales en sondeos, perfiles de desplazamiento horizontal profundo y datos listos para la nube.',
-  'RIPI 1025S':
+  'SCIS-IPI-03':
     'Cadena automatizada In-Place Inclinometer (IPI) para monitoreo 24/7 de desplazamiento profundo con RS485, varillas ligeras y alarmas en la nube.',
   'SCIS-SAA-02':
     'Shape Displacement Array (SAA) recuperable para monitoreo 3D de deformación en sondeos, tuneles, taludes, terraplenes y proyectos reutilizables.',
@@ -80,14 +80,14 @@ export const spanishProductCards = catalog.products.map((product) => ({
 }))
 
 export const spanishFeaturedProducts = spanishProductCards.filter((product) =>
-  ['SCIS Series', 'RIPI 1025S', 'SCIS-SAA-02'].includes(product.sku)
+  ['SCIS Series', 'SCIS-IPI-03', 'SCIS-SAA-02'].includes(product.sku)
 )
 
 export const spanishProductPages = {
   'in-place-inclinometer': {
     title: 'In-Place Inclinometer (IPI)',
     h1: 'In-Place Inclinometer (IPI) para monitoreo automatizado de sondeos',
-    model: 'RIPI 1025S',
+    model: 'SCIS-IPI-03',
     category: 'Monitoreo de deformacion',
     image: '/images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg',
     imageAlt: 'Cadena In-Place Inclinometer IPI para monitoreo automatizado de desplazamiento en sondeos',

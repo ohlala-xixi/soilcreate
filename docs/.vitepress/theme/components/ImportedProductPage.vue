@@ -24,7 +24,8 @@ const isSpanish = computed(() => props.locale === 'es')
 const item = computed(() => importedProducts[props.product])
 const spanishItem = computed(() => spanishProductPages[props.product])
 const displayTitle = computed(() => (isSpanish.value && spanishItem.value?.title) || item.value?.title)
-const measurementTermsFaq = `<details>
+const measurementTermsFaq = {
+  en: `<details>
   <summary>What is the difference between measurement accuracy, displacement resolution, and angular repeatability?</summary>
   <div class="faq-body">
     <p><strong>Measurement accuracy</strong> describes how close a measured value is to the true or reference value. The stated displacement accuracy is 0.01 mm over a 500 mm gauge length.</p>
@@ -32,12 +33,21 @@ const measurementTermsFaq = `<details>
     <p><strong>Angular repeatability</strong> describes how consistently the sensor reads the same angle under the same conditions. The stated repeatability is &plusmn;0.002&deg;.</p>
     <p>In short: accuracy is closeness to a reference, resolution is the smallest distinguishable change, and repeatability is consistency across repeated measurements. These are different performance measures and should not be treated as interchangeable.</p>
   </div>
+</details>`,
+  es: `<details>
+  <summary>¿Cuál es la diferencia entre la exactitud de medición, la resolución de desplazamiento y la repetibilidad angular?</summary>
+  <div class="faq-body">
+    <p><strong>Exactitud de medición</strong> indica qué tan cerca está un valor medido del valor verdadero o de referencia. La exactitud de desplazamiento indicada es de 0,01 mm en una longitud de referencia de 500 mm.</p>
+    <p><strong>Resolución de desplazamiento</strong> es el cambio más pequeño de desplazamiento que el sistema puede distinguir. La resolución indicada de 0,01 mm/m equivale a 0,01 mm en una longitud de referencia de 1 m.</p>
+    <p><strong>Repetibilidad angular</strong> indica la consistencia de las lecturas del mismo ángulo bajo las mismas condiciones. La repetibilidad indicada es de &plusmn;0,002&deg;.</p>
+    <p>En resumen, la exactitud expresa la cercanía a un valor de referencia; la resolución, el cambio mínimo distinguible; y la repetibilidad, la consistencia entre mediciones repetidas. Son características diferentes y no deben confundirse.</p>
+  </div>
 </details>`
+}
 const rawHtml = computed(() => {
-  if (isSpanish.value && spanishProductPageHtml[props.product]) return spanishProductPageHtml[props.product]
-  const html = rasberProductPages[props.product] || ''
+  const html = (isSpanish.value && spanishProductPageHtml[props.product]) || rasberProductPages[props.product] || ''
   return props.product === 'flexible-inclinometer'
-    ? html.replace(/(<div class="faq-list reveal">\s*)/, `$1${measurementTermsFaq}\n      `)
+    ? html.replace(/(<div class="faq-list reveal">\s*)/, `$1${measurementTermsFaq[isSpanish.value ? 'es' : 'en']}\n      `)
     : html
 })
 const spanishProductByHref = computed(() => Object.fromEntries(spanishProductCards.map((product) => [product.href.replace('/es', ''), product])))

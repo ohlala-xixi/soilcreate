@@ -48,10 +48,10 @@ export const importedProducts = {
   'in-place-inclinometer': {
     title: 'In-Place Inclinometer',
     seoTitle: 'In-Place Inclinometer (IPI) | SoilCreate',
-    description: 'RIPI 1025S in-place inclinometer for 7x24 deep-displacement monitoring. One RS485 cable chains up to 128 sensors with lightweight carbon-fiber rods, 0.005 mm/m displacement resolution at a 1 m gauge length, and IP68 / 5 MPa protection.',
+    description: 'SCIS-IPI-03 in-place inclinometer for 7x24 deep-displacement monitoring. One RS485 cable chains up to 128 sensors with lightweight carbon-fiber rods, 0.005 mm/m displacement resolution at a 1 m gauge length, and IP68 / 5 MPa protection.',
     category: 'Deformation Monitoring',
     subcategory: 'In-Place Inclinometer',
-    model: 'RIPI 1025S · RS485 x128 · Carbon Fiber',
+    model: 'SCIS-IPI-03 · RS485 x128 · Carbon Fiber',
     image: '/images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg',
     imageAlt: 'In-place inclinometer sensor chain with lightweight rods and RS485 bus cabling',
     downloads: [
@@ -108,10 +108,10 @@ export const importedProducts = {
   'flexible-inclinometer': {
     title: 'Flexible Inclinometer (Shape Array, SAA)',
     seoTitle: 'Flexible Inclinometer / Shape Array SAA | SoilCreate',
-    description: 'RIPI 2010S flexible inclinometer shape array for 3D deformation monitoring. Segmented, recoverable, reusable hardware with +/-0.002 degree repeatability, 0.01 mm/m displacement resolution at a 1 m gauge length, and IP68 / 5 MPa protection.',
+    description: 'SCIS-SAA-02 flexible inclinometer shape array for 3D deformation monitoring. Segmented, recoverable, reusable hardware with +/-0.002 degree repeatability, 0.01 mm/m displacement resolution at a 1 m gauge length, and IP68 / 5 MPa protection.',
     category: 'Deformation Monitoring',
     subcategory: 'Flexible Inclinometer / SAA',
-    model: 'RIPI 2010S · 3-Axis · Segmented & Recoverable',
+    model: 'SCIS-SAA-02 · 3-Axis · Segmented & Recoverable',
     image: '/images/products/flexible-inclinometer/flexible-inclinometer-shape-array.jpg',
     imageAlt: 'Flexible inclinometer shape array with rigid sensing segments and flexible joints',
     downloads: [

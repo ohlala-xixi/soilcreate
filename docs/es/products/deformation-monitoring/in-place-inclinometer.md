@@ -3,7 +3,7 @@ title: In-Place Inclinometer IPI para monitoreo automatizado de sondeos
 description: In-Place Inclinometer (IPI) para monitoreo automatizado 24/7 de desplazamiento en sondeos, excavaciones profundas, taludes, tuneles y presas.
 lang: es-ES
 schemaType: product
-model: RIPI 1025S
+model: SCIS-IPI-03
 category: Deformation Monitoring
 subcategory: In-Place Inclinometer
 image: /images/products/in-place-inclinometer/in-place-inclinometer-sensor-chain.jpg
