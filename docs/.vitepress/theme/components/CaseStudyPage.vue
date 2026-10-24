@@ -74,6 +74,15 @@ const localizedCategories = computed(() => categories.map((category) => ({
 
 const articles = [
   {
+    title: 'Once a Monitoring System Is Buried, Who Controls Your Data Access?',
+    href: '/solutions/inclinometer-data-access-ownership',
+    categoryId: 'distributor-procurement-insights',
+    category: 'Distributor & Procurement Insights',
+    image: '/images/home/soilcreate-monitoring-instruments-hero.jpg',
+    imageAlt: 'SoilCreate inclinometers, sensor arrays and data acquisition equipment',
+    summary: 'Five questions about device activation, raw data export, distributor changes and baseline continuity before an SAA or IPI installation.'
+  },
+  {
     title: 'Automated Inclinometer Installation Troubleshooting: Common Field Errors and Fixes',
     href: '/solutions/automated-inclinometer-installation-troubleshooting-common-field-errors-and-fixes',
     categoryId: 'installation-troubleshooting',

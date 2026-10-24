@@ -37,6 +37,10 @@ relatedProducts:
     image: "/images/products/sliding-inclinometer/high-precision-sliding-inclinometer-product.jpg"
     imageAlt: "SoilCreate portable Bluetooth sliding inclinometer system"
 relatedArticles:
+  - title: "Once a Monitoring System Is Buried, Who Controls Your Data Access?"
+    href: "/solutions/inclinometer-data-access-ownership"
+    category: "Distributor & Procurement Insights"
+    summary: "Clarify device activation, historical data export and access responsibilities before installation."
   - title: "Browse SoilCreate Monitoring Articles"
     href: "/solutions/"
     category: "All Solutions"
