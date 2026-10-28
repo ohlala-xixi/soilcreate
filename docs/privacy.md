@@ -5,7 +5,7 @@ description: "SoilCreate privacy policy covering inquiry forms, email communicat
 
 # Privacy Policy
 
-Last updated: July 18, 2026
+Last updated: October 28, 2026
 
 SoilCreate respects the privacy of visitors, customers, distributors, and engineering partners who use this website.
 
@@ -34,6 +34,8 @@ We do not sell personal or business contact information.
 ## Analytics and Cookies
 
 This website may use Google Tag Manager, Google Analytics, and similar tools to understand website performance and visitor behavior. These tools may use cookies or comparable technologies.
+
+We also use a self-hosted analytics tool, GEOInflow, to measure page views and selected interactions such as successful inquiry submissions and contact-link clicks. Tracking events include the page URL and event type, but not the information entered into inquiry forms.
 
 You can manage cookies through your browser settings.
 

@@ -4,6 +4,16 @@ import { getEnglishRoute, getSpanishRoute } from './theme/data/languageRoutes.js
 const siteUrl = 'https://soilcreate.com'
 const siteName = 'SoilCreate'
 const isProductionBuild = process.argv.includes('build')
+const geoinflowOverrideUrl = process.env.GEOINFLOW_PUBLIC_URL
+const geoinflowOverrideWebsiteId = process.env.GEOINFLOW_WEBSITE_ID
+if (isProductionBuild && Boolean(geoinflowOverrideUrl) !== Boolean(geoinflowOverrideWebsiteId)) {
+  throw new Error('GEOINFLOW_PUBLIC_URL and GEOINFLOW_WEBSITE_ID must be set together')
+}
+const geoinflowUrl = (geoinflowOverrideUrl || 'https://stats.soilcreate.com').replace(/\/+$/, '')
+const geoinflowWebsiteId = geoinflowOverrideWebsiteId || '1c82c97b-c70d-455c-a0bb-bd9ca82661ac'
+if (geoinflowUrl && (!/^https:\/\/[a-z0-9.-]+(?::[0-9]{1,5})?$/i.test(geoinflowUrl) || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(geoinflowWebsiteId))) {
+  throw new Error('GEOInflow tracking requires an HTTPS origin and a website UUID')
+}
 const defaultDescription =
   'Advanced geotechnical monitoring instruments and precision sensor systems for global engineering projects.'
 const defaultImage = `${siteUrl}/images/shared/hero/bridge-infrastructure-hero.jpg`
@@ -253,6 +263,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NXV7CZGC');`
     ],
+    ...(isProductionBuild && geoinflowUrl ? [[
+      'script',
+      { defer: '', src: `${geoinflowUrl}/script.js`, 'data-website-id': geoinflowWebsiteId }
+    ]] : []),
     ['link', { rel: 'icon', href: '/images/logo/favicon.ico', sizes: 'any' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/logo/favicon-32x32.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/logo/favicon-16x16.png' }],
