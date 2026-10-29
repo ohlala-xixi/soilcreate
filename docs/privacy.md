@@ -5,7 +5,7 @@ description: "SoilCreate privacy policy covering inquiry forms, email communicat
 
 # Privacy Policy
 
-Last updated: October 28, 2026
+Last updated: October 29, 2026
 
 SoilCreate respects the privacy of visitors, customers, distributors, and engineering partners who use this website.
 
@@ -38,6 +38,12 @@ This website may use Google Tag Manager, Google Analytics, and similar tools to 
 We also use a self-hosted analytics tool, GEOInflow, to measure page views and selected interactions such as successful inquiry submissions and contact-link clicks. Tracking events include the page URL and event type, but not the information entered into inquiry forms.
 
 You can manage cookies through your browser settings.
+
+## SoilCreate SEO Platform Google Access
+
+The SoilCreate SEO Platform is an owner-operated tool used to review this website's search and analytics performance. If you authorize it with a Google account, it requests read-only access to Google Search Console and Google Analytics reports. It does not request permission to change your Google account, website, or Analytics settings.
+
+The tool stores its Google authorization token and retrieved report summaries on the owner's local computer. The dashboard is available only on that computer. We do not sell or share the authorized Google account's report data with other users. The account owner can revoke access at any time in their Google Account's third-party connections settings. After revocation, we will remove locally stored authorization data on request.
 
 ## Data Sharing
 
